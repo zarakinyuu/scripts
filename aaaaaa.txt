@@ -96,7 +96,7 @@ boot.elf
 boot.img
 boot/dtb/01_dtbdump_nvidia,tegra20-ictlr.dtb
 boot/dts/01_dtbdump_nvidia,tegra20-ictlr.dts
-boot/img_info
+boot/info.txt
 boot/kernel
 dtbo.img
 dtbo/01_dtbdump_amxbr.dtb
@@ -105,7 +105,7 @@ dtbo/dts/01_dtbdump_amxbr.dts
 dtbo/dts/02_dtbdump_amxbr.dts
 ikconfig
 init_boot.img
-init_boot/img_info
+init_boot/info.txt
 init_boot/ramdisk/init
 init_boot/ramdisk/system/bin/snapuserd_ramdisk
 init_boot/ramdisk/system/etc/init/snapuserd.rc
@@ -510,6 +510,7 @@ modem/image/vpu20_1v.mbn
 modem/image/vpu20_1v.mdt
 modem/image/widevine.mbn
 product/apex/com.motorola.modules.factorycustomization.apex
+product/apex_payload.img
 product/app/ARCore/ARCore.apk
 product/app/AudioRecorder/AudioRecorder.apk
 product/app/CalculatorGoogle/CalculatorGoogle.apk
@@ -743,11 +744,13 @@ product/etc/CarrierSettings/s21404spn_3d_llamaya.pb
 product/etc/CarrierSettings/s21404spn_3d_lycamobile.pb
 product/etc/CarrierSettings/s21404spn_3d_masmovil.pb
 product/etc/CarrierSettings/s21404spn_3d_mobilr.pb
+product/etc/CarrierSettings/s21404spn_3d_parlem.pb
 product/etc/CarrierSettings/s21404spn_3d_pepephone.pb
 product/etc/CarrierSettings/s21404spn_3d_populoos.pb
 product/etc/CarrierSettings/s21404spn_3d_r.pb
 product/etc/CarrierSettings/s21404spn_3d_racc.pb
 product/etc/CarrierSettings/s21404spn_3d_racctel_2b_.pb
+product/etc/CarrierSettings/s21404spn_3d_simple.pb
 product/etc/CarrierSettings/s21404spn_3d_sweno.pb
 product/etc/CarrierSettings/s21404spn_3d_telecable.pb
 product/etc/CarrierSettings/s21404spn_3d_tu_20_operador.pb
@@ -4855,7 +4858,7 @@ product/wallpaper/image/mumbap/default_wallpaper_regatta.jpg
 proprietary-files.sha1
 proprietary-files.txt
 recovery.img
-recovery/img_info
+recovery/info.txt
 recovery/ramdisk/init.recovery.qcom.rc
 recovery/ramdisk/linkerconfig/ld.config.txt
 recovery/ramdisk/odm_file_contexts
@@ -5089,6 +5092,7 @@ recovery/ramdisk/system_ext_service_contexts
 recovery/ramdisk/vendor_file_contexts
 recovery/ramdisk/vendor_property_contexts
 recovery/ramdisk/vendor_service_contexts
+system/apex_payload.img
 system/init.environ.rc
 system/system/apex/com.android.apex.cts.shim.apex
 system/system/apex/com.android.bt.apex
@@ -7820,12 +7824,14 @@ system_dlkm/lib/modules/vmw_vsock_virtio_transport.ko
 system_dlkm/lib/modules/wwan.ko
 system_dlkm/lib/modules/zram.ko
 system_dlkm/lib/modules/zsmalloc.ko
+system_dlkm/system_dlkm
 system_ext/apex/com.android.compos.apex
 system_ext/apex/com.android.vndk.v30.apex
 system_ext/apex/com.android.vndk.v31.apex
 system_ext/apex/com.android.vndk.v32.apex
 system_ext/apex/com.android.vndk.v33.apex
 system_ext/apex/com.android.vndk.v34.apex
+system_ext/apex_payload.img
 system_ext/app/AccessibilityMenu/AccessibilityMenu.apk
 system_ext/app/AtFwd2/AtFwd2.apk
 system_ext/app/DciStatsService/DciStatsService.apk
@@ -9214,6 +9220,7 @@ twrp-device-tree/motorola/mumba/setup-makefiles.sh
 twrp-device-tree/motorola/mumba/vendorsetup.sh
 vendor/apex/com.android.hardware.cas.apex
 vendor/apex/com.google.android.widevine-12498615.apex
+vendor/apex_payload.img
 vendor/app/CACertService/CACertService.apk
 vendor/app/CACertService/oat/arm64/CACertService.odex
 vendor/app/CACertService/oat/arm64/CACertService.vdex
@@ -11812,7 +11819,7 @@ vendor_boot/dtb/01_dtbdump_Qualcomm_Technologies,_Inc._Parrot_Lite_and_Parrot.dt
 vendor_boot/dtb/02_dtbdump_Qualcomm_Technologies,_Inc._Parrot_Lite_and_Parrot.dtb
 vendor_boot/dts/01_dtbdump_Qualcomm_Technologies,_Inc._Parrot_Lite_and_Parrot.dts
 vendor_boot/dts/02_dtbdump_Qualcomm_Technologies,_Inc._Parrot_Lite_and_Parrot.dts
-vendor_boot/img_info
+vendor_boot/info.txt
 vendor_boot/ramdisk/first_stage_ramdisk/fstab.qcom
 vendor_boot/ramdisk/lib/modules/altmode-glink.ko
 vendor_boot/ramdisk/lib/modules/arm_smmu.ko
@@ -12349,3 +12356,4 @@ vendor_dlkm/lib/modules/wlan_firmware_service.ko
 vendor_dlkm/lib/modules/wsa881x_dlkm.ko
 vendor_dlkm/lib/modules/wsa883x_dlkm.ko
 vendor_dlkm/lib/modules/xhci-sideband.ko
+vendor_dlkm/vendor_dlkm
