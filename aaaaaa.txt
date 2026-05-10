@@ -50,6 +50,7 @@ qti-regmap-debugfs.ko
 qcom-spmi-pmic.ko
 qcom_dma_heaps.ko
 spmi-pmic-arb.ko
+qpnp-power-on.ko
 rtc-pm8xxx.ko
 qcom-dload-mode.ko
 qcom-reboot-reason.ko
@@ -78,5 +79,6 @@ icc-rpmh.ko
 qnoc-parrot.ko
 qnoc-ravelin.ko
 qnoc-qos.ko
+icc-debug.ko
 qrtr.ko
 qrtr-gunyah.ko
