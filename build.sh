@@ -13,7 +13,8 @@ git clone https://github.com/motorola-sm6435/android_device_motorola_mumba devic
 git clone https://github.com/motorola-sm6435/android_vendor_motorola_mumba vendor/motorola/mumba
 git clone https://github.com/motorola-sm6435/android_device_motorola_mumba-kernel device/motorola/mumba-kernel
 git clone https://github.com/LineageOS/android_hardware_motorola -b lineage-23.2 hardware/motorola
+git clone https://github.com/TRIDEV099/hardware_dolby hardware/dolby
 
-source build/envsetup.sh
+. build/envsetup.sh
 lunch lineage_mumba-bp4a-userdebug
-mka bacon
+m evolution
