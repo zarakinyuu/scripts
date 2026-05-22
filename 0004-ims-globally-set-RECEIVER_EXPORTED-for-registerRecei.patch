@@ -1,119 +1,230 @@
-From 38fcb0002ad1a3e6d94917ae2dd7401b4914e8d3 Mon Sep 17 00:00:00 2001
-From: SGCMarkus <markusornik@gmail.com>
-Date: Wed, 21 Feb 2024 19:18:49 +0100
-Subject: [PATCH 4/4] ims: globally set RECEIVER_EXPORTED for registerReceiver
-
-E AndroidRuntime: FATAL EXCEPTION: main
-E AndroidRuntime: Process: org.codeaurora.ims, PID: 3692
-E AndroidRuntime: java.lang.RuntimeException: Unable to create service org.codeaurora.ims.ImsService: java.lang.SecurityException: org.codeaurora.ims: One of RECEIVER_EXPORTED or RECEIVER_NOT_EXPORTED should be specified when a receiver isn't being registered exclusively for system broadcasts
-
-Co-authored-by: Cosmin Tanislav <demonsingur@gmail.com>
----
- smali/com/qualcomm/ims/vt/LowBatteryHandler.smali  | 6 ++++--
- smali/org/codeaurora/ims/ImsCallModification.smali | 6 ++++--
- smali/org/codeaurora/ims/ImsServiceSub.smali       | 6 ++++--
- smali/org/codeaurora/ims/ImsSubController.smali    | 6 ++++--
- 4 files changed, 16 insertions(+), 8 deletions(-)
-
-diff --git a/smali/com/qualcomm/ims/vt/LowBatteryHandler.smali b/smali/com/qualcomm/ims/vt/LowBatteryHandler.smali
-index 1b5620a..66d9faf 100644
---- a/smali/com/qualcomm/ims/vt/LowBatteryHandler.smali
-+++ b/smali/com/qualcomm/ims/vt/LowBatteryHandler.smali
-@@ -96,7 +96,7 @@
- .end method
- 
- .method private constructor <init>(Ljava/util/List;Landroid/content/Context;)V
--    .locals 1
-+    .locals 2
-     .annotation system Ldalvik/annotation/Signature;
-         value = {
-             "(",
-@@ -142,8 +142,10 @@
-     const-string p1, "android.intent.action.BATTERY_CHANGED"
- 
-     invoke-direct {p0, p1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
-+    
-+    const/4 v4, 0x2
- 
--    invoke-virtual {p2, v0, p0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-+    invoke-virtual {p2, v0, p0, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
- 
-     return-void
- .end method
-diff --git a/smali/org/codeaurora/ims/ImsCallModification.smali b/smali/org/codeaurora/ims/ImsCallModification.smali
-index 128f82c..fb221ef 100644
---- a/smali/org/codeaurora/ims/ImsCallModification.smali
-+++ b/smali/org/codeaurora/ims/ImsCallModification.smali
-@@ -175,7 +175,7 @@
- .end method
- 
- .method public constructor <init>(Lorg/codeaurora/ims/ImsCallSessionImpl;Landroid/content/Context;Lorg/codeaurora/ims/ImsSenderRxr;Landroid/os/Looper;)V
--    .locals 3
-+    .locals 4
- 
-     .line 129
-     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-@@ -285,7 +285,9 @@
-     .line 140
-     iget-object p2, p0, Lorg/codeaurora/ims/ImsCallModification;->mContext:Landroid/content/Context;
- 
--    invoke-virtual {p2, v0, p1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-+    const/4 v3, 0x2
-+
-+    invoke-virtual {p2, v0, p1, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
- 
-     .line 141
-     const-string p1, "Registering car mode receiver"
-diff --git a/smali/org/codeaurora/ims/ImsServiceSub.smali b/smali/org/codeaurora/ims/ImsServiceSub.smali
-index 18d2816..a10d38c 100644
---- a/smali/org/codeaurora/ims/ImsServiceSub.smali
-+++ b/smali/org/codeaurora/ims/ImsServiceSub.smali
-@@ -609,7 +609,7 @@
- .end method
- 
- .method public constructor <init>(Landroid/content/Context;ILorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/ImsSubController;)V
--    .locals 5
-+    .locals 6
- 
-     .line 282
-     invoke-direct {p0}, Landroid/telephony/ims/feature/MmTelFeature;-><init>()V
-@@ -1054,8 +1054,10 @@
-     iget-object v2, p0, Lorg/codeaurora/ims/ImsServiceSub;->mImsServiceStateReceiver:Lorg/codeaurora/ims/ImsServiceStateReceiver;
- 
-     const/4 v3, 0x2
-+    
-+    const/4 v5, 0x2
- 
--    invoke-virtual {v0, v2, p4, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
-+    invoke-virtual {v0, v2, p4, v3, v5}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
- 
-     .line 312
-     iget-object p4, p0, Lorg/codeaurora/ims/ImsServiceSub;->mImsServiceStateReceiver:Lorg/codeaurora/ims/ImsServiceStateReceiver;
-diff --git a/smali/org/codeaurora/ims/ImsSubController.smali b/smali/org/codeaurora/ims/ImsSubController.smali
-index f237166..eb9b157 100644
---- a/smali/org/codeaurora/ims/ImsSubController.smali
-+++ b/smali/org/codeaurora/ims/ImsSubController.smali
-@@ -304,7 +304,7 @@
- .end method
- 
- .method public constructor <init>(Landroid/content/Context;Ljava/util/List;Ljava/util/List;Landroid/os/Looper;)V
--    .locals 3
-+    .locals 5
-     .annotation system Ldalvik/annotation/Signature;
-         value = {
-             "(",
-@@ -408,8 +408,10 @@
-     const-string v2, "android.telephony.action.MULTI_SIM_CONFIG_CHANGED"
- 
-     invoke-direct {v1, v2}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
-+    
-+    const/4 v4, 0x2
- 
--    invoke-virtual {p1, v0, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-+    invoke-virtual {p1, v0, v1, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
- 
-     .line 210
-     iput-object p2, p0, Lorg/codeaurora/ims/ImsSubController;->mSenderRxrs:Ljava/util/List;
--- 
-2.52.0.windows.1
-
+gh_arm_drv.ko
+sched-walt.ko
+qcom_ipc_logging.ko
+qcom-pdc.ko
+phy-qcom-ufs.ko
+phy-qcom-ufs-qmp-v4-waipio.ko
+phy-qcom-ufs-qrbtc-sdm845.ko
+pinctrl-msm.ko
+pinctrl-ravelin.ko
+pinctrl-parrot.ko
+clk-qcom.ko
+clk-dummy.ko
+gdsc-regulator.ko
+clk-rpmh.ko
+dispcc-sm4450.ko
+dispcc-parrot.ko
+gcc-sm4450.ko
+gcc-parrot.ko
+qcom_aoss.ko
+cmd-db.ko
+mdt_loader.ko
+qcom_rpmh.ko
+smem.ko
+socinfo.ko
+cpu_phys_log_map.ko
+dcc_v2.ko
+qcom_wdt_core.ko
+memory_dump_v2.ko
+minidump.ko
+qcom_ice.ko
+qcom-pmu-lib.ko
+dcvs_fp.ko
+qcom-dcvs.ko
+qcom_cpucp.ko
+mem_buf.ko
+mem_buf_dev.ko
+mem_buf_msgq.ko
+secure_buffer.ko
+qcom_cpu_vendor_hooks.ko
+debug_symbol.ko
+proxy-consumer.ko
+rpmh-regulator.ko
+stub-regulator.ko
+debug-regulator.ko
+arm_smmu.ko
+msm_dma_iommu_mapping.ko
+qcom_iommu_util.ko
+iommu-logger.ko
+qti-regmap-debugfs.ko
+qcom-spmi-pmic.ko
+qcom_dma_heaps.ko
+spmi-pmic-arb.ko
+rtc-pm8xxx.ko
+qcom-dload-mode.ko
+qcom-reboot-reason.ko
+qti_thermal_vendor_hooks.ko
+qcom_tsens.ko
+bcl_pmic5.ko
+cpu_hotplug.ko
+thermal_pause.ko
+sdhci-msm.ko
+cqhci.ko
+ufs-qcom.ko
+ufshcd-crypto-qti.ko
+qcom-scm.ko
+qcom-ipcc.ko
+msm_qmp.ko
+qcom_hwspinlock.ko
+gh_virt_wdt.ko
+gh_dbl.ko
+gh_msgq.ko
+gh_rm_drv.ko
+gunyah_loader.ko
+nvmem_qfprom.ko
+nvmem_qcom-spmi-sdam.ko
+icc-bcm-voter.ko
+icc-rpmh.ko
+qnoc-parrot.ko
+qnoc-ravelin.ko
+qnoc-qos.ko
+qrtr.ko
+qrtr-gunyah.ko
+msm_sysstats.ko
+msm_show_resume_irq.ko
+mhi.ko
+mhi_dev_uci.ko
+mhi_dev_dtr.ko
+pinctrl-spmi-gpio.ko
+pinctrl-spmi-mpp.ko
+pwm-qti-lpg.ko
+pci-msm-drv.ko
+qcom-spmi-wled.ko
+camcc-sm4450.ko
+debugcc-sm4450.ko
+debugcc-parrot.ko
+camcc-parrot.ko
+gpucc-sm4450.ko
+gpucc-parrot.ko
+videocc-parrot.ko
+bam_dma.ko
+msm_gpi.ko
+qcom_cpuss_sleep_stats.ko
+pdr_interface.ko
+qmi_helpers.ko
+heap_mem_ext_v01.ko
+msm_memshare.ko
+smp2p.ko
+smp2p_sleepstate.ko
+qsee_ipc_irq_bridge.ko
+qcom_soc_wdt.ko
+qcom_stats.ko
+eud.ko
+boot_stats.ko
+rq_stats.ko
+tmecom-intf.ko
+qcom_va_minidump.ko
+qcom_logbuf_vendor_hooks.ko
+qcom_logbuf_boot_log.ko
+gic_intr_routing.ko
+hung_task_enh.ko
+memlat.ko
+bwmon.ko
+cpucp_log.ko
+sys_pm_vx.ko
+sps_drv.ko
+qcom_ramdump.ko
+sysmon_subsystem_stats.ko
+cdsprm.ko
+panel_event_notifier.ko
+qti_pmic_glink.ko
+altmode-glink.ko
+charger-ulog-glink.ko
+pmic-pon-log.ko
+dmesg_dumper.ko
+gh_tlmm_vm_mem_access.ko
+qfprom-sys.ko
+msm_performance.ko
+fsa4480-i2c.ko
+qti-fixed-regulator.ko
+qcom_pm8008-regulator.ko
+qcom-amoled-regulator.ko
+qpnp-lcdb-regulator.ko
+qti-ocp-notifier.ko
+hvc_gunyah.ko
+msm_geni_serial.ko
+rdbg.ko
+drm_dp_aux_bus.ko
+drm_display_helper.ko
+qseecom_proxy.ko
+qcom-i2c-pmic.ko
+sg.ko
+spi-msm-geni.ko
+msm_sharedmem.ko
+phy-generic.ko
+phy-qcom-emu.ko
+phy-msm-ssusb-qmp.ko
+phy-msm-snps-hs.ko
+dwc3-msm.ko
+xhci-sideband.ko
+ehset.ko
+lvstest.ko
+f_fs_ipc_log.ko
+usb_f_cdev.ko
+usb_f_ccid.ko
+usb_f_qdss.ko
+usb_f_gsi.ko
+ucsi_qti_glink.ko
+pm8941-pwrkey.ko
+qpnp-power-on.ko
+qcom-hv-haptics.ko
+i2c-msm-geni.ko
+qcom-pon.ko
+reboot-mode.ko
+qti_battery_charger.ko
+qcom-spmi-adc-tm5.ko
+qcom-spmi-temp-alarm.ko
+qti_qmi_sensor_v2.ko
+qti_qmi_cdev.ko
+policy_engine.ko
+bcl_soc.ko
+qti_userspace_cdev.ko
+ddr_cdev.ko
+qti_cpufreq_cdev.ko
+thermal_config.ko
+sdpm_clk.ko
+qti_devfreq_cdev.ko
+qcom-cpufreq-hw.ko
+qcom_lpm.ko
+leds-aw2016.ko
+leds-qpnp-flash-v2.ko
+leds-qpnp-vibrator-ldo.ko
+leds-qti-tri-led.ko
+si_core_module.ko
+mem_object.ko
+qcom_pil_info.ko
+rproc_qcom_common.ko
+qcom_q6v5.ko
+qcom_q6v5_pas.ko
+qcom_sysmon.ko
+qcom_glink.ko
+qcom_glink_smem.ko
+qcom_smd.ko
+glink_pkt.ko
+gh_ctrl.ko
+gh_irq_lend.ko
+gh_rm_booster.ko
+gh_mem_notifier.ko
+gh_panic_notifier.ko
+governor_msm_adreno_tz.ko
+governor_gpubw_mon.ko
+qcom-spmi-adc5.ko
+qcom-vadc-common.ko
+qti-glink-adc.ko
+slimbus.ko
+slim-qcom-ngd-ctrl.ko
+stm_core.ko
+stm_p_basic.ko
+stm_p_ost.ko
+stm_console.ko
+stm_ftrace.ko
+snd-usb-audio-qmi.ko
+qrtr-smd.ko
+qrtr-mhi.ko
+smcinvoke_dlkm.ko
+msm_drm.ko
+msm_ext_display.ko
+sync_fence.ko
+msm-mmrm.ko
+smcinvoke_dlkm.ko
+qseecom_dlkm.ko
