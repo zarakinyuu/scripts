@@ -4,10 +4,12 @@ system/etc/permissions/moto-settings.xml
 system_ext/etc/permissions/privapp-com.dolby.daxservice.xml
 system_ext/etc/permissions/privapp-com.motorola.android.providers.settings.xml
 system_ext/etc/permissions/privapp-com.motorola.dolby.dolbyui.xml
+system//etc/permissions/motoaudioeffectsdk.xml
 system_ext/etc/sysconfig/config-com.dolby.daxservice.xml
 system_ext/etc/sysconfig/config-com.motorola.android.providers.settings.xml
 system_ext/etc/sysconfig/config-com.motorola.dolby.dolbyui.xml
 system/framework/com.motorola.motosignature.jar
+system//framework/motoaudioeffectsdk.jar
 system_ext/etc/sysconfig/config-com.motorola.motosignature.app.xml
 system_ext/framework/com.motorola.frameworks.core.addon.jar
 system/etc/permissions/com.motorola.motosignature.xml
