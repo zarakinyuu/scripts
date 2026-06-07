@@ -189,8 +189,6 @@
       "Name": "GPUMaxFreq",
       "Path": "/sys/class/kgsl/kgsl-3d0/devfreq/max_freq",
       "Values": [
-        "940000000",
-        "875000000",
         "816000000",
         "734000000",
         "650000000",
@@ -206,8 +204,6 @@
       "Name": "GPUMinFreq",
       "Path": "/sys/class/kgsl/kgsl-3d0/devfreq/min_freq",
       "Values": [
-        "940000000",
-        "875000000",
         "816000000",
         "734000000",
         "650000000",
@@ -346,7 +342,7 @@
       "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "GPUMaxFreq",
       "Duration": 0,
-      "Value": "940000000"
+      "Value": "816000000"
     },
     {
       "PowerHint": "INTERACTION",
