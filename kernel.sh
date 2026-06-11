@@ -24,16 +24,5 @@ export OBJDUMP="${TOOLCHAIN_PATH}/llvm-objdump"
 export READELF="${TOOLCHAIN_PATH}/llvm-readelf"
 export HOSTCC="${TOOLCHAIN_PATH}/clang"
 export HOSTCXX="${TOOLCHAIN_PATH}/clang++"
-make -C $(pwd) O=$(pwd)/out KCFLAGS=-w CONFIG_SECTION_MISMATCH_WARN_ONLY=y gki_defconfig vendor/parrot_perf.config vendor/ext_config/moto-parrot.config vendor/ext_config/moto-parrot-mumba.config
+make -C $(pwd) O=$(pwd)/out KCFLAGS=-w CONFIG_SECTION_MISMATCH_WARN_ONLY=y gki_defconfig vendor/parrot_perf.config vendor/parrot_consolidate.config vendor/ext_config/debug-parrot.config vendor/ext_config/moto-parrot.config vendor/ext_config/moto-parrot-mumba.config
 make -C $(pwd) O=$(pwd)/out KCFLAGS=-w CONFIG_SECTION_MISMATCH_WARN_ONLY=y -j$(nproc --all)
-cd out/arch/arm64/boot
-wget https://github.com/Uevo001/magiskboot-linux/raw/refs/heads/main/x86_64/magiskboot
-wget https://gitlab.com/zarakinyu/android_dump_motorola_mumba/-/raw/WWAA36V.48-12-ST12.1/boot.img
-chmod +x magiskboot
-./magiskboot unpack boot.img
-rm kernel
-mv Image kernel
-./magiskboot repack boot.img
-wget -q https://raw.githubusercontent.com/kenway214/GoFile-Upload-Script/master/upload.sh -O ~/gofile && chmod +x ~/gofile
-echo 'alias gofile="~/gofile"' >> ~/.bashrc && source ~/.bashrc
-gofile new-boot.img
