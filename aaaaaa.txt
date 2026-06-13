@@ -1,449 +1,1053 @@
-5:06-16 01:32:11.131     1     1 I auditd  : type=1107 audit(0.0:4): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { set } for property=persist.vendor.bt.a2dp_offload_cap pid=1 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:bluetooth_prop:s0 tclass=property_service permissive=0'
-6:06-16 01:32:11.139     1     1 I auditd  : type=1400 audit(0.0:5): avc:  denied  { read } for  comm="init" name="sdd15" dev="tmpfs" ino=12 scontext=u:r:init:s0 tcontext=u:object_r:tmpfs:s0 tclass=blk_file permissive=0
-7:06-16 01:32:11.175     1     1 I auditd  : type=1107 audit(0.0:6): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { read } for property=persist.wlan.debug_log pid=0 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0'
-8:06-16 01:32:11.175     1     1 I auditd  : type=1107 audit(0.0:7): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { read } for property=persist.wlan.debug_log pid=0 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0'
-9:06-16 01:32:11.179     1     1 I auditd  : type=1107 audit(0.0:8): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { read } for property=mot.oobe.rubbish.screenshot pid=0 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0'
-10:06-16 01:32:11.179     1     1 I auditd  : type=1107 audit(0.0:9): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { read } for property=ro.sys.force_max_chrg_temp pid=0 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0'
-11:06-16 01:32:11.179     1     1 I auditd  : type=1107 audit(0.0:10): uid=0 auid=4294967295 ses=4294967295 subj=u:r:init:s0 msg='avc:  denied  { read } for property=ro.sys.force_demo_mode pid=0 uid=0 gid=0 scontext=u:r:vendor_init:s0 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0'
-24:06-16 01:32:15.235   271   271 I auditd  : type=1400 audit(0.0:15): avc:  denied  { write } for  comm="init" name="vendor_de" dev="dm-44" ino=145 scontext=u:r:vendor_init:s0 tcontext=u:object_r:vendor_userdir_file:s0 tclass=dir permissive=0
-26:05-26 11:31:05.862     1     1 I auditd  : type=1400 audit(0.0:16): avc:  denied  { write } for  comm="init" name="discard_max_bytes" dev="sysfs" ino=72452 scontext=u:r:init:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-27:05-26 11:31:06.130  1438  1438 I auditd  : type=1400 audit(0.0:17): avc:  denied  { write } for  comm="binder:1438_2" name="property_service" dev="tmpfs" ino=597 scontext=u:r:vendor_hal_gnss_qti:s0 tcontext=u:object_r:property_socket:s0 tclass=sock_file permissive=0
-28:05-26 11:31:06.143  1050  1050 I auditd  : avc:  denied  { find } for pid=1459 uid=1000 name=vendor.qti.hardware.pal.IPAL/default scontext=u:r:hal_vibrator_default:s0 tcontext=u:object_r:hal_audio_service:s0 tclass=service_manager permissive=0
-29:05-26 11:31:06.143  1050  1050 I auditd  : avc:  denied  { find } for pid=1459 uid=1000 name=vendor.qti.hardware.pal.IPAL/default scontext=u:r:hal_vibrator_default:s0 tcontext=u:object_r:hal_audio_service:s0 tclass=service_manager permissive=0
-35:05-26 11:31:06.554  1502  1502 I auditd  : type=1400 audit(0.0:18): avc:  denied  { write } for  comm="init.mmi.boot.s" name="kmsg" dev="tmpfs" ino=5 scontext=u:r:vendor_mmi_boot:s0 tcontext=u:object_r:kmsg_device:s0 tclass=chr_file permissive=0
-36:05-26 11:31:06.598     1     1 I auditd  : type=1400 audit(0.0:19): avc:  denied  { write } for  comm="init" name="error_report_end" dev="tracefs" ino=25597 scontext=u:r:init:s0 tcontext=u:object_r:debugfs_bootreceiver_tracing:s0 tclass=dir permissive=0
-37:05-26 11:31:06.598  1502  1502 I auditd  : type=1400 audit(0.0:20): avc:  denied  { write } for  comm="init.mmi.boot.s" name="kmsg" dev="tmpfs" ino=5 scontext=u:r:vendor_mmi_boot:s0 tcontext=u:object_r:kmsg_device:s0 tclass=chr_file permissive=0
-38:05-26 11:31:06.642  1502  1502 I auditd  : type=1400 audit(0.0:21): avc:  denied  { write } for  comm="init.mmi.boot.s" name="kmsg" dev="tmpfs" ino=5 scontext=u:r:vendor_mmi_boot:s0 tcontext=u:object_r:kmsg_device:s0 tclass=chr_file permissive=0
-39:05-26 11:31:06.654  1502  1502 I auditd  : type=1400 audit(0.0:22): avc:  denied  { write } for  comm="init.mmi.boot.s" name="kmsg" dev="tmpfs" ino=5 scontext=u:r:vendor_mmi_boot:s0 tcontext=u:object_r:kmsg_device:s0 tclass=chr_file permissive=0
-40:05-26 11:31:07.310  1821  1821 I auditd  : type=1400 audit(0.0:23): avc:  denied  { read } for  comm="nicmd" name="u:object_r:init_service_status_private_prop:s0" dev="tmpfs" ino=264 scontext=u:r:vendor_nicmd:s0 tcontext=u:object_r:init_service_status_private_prop:s0 tclass=file permissive=0
-43:05-26 11:31:07.462  1818  1818 I auditd  : type=1400 audit(0.0:24): avc:  denied  { getattr } for  comm="thermal-engine-" path="/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dpms" dev="sysfs" ino=117011 scontext=u:r:vendor_thermal-engine:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-45:05-26 11:31:07.774  1445  1445 I auditd  : type=1400 audit(0.0:25): avc:  denied  { read } for  comm="binder:1445_4" name="debug" dev="sysfs" ino=24086 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=0
-46:05-26 11:31:07.774  1445  1445 I auditd  : type=1400 audit(0.0:26): avc:  denied  { read } for  comm="binder:1445_4" name="debug" dev="sysfs" ino=24086 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=0
-47:05-26 11:31:07.774  1445  1445 I auditd  : type=1400 audit(0.0:27): avc:  denied  { read } for  comm="binder:1445_4" name="debug" dev="sysfs" ino=24086 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=0
-48:05-26 11:31:08.750  2020  2020 I auditd  : type=1400 audit(0.0:28): avc:  denied  { read } for  comm="DispatcherModul" name="u:object_r:vendor_pd_locater_dbg_prop:s0" dev="tmpfs" ino=506 scontext=u:r:rild:s0 tcontext=u:object_r:vendor_pd_locater_dbg_prop:s0 tclass=file permissive=0
-49:05-26 11:31:08.782  2020  2020 I auditd  : type=1400 audit(0.0:29): avc:  denied  { read } for  comm="DispatcherModul" name="u:object_r:vendor_pd_locater_dbg_prop:s0" dev="tmpfs" ino=506 scontext=u:r:rild:s0 tcontext=u:object_r:vendor_pd_locater_dbg_prop:s0 tclass=file permissive=0
-52:05-26 11:31:08.902  2028  2028 I auditd  : type=1400 audit(0.0:30): avc:  denied  { read } for  comm="DispatcherModul" name="u:object_r:vendor_pd_locater_dbg_prop:s0" dev="tmpfs" ino=506 scontext=u:r:rild:s0 tcontext=u:object_r:vendor_pd_locater_dbg_prop:s0 tclass=file permissive=0
-53:05-26 11:31:08.906  2028  2028 I auditd  : type=1400 audit(0.0:31): avc:  denied  { read } for  comm="DispatcherModul" name="u:object_r:vendor_pd_locater_dbg_prop:s0" dev="tmpfs" ino=506 scontext=u:r:rild:s0 tcontext=u:object_r:vendor_pd_locater_dbg_prop:s0 tclass=file permissive=0
-54:05-26 11:31:09.000  1050  1050 I auditd  : avc:  denied  { add } for pid=2370 uid=1000 name=com.motorola.hardware.biometric.fingerprint.IMotoCaptiveSensorTest/default scontext=u:r:hal_fingerprint_default:s0 tcontext=u:object_r:default_android_service:s0 tclass=service_manager permissive=0
-55:05-26 11:31:09.001  1050  1050 I auditd  : avc:  denied  { add } for pid=2370 uid=1000 name=com.motorola.hardware.biometric.fingerprint.IMotoFingerPrint/default scontext=u:r:hal_fingerprint_default:s0 tcontext=u:object_r:default_android_service:s0 tclass=service_manager permissive=0
-56:05-26 11:31:10.426  1504  1504 I auditd  : type=1400 audit(0.0:32): avc:  denied  { getattr } for  comm="init.mmi.touch." path="/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/panelName" dev="sysfs" ino=133066 scontext=u:r:vendor_init_touch:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-57:05-26 11:31:11.438  1504  1504 I auditd  : type=1400 audit(0.0:33): avc:  denied  { getattr } for  comm="init.mmi.touch." path="/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/panelName" dev="sysfs" ino=133066 scontext=u:r:vendor_init_touch:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-58:05-26 11:31:11.494  2792  2792 I auditd  : type=1400 audit(0.0:34): avc:  denied  { read } for  comm="qms" name="u:object_r:vendor_qms_prop:s0" dev="tmpfs" ino=523 scontext=u:r:vendor_qms_1:s0 tcontext=u:object_r:vendor_qms_prop:s0 tclass=file permissive=0
-59:05-26 11:31:11.494  2792  2792 I auditd  : type=1400 audit(0.0:35): avc:  denied  { read } for  comm="qms" name="u:object_r:vendor_qms_prop:s0" dev="tmpfs" ino=523 scontext=u:r:vendor_qms_1:s0 tcontext=u:object_r:vendor_qms_prop:s0 tclass=file permissive=0
-60:05-26 11:31:11.498  2792  2792 I auditd  : type=1400 audit(0.0:36): avc:  denied  { read } for  comm="qsap_qms_1" name="u:object_r:vendor_qms_prop:s0" dev="tmpfs" ino=523 scontext=u:r:vendor_qms_1:s0 tcontext=u:object_r:vendor_qms_prop:s0 tclass=file permissive=0
-61:05-26 11:31:11.498  2792  2792 I auditd  : type=1400 audit(0.0:37): avc:  denied  { read } for  comm="qsap_qms_1" name="u:object_r:vendor_qms_prop:s0" dev="tmpfs" ino=523 scontext=u:r:vendor_qms_1:s0 tcontext=u:object_r:vendor_qms_prop:s0 tclass=file permissive=0
-62:05-26 11:31:11.958  2646  2646 I auditd  : type=1400 audit(0.0:38): avc:  denied  { read } for  comm="android.ui" name="name" dev="sysfs" ino=124744 scontext=u:r:system_server:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-63:05-26 11:31:11.958  2646  2646 I auditd  : type=1400 audit(0.0:39): avc:  denied  { read } for  comm="android.ui" name="name" dev="sysfs" ino=124738 scontext=u:r:system_server:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-64:05-26 11:31:11.958  2646  2646 I auditd  : type=1400 audit(0.0:40): avc:  denied  { read } for  comm="android.ui" name="name" dev="sysfs" ino=124741 scontext=u:r:system_server:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-65:05-26 11:31:11.958  2646  2646 I auditd  : type=1400 audit(0.0:41): avc:  denied  { read } for  comm="android.ui" name="name" dev="sysfs" ino=124735 scontext=u:r:system_server:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-66:05-26 11:31:11.990  1050  1050 I auditd  : type=1400 audit(0.0:42): avc:  denied  { call } for  comm="servicemanager" scontext=u:r:servicemanager:s0 tcontext=u:r:hal_graphics_composer_default:s0 tclass=binder permissive=0
-67:05-26 11:31:12.446  1504  1504 I auditd  : type=1400 audit(0.0:43): avc:  denied  { getattr } for  comm="init.mmi.touch." path="/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/panelName" dev="sysfs" ino=133066 scontext=u:r:vendor_init_touch:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-68:05-26 11:31:12.926  1115  1115 I auditd  : type=1400 audit(0.0:44): avc:  denied  { read } for  comm="binder:1115_3" name="name" dev="sysfs" ino=124106 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-69:05-26 11:31:12.930  1115  1115 I auditd  : type=1400 audit(0.0:45): avc:  denied  { read } for  comm="binder:1115_3" name="active_count" dev="sysfs" ino=124107 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-70:05-26 11:31:12.930  1115  1115 I auditd  : type=1400 audit(0.0:46): avc:  denied  { read } for  comm="binder:1115_3" name="last_change_ms" dev="sysfs" ino=124114 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-71:05-26 11:31:12.930  1115  1115 I auditd  : type=1400 audit(0.0:47): avc:  denied  { read } for  comm="binder:1115_3" name="max_time_ms" dev="sysfs" ino=124113 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-72:05-26 11:31:12.930  1115  1115 I auditd  : type=1400 audit(0.0:48): avc:  denied  { read } for  comm="binder:1115_3" name="total_time_ms" dev="sysfs" ino=124112 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-73:05-26 11:31:12.930  1115  1115 I auditd  : type=1400 audit(0.0:49): avc:  denied  { read } for  comm="binder:1115_3" name="active_time_ms" dev="sysfs" ino=124111 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-74:05-26 11:31:12.930  1115  1115 I auditd  : type=1400 audit(0.0:50): avc:  denied  { read } for  comm="binder:1115_3" name="event_count" dev="sysfs" ino=124108 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-75:05-26 11:31:12.930  1115  1115 I auditd  : type=1400 audit(0.0:51): avc:  denied  { read } for  comm="binder:1115_3" name="expire_count" dev="sysfs" ino=124110 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-76:05-26 11:31:12.930  1115  1115 I auditd  : type=1400 audit(0.0:52): avc:  denied  { read } for  comm="binder:1115_3" name="prevent_suspend_time_ms" dev="sysfs" ino=124115 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-77:05-26 11:31:12.930  1115  1115 I auditd  : type=1400 audit(0.0:53): avc:  denied  { read } for  comm="binder:1115_3" name="wakeup_count" dev="sysfs" ino=124109 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-78:05-26 11:31:12.930  1115  1115 I auditd  : type=1400 audit(0.0:54): avc:  denied  { read } for  comm="binder:1115_3" name="name" dev="sysfs" ino=118502 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-79:05-26 11:31:12.930  1115  1115 I auditd  : type=1400 audit(0.0:55): avc:  denied  { read } for  comm="binder:1115_3" name="active_count" dev="sysfs" ino=118503 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-80:05-26 11:31:12.930  1115  1115 I auditd  : type=1400 audit(0.0:56): avc:  denied  { read } for  comm="binder:1115_3" name="last_change_ms" dev="sysfs" ino=118510 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-81:05-26 11:31:12.930  1115  1115 I auditd  : type=1400 audit(0.0:57): avc:  denied  { read } for  comm="binder:1115_3" name="max_time_ms" dev="sysfs" ino=118509 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-82:05-26 11:31:12.934  1115  1115 I auditd  : type=1400 audit(0.0:58): avc:  denied  { read } for  comm="binder:1115_3" name="total_time_ms" dev="sysfs" ino=118508 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-83:05-26 11:31:12.934  1115  1115 I auditd  : type=1400 audit(0.0:59): avc:  denied  { read } for  comm="binder:1115_3" name="active_time_ms" dev="sysfs" ino=118507 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-84:05-26 11:31:12.934  1115  1115 I auditd  : type=1400 audit(0.0:60): avc:  denied  { read } for  comm="binder:1115_3" name="event_count" dev="sysfs" ino=118504 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-85:05-26 11:31:12.934  1115  1115 I auditd  : type=1400 audit(0.0:61): avc:  denied  { read } for  comm="binder:1115_3" name="expire_count" dev="sysfs" ino=118506 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-86:05-26 11:31:12.934  1115  1115 I auditd  : type=1400 audit(0.0:62): avc:  denied  { read } for  comm="binder:1115_3" name="prevent_suspend_time_ms" dev="sysfs" ino=118511 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-87:05-26 11:31:12.934  1115  1115 I auditd  : type=1400 audit(0.0:63): avc:  denied  { read } for  comm="binder:1115_3" name="wakeup_count" dev="sysfs" ino=118505 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-88:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:64): avc:  denied  { read } for  comm="binder:1115_3" name="name" dev="sysfs" ino=124106 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-89:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:65): avc:  denied  { read } for  comm="binder:1115_3" name="active_count" dev="sysfs" ino=124107 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-90:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:66): avc:  denied  { read } for  comm="binder:1115_3" name="last_change_ms" dev="sysfs" ino=124114 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-91:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:67): avc:  denied  { read } for  comm="binder:1115_3" name="max_time_ms" dev="sysfs" ino=124113 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-92:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:68): avc:  denied  { read } for  comm="binder:1115_3" name="total_time_ms" dev="sysfs" ino=124112 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-93:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:69): avc:  denied  { read } for  comm="binder:1115_3" name="active_time_ms" dev="sysfs" ino=124111 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-94:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:70): avc:  denied  { read } for  comm="binder:1115_3" name="event_count" dev="sysfs" ino=124108 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-95:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:71): avc:  denied  { read } for  comm="binder:1115_3" name="expire_count" dev="sysfs" ino=124110 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-96:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:72): avc:  denied  { read } for  comm="binder:1115_3" name="prevent_suspend_time_ms" dev="sysfs" ino=124115 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-97:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:73): avc:  denied  { read } for  comm="binder:1115_3" name="wakeup_count" dev="sysfs" ino=124109 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-98:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:74): avc:  denied  { read } for  comm="binder:1115_3" name="name" dev="sysfs" ino=118502 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-99:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:75): avc:  denied  { read } for  comm="binder:1115_3" name="active_count" dev="sysfs" ino=118503 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-100:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:76): avc:  denied  { read } for  comm="binder:1115_3" name="last_change_ms" dev="sysfs" ino=118510 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-101:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:77): avc:  denied  { read } for  comm="binder:1115_3" name="max_time_ms" dev="sysfs" ino=118509 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-102:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:78): avc:  denied  { read } for  comm="binder:1115_3" name="total_time_ms" dev="sysfs" ino=118508 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-103:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:79): avc:  denied  { read } for  comm="binder:1115_3" name="active_time_ms" dev="sysfs" ino=118507 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-104:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:80): avc:  denied  { read } for  comm="binder:1115_3" name="event_count" dev="sysfs" ino=118504 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-105:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:81): avc:  denied  { read } for  comm="binder:1115_3" name="expire_count" dev="sysfs" ino=118506 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-106:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:82): avc:  denied  { read } for  comm="binder:1115_3" name="prevent_suspend_time_ms" dev="sysfs" ino=118511 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-107:05-26 11:31:12.982  1115  1115 I auditd  : type=1400 audit(0.0:83): avc:  denied  { read } for  comm="binder:1115_3" name="wakeup_count" dev="sysfs" ino=118505 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-108:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:84): avc:  denied  { read } for  comm="binder:1115_3" name="name" dev="sysfs" ino=124106 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-109:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:85): avc:  denied  { read } for  comm="binder:1115_3" name="active_count" dev="sysfs" ino=124107 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-110:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:86): avc:  denied  { read } for  comm="binder:1115_3" name="last_change_ms" dev="sysfs" ino=124114 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-111:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:87): avc:  denied  { read } for  comm="binder:1115_3" name="max_time_ms" dev="sysfs" ino=124113 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-112:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:88): avc:  denied  { read } for  comm="binder:1115_3" name="total_time_ms" dev="sysfs" ino=124112 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-113:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:89): avc:  denied  { read } for  comm="binder:1115_3" name="active_time_ms" dev="sysfs" ino=124111 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-114:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:90): avc:  denied  { read } for  comm="binder:1115_3" name="event_count" dev="sysfs" ino=124108 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-115:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:91): avc:  denied  { read } for  comm="binder:1115_3" name="expire_count" dev="sysfs" ino=124110 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-116:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:92): avc:  denied  { read } for  comm="binder:1115_3" name="prevent_suspend_time_ms" dev="sysfs" ino=124115 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-117:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:93): avc:  denied  { read } for  comm="binder:1115_3" name="wakeup_count" dev="sysfs" ino=124109 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-118:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:94): avc:  denied  { read } for  comm="binder:1115_3" name="name" dev="sysfs" ino=118502 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-119:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:95): avc:  denied  { read } for  comm="binder:1115_3" name="active_count" dev="sysfs" ino=118503 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-120:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:96): avc:  denied  { read } for  comm="binder:1115_3" name="last_change_ms" dev="sysfs" ino=118510 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-121:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:97): avc:  denied  { read } for  comm="binder:1115_3" name="max_time_ms" dev="sysfs" ino=118509 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-122:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:98): avc:  denied  { read } for  comm="binder:1115_3" name="total_time_ms" dev="sysfs" ino=118508 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-123:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:99): avc:  denied  { read } for  comm="binder:1115_3" name="active_time_ms" dev="sysfs" ino=118507 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-124:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:100): avc:  denied  { read } for  comm="binder:1115_3" name="event_count" dev="sysfs" ino=118504 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-125:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:101): avc:  denied  { read } for  comm="binder:1115_3" name="expire_count" dev="sysfs" ino=118506 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-126:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:102): avc:  denied  { read } for  comm="binder:1115_3" name="prevent_suspend_time_ms" dev="sysfs" ino=118511 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-127:05-26 11:31:13.010  1115  1115 I auditd  : type=1400 audit(0.0:103): avc:  denied  { read } for  comm="binder:1115_3" name="wakeup_count" dev="sysfs" ino=118505 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-128:05-26 11:31:13.054  1444  1444 I auditd  : type=1400 audit(0.0:104): avc:  denied  { read } for  comm="binder:1444_1" name="u:object_r:persist_vendor_debug_wifi_prop:s0" dev="tmpfs" ino=326 scontext=u:r:hal_wifi_default:s0 tcontext=u:object_r:persist_vendor_debug_wifi_prop:s0 tclass=file permissive=0
-130:05-26 11:31:13.454  1504  1504 I auditd  : type=1400 audit(0.0:105): avc:  denied  { getattr } for  comm="init.mmi.touch." path="/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/panelName" dev="sysfs" ino=133066 scontext=u:r:vendor_init_touch:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-131:05-26 11:31:13.606  3058  3058 I auditd  : type=1400 audit(0.0:106): avc:  denied  { read } for  comm="qms" name="u:object_r:vendor_qms_prop:s0" dev="tmpfs" ino=523 scontext=u:r:vendor_qms_0:s0 tcontext=u:object_r:vendor_qms_prop:s0 tclass=file permissive=0
-132:05-26 11:31:13.606  3058  3058 I auditd  : type=1400 audit(0.0:107): avc:  denied  { read } for  comm="qms" name="u:object_r:vendor_qms_prop:s0" dev="tmpfs" ino=523 scontext=u:r:vendor_qms_0:s0 tcontext=u:object_r:vendor_qms_prop:s0 tclass=file permissive=0
-133:05-26 11:31:13.746  1438  1438 I auditd  : type=1400 audit(0.0:108): avc:  denied  { read } for  comm="Loc_hal_worker" name="u:object_r:vendor_pd_locater_dbg_prop:s0" dev="tmpfs" ino=506 scontext=u:r:vendor_hal_gnss_qti:s0 tcontext=u:object_r:vendor_pd_locater_dbg_prop:s0 tclass=file permissive=0
-136:05-26 11:31:13.769  1050  1050 I auditd  : avc:  denied  { find } for pid=1438 uid=1021 name=android.frameworks.sensorservice.ISensorManager/default scontext=u:r:vendor_hal_gnss_qti:s0 tcontext=u:object_r:fwk_sensor_service:s0 tclass=service_manager permissive=0
-137:05-26 11:31:13.769  1050  1050 I auditd  : avc:  denied  { find } for pid=1438 uid=1021 name=android.frameworks.sensorservice.ISensorManager/default scontext=u:r:vendor_hal_gnss_qti:s0 tcontext=u:object_r:fwk_sensor_service:s0 tclass=service_manager permissive=0
-138:05-26 11:31:14.270  3241  3241 I auditd  : type=1400 audit(0.0:109): avc:  denied  { read } for  comm=".cacertservice" name="u:object_r:default_prop:s0" dev="tmpfs" ino=178 scontext=u:r:vendor_cacertservice_app:s0:c102,c267,c512,c768 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0
-139:05-26 11:31:14.274  3241  3241 I auditd  : type=1400 audit(0.0:110): avc:  denied  { read } for  comm=".cacertservice" name="u:object_r:default_prop:s0" dev="tmpfs" ino=178 scontext=u:r:vendor_cacertservice_app:s0:c102,c267,c512,c768 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0
-140:05-26 11:31:14.274  3241  3241 I auditd  : type=1400 audit(0.0:111): avc:  denied  { read } for  comm=".cacertservice" name="u:object_r:default_prop:s0" dev="tmpfs" ino=178 scontext=u:r:vendor_cacertservice_app:s0:c102,c267,c512,c768 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0
-141:05-26 11:31:14.466  3351  3351 I auditd  : type=1400 audit(0.0:112): avc:  denied  { read } for  comm="qtidataservices" name="u:object_r:default_prop:s0" dev="tmpfs" ino=178 scontext=u:r:vendor_qtidataservices_app:s0:c254,c256,c512,c768 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0 app=vendor.qti.iwlan
-142:05-26 11:31:14.466  1504  1504 I auditd  : type=1400 audit(0.0:113): avc:  denied  { getattr } for  comm="init.mmi.touch." path="/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/panelName" dev="sysfs" ino=133066 scontext=u:r:vendor_init_touch:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-143:05-26 11:31:14.466  3351  3351 I auditd  : type=1400 audit(0.0:114): avc:  denied  { read } for  comm="qtidataservices" name="u:object_r:default_prop:s0" dev="tmpfs" ino=178 scontext=u:r:vendor_qtidataservices_app:s0:c254,c256,c512,c768 tcontext=u:object_r:default_prop:s0 tclass=file permissive=0 app=vendor.qti.iwlan
-144:05-26 11:31:15.498  1504  1504 I auditd  : type=1400 audit(0.0:115): avc:  denied  { getattr } for  comm="init.mmi.touch." path="/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/panelName" dev="sysfs" ino=133066 scontext=u:r:vendor_init_touch:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-145:05-26 11:31:15.762  3802  3802 I auditd  : type=1400 audit(0.0:116): avc:  denied  { read } for  comm="qms" name="u:object_r:vendor_qms_prop:s0" dev="tmpfs" ino=523 scontext=u:r:vendor_qms_2:s0 tcontext=u:object_r:vendor_qms_prop:s0 tclass=file permissive=0
-146:05-26 11:31:15.762  3802  3802 I auditd  : type=1400 audit(0.0:117): avc:  denied  { read } for  comm="qms" name="u:object_r:vendor_qms_prop:s0" dev="tmpfs" ino=523 scontext=u:r:vendor_qms_2:s0 tcontext=u:object_r:vendor_qms_prop:s0 tclass=file permissive=0
-147:05-26 11:31:15.766  3802  3802 I auditd  : type=1400 audit(0.0:118): avc:  denied  { read } for  comm="qsap_qms_2" name="u:object_r:vendor_qms_prop:s0" dev="tmpfs" ino=523 scontext=u:r:vendor_qms_2:s0 tcontext=u:object_r:vendor_qms_prop:s0 tclass=file permissive=0
-148:05-26 11:31:15.766  3802  3802 I auditd  : type=1400 audit(0.0:119): avc:  denied  { read } for  comm="qsap_qms_2" name="u:object_r:vendor_qms_prop:s0" dev="tmpfs" ino=523 scontext=u:r:vendor_qms_2:s0 tcontext=u:object_r:vendor_qms_prop:s0 tclass=file permissive=0
-150:05-26 11:31:16.518  1504  1504 I auditd  : type=1400 audit(0.0:120): avc:  denied  { getattr } for  comm="init.mmi.touch." path="/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/panelName" dev="sysfs" ino=133066 scontext=u:r:vendor_init_touch:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-152:05-26 11:31:16.778  4027  4027 I auditd  : type=1400 audit(0.0:121): avc:  denied  { transition } for  comm="init" path="/system/bin/sh" dev="dm-1" ino=525 scontext=u:r:init:s0 tcontext=u:r:qti-testscripts:s0 tclass=process permissive=0
-354:05-26 11:31:17.210  4063  4063 I auditd  : type=1400 audit(0.0:122): avc:  denied  { getattr } for  comm="thermal-engine-" path="/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dpms" dev="sysfs" ino=117011 scontext=u:r:vendor_thermal-engine:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-577:05-26 11:31:17.530  1504  1504 I auditd  : type=1400 audit(0.0:123): avc:  denied  { getattr } for  comm="init.mmi.touch." path="/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/panelName" dev="sysfs" ino=133066 scontext=u:r:vendor_init_touch:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-1565:05-26 11:31:18.558  1504  1504 I auditd  : type=1400 audit(0.0:124): avc:  denied  { getattr } for  comm="init.mmi.touch." path="/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/panelName" dev="sysfs" ino=133066 scontext=u:r:vendor_init_touch:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-1566:05-26 11:31:18.565  1050  1050 I auditd  : avc:  denied  { add } for pid=1452 uid=1047 name=com.motorola.hardware.camera.postprocess.IPostProcService/default scontext=u:r:hal_camera_default:s0 tcontext=u:object_r:default_android_service:s0 tclass=service_manager permissive=0
-1760:05-26 11:31:18.771  1050  1050 I auditd  : avc:  denied  { find } for pid=1438 uid=1021 name=android.frameworks.sensorservice.ISensorManager/default scontext=u:r:vendor_hal_gnss_qti:s0 tcontext=u:object_r:fwk_sensor_service:s0 tclass=service_manager permissive=0
-1761:05-26 11:31:18.772  1050  1050 I auditd  : avc:  denied  { find } for pid=1438 uid=1021 name=android.frameworks.sensorservice.ISensorManager/default scontext=u:r:vendor_hal_gnss_qti:s0 tcontext=u:object_r:fwk_sensor_service:s0 tclass=service_manager permissive=0
-1782:05-26 11:31:19.586  1504  1504 I auditd  : type=1400 audit(0.0:125): avc:  denied  { getattr } for  comm="init.mmi.touch." path="/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/panelName" dev="sysfs" ino=133066 scontext=u:r:vendor_init_touch:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-1799:05-26 11:31:20.610  1504  1504 I auditd  : type=1400 audit(0.0:126): avc:  denied  { getattr } for  comm="init.mmi.touch." path="/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/panelName" dev="sysfs" ino=133066 scontext=u:r:vendor_init_touch:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-1800:05-26 11:31:20.622  1445  1445 I auditd  : type=1400 audit(0.0:127): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-2410:05-26 11:31:29.534  5063  5063 I auditd  : type=1400 audit(0.0:130): avc:  denied  { execmod } for  comm=4173796E635461736B202331 path="/data/app/~~AE4m6d--onAHLROvt4hoaQ==/com.facebook.katana-oDlJvI4NJMXVFNKZP9ct3w==/oat/arm64/base.odex" dev="dm-44" ino=6309 scontext=u:r:untrusted_app:s0:c139,c257,c512,c768 tcontext=u:object_r:dalvikcache_data_file:s0 tclass=file permissive=0 app=com.facebook.katana
-2411:05-26 11:31:29.554  5063  5063 I auditd  : type=1400 audit(0.0:131): avc:  denied  { read } for  comm="AppInit4" name="u:object_r:build_bootimage_prop:s0" dev="tmpfs" ino=121 scontext=u:r:untrusted_app:s0:c139,c257,c512,c768 tcontext=u:object_r:build_bootimage_prop:s0 tclass=file permissive=0 app=com.facebook.katana
-2443:05-26 11:31:35.614  4654  4654 I auditd  : type=1400 audit(0.0:132): avc:  denied  { read } for  comm="binder:4654_4" name="u:object_r:incremental_prop:s0" dev="tmpfs" ino=261 scontext=u:r:system_app:s0 tcontext=u:object_r:incremental_prop:s0 tclass=file permissive=0
-2444:05-26 11:31:35.614  4654  4654 I auditd  : type=1400 audit(0.0:133): avc:  denied  { read } for  comm="binder:4654_4" name="filesystems" dev="proc" ino=4026532056 scontext=u:r:system_app:s0 tcontext=u:object_r:proc_filesystems:s0 tclass=file permissive=0
-2516:05-26 11:31:36.757  1050  1050 I auditd  : avc:  denied  { find } for pid=1438 uid=1021 name=android.frameworks.sensorservice.ISensorManager/default scontext=u:r:vendor_hal_gnss_qti:s0 tcontext=u:object_r:fwk_sensor_service:s0 tclass=service_manager permissive=0
-2518:05-26 11:31:36.759  1050  1050 I auditd  : avc:  denied  { find } for pid=1438 uid=1021 name=android.frameworks.sensorservice.ISensorManager/default scontext=u:r:vendor_hal_gnss_qti:s0 tcontext=u:object_r:fwk_sensor_service:s0 tclass=service_manager permissive=0
-2519:05-26 11:31:36.781  1050  1050 I auditd  : avc:  denied  { find } for pid=1438 uid=1021 name=android.frameworks.sensorservice.ISensorManager/default scontext=u:r:vendor_hal_gnss_qti:s0 tcontext=u:object_r:fwk_sensor_service:s0 tclass=service_manager permissive=0
-2520:05-26 11:31:36.781  1050  1050 I auditd  : avc:  denied  { find } for pid=1438 uid=1021 name=android.frameworks.sensorservice.ISensorManager/default scontext=u:r:vendor_hal_gnss_qti:s0 tcontext=u:object_r:fwk_sensor_service:s0 tclass=service_manager permissive=0
-2523:05-26 11:31:36.808  1050  1050 I auditd  : avc:  denied  { find } for pid=1438 uid=1021 name=android.frameworks.sensorservice.ISensorManager/default scontext=u:r:vendor_hal_gnss_qti:s0 tcontext=u:object_r:fwk_sensor_service:s0 tclass=service_manager permissive=0
-2524:05-26 11:31:36.808  1050  1050 I auditd  : avc:  denied  { find } for pid=1438 uid=1021 name=android.frameworks.sensorservice.ISensorManager/default scontext=u:r:vendor_hal_gnss_qti:s0 tcontext=u:object_r:fwk_sensor_service:s0 tclass=service_manager permissive=0
-2548:05-26 11:31:36.845  1050  1050 I auditd  : avc:  denied  { find } for pid=1438 uid=1021 name=android.frameworks.sensorservice.ISensorManager/default scontext=u:r:vendor_hal_gnss_qti:s0 tcontext=u:object_r:fwk_sensor_service:s0 tclass=service_manager permissive=0
-2549:05-26 11:31:36.845  1050  1050 I auditd  : avc:  denied  { find } for pid=1438 uid=1021 name=android.frameworks.sensorservice.ISensorManager/default scontext=u:r:vendor_hal_gnss_qti:s0 tcontext=u:object_r:fwk_sensor_service:s0 tclass=service_manager permissive=0
-2561:05-26 11:31:36.930  7735  7735 I auditd  : type=1400 audit(0.0:138): avc:  denied  { read } for  comm="com.Version1" name="policy" dev="selinuxfs" ino=20 scontext=u:r:untrusted_app:s0:c147,c257,c512,c768 tcontext=u:object_r:selinuxfs:s0 tclass=file permissive=0 app=com.Version1
-2568:05-26 11:31:37.010  7735  7735 I auditd  : type=1400 audit(0.0:139): avc:  denied  { getattr } for  comm="com.Version1" path="/sys/kernel/tracing/trace_marker" dev="tracefs" ino=3087 scontext=u:r:untrusted_app:s0:c147,c257,c512,c768 tcontext=u:object_r:debugfs_trace_marker:s0 tclass=file permissive=0 app=com.Version1
-2569:05-26 11:31:37.010  7735  7735 I auditd  : type=1400 audit(0.0:140): avc:  denied  { getattr } for  comm="com.Version1" path="/sys/kernel/tracing/trace_marker" dev="tracefs" ino=3087 scontext=u:r:untrusted_app:s0:c147,c257,c512,c768 tcontext=u:object_r:debugfs_trace_marker:s0 tclass=file permissive=0 app=com.Version1
-2570:05-26 11:31:37.010  7735  7735 I auditd  : type=1400 audit(0.0:141): avc:  denied  { getattr } for  comm="com.Version1" path="anon_inode:[userfaultfd]" dev="anon_inodefs" ino=53680 scontext=u:r:untrusted_app:s0:c147,c257,c512,c768 tcontext=u:object_r:untrusted_app_userfaultfd:s0:c147,c257,c512,c768 tclass=anon_inode permissive=0 app=com.Version1
-2631:05-26 11:31:37.254  1445  1445 I auditd  : type=1400 audit(0.0:142): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-2801:05-26 11:31:38.034  7735  7735 I auditd  : type=1400 audit(0.0:143): avc:  denied  { getattr } for  comm="com.Version1" path="/proc/filesystems" dev="proc" ino=4026532056 scontext=u:r:untrusted_app:s0:c147,c257,c512,c768 tcontext=u:object_r:proc_filesystems:s0 tclass=file permissive=0 app=com.Version1
-2802:05-26 11:31:38.058  7735  7735 I auditd  : type=1400 audit(0.0:144): avc:  denied  { read } for  comm="com.Version1" name="filesystems" dev="proc" ino=4026532056 scontext=u:r:untrusted_app:s0:c147,c257,c512,c768 tcontext=u:object_r:proc_filesystems:s0 tclass=file permissive=0 app=com.Version1
-2803:05-26 11:31:38.058  7735  7735 I auditd  : type=1400 audit(0.0:145): avc:  denied  { read } for  comm="com.Version1" name="modules" dev="proc" ino=4026532049 scontext=u:r:untrusted_app:s0:c147,c257,c512,c768 tcontext=u:object_r:proc_modules:s0 tclass=file permissive=0 app=com.Version1
-2993:05-26 11:31:42.554  8282  8282 I auditd  : type=1400 audit(0.0:173): avc:  denied  { read } for  comm=".nbu.paisa.user" name="max_map_count" dev="proc" ino=54565 scontext=u:r:untrusted_app:s0:c137,c257,c512,c768 tcontext=u:object_r:proc_max_map_count:s0 tclass=file permissive=0 app=com.google.android.apps.nbu.paisa.user
-3004:05-26 11:31:43.162  8822  8822 I auditd  : type=1400 audit(0.0:174): avc:  denied  { read } for  comm="binder:8822_3" name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=85 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
-3012:05-26 11:31:45.566  8822  8822 I auditd  : type=1400 audit(0.0:180): avc:  denied  { read } for  comm="binder:8822_5" name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=85 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
-3084:05-26 11:31:49.170  8822  8822 I auditd  : type=1400 audit(0.0:181): avc:  denied  { read } for  comm="binder:8822_4" name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=85 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
-3087:05-26 11:31:49.726  8822  8822 I auditd  : type=1400 audit(0.0:182): avc:  denied  { read } for  comm="binder:8822_3" name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=85 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
-3088:05-26 11:31:50.094  8822  8822 I auditd  : type=1400 audit(0.0:183): avc:  denied  { read } for  comm="lowpool[3]" name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=85 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
-3096:05-26 11:31:53.558 10238 10238 I auditd  : type=1400 audit(0.0:184): avc:  denied  { read } for  comm="getprop" name="u:object_r:system_adbd_prop:s0" dev="tmpfs" ino=379 scontext=u:r:untrusted_app:s0:c137,c257,c512,c768 tcontext=u:object_r:system_adbd_prop:s0 tclass=file permissive=0 app=com.google.android.apps.nbu.paisa.user
-3097:05-26 11:31:54.226 10269 10269 I auditd  : type=1400 audit(0.0:185): avc:  denied  { read } for  comm="getenforce" name="enforce" dev="selinuxfs" ino=4 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:selinuxfs:s0 tclass=file permissive=0 app=net.one97.paytm
-3098:05-26 11:31:54.230  9563  9563 I auditd  : type=1400 audit(0.0:186): avc:  denied  { read } for  comm="Thread-7" name="enforce" dev="selinuxfs" ino=4 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:selinuxfs:s0 tclass=file permissive=0 app=net.one97.paytm
-3099:05-26 11:31:54.230  9563  9563 I auditd  : type=1400 audit(0.0:187): avc:  denied  { read } for  comm="Thread-7" name="cache" dev="dm-1" ino=17 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:cache_file:s0 tclass=lnk_file permissive=0 app=net.one97.paytm
-3100:05-26 11:31:54.230  9563  9563 I auditd  : type=1400 audit(0.0:188): avc:  denied  { read } for  comm="Thread-7" name="cache" dev="dm-1" ino=17 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:cache_file:s0 tclass=lnk_file permissive=0 app=net.one97.paytm
-3109:05-26 11:32:03.754 10799 10799 I auditd  : type=1400 audit(0.0:189): avc:  denied  { read } for  comm="getprop" name="u:object_r:system_adbd_prop:s0" dev="tmpfs" ino=379 scontext=u:r:untrusted_app:s0:c137,c257,c512,c768 tcontext=u:object_r:system_adbd_prop:s0 tclass=file permissive=0 app=com.google.android.apps.nbu.paisa.user
-3133:05-26 11:32:03.862  1445  1445 I auditd  : type=1400 audit(0.0:190): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-3152:05-26 11:32:08.746 11198 11198 I auditd  : type=1400 audit(0.0:191): avc:  denied  { read } for  comm="getenforce" name="enforce" dev="selinuxfs" ino=4 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:selinuxfs:s0 tclass=file permissive=0 app=net.one97.paytm
-3153:05-26 11:32:08.750  9563  9563 I auditd  : type=1400 audit(0.0:192): avc:  denied  { read } for  comm="Thread-38" name="enforce" dev="selinuxfs" ino=4 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:selinuxfs:s0 tclass=file permissive=0 app=net.one97.paytm
-3154:05-26 11:32:08.750  9563  9563 I auditd  : type=1400 audit(0.0:193): avc:  denied  { read } for  comm="Thread-38" name="cache" dev="dm-1" ino=17 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:cache_file:s0 tclass=lnk_file permissive=0 app=net.one97.paytm
-3155:05-26 11:32:08.750  9563  9563 I auditd  : type=1400 audit(0.0:194): avc:  denied  { read } for  comm="Thread-38" name="cache" dev="dm-1" ino=17 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:cache_file:s0 tclass=lnk_file permissive=0 app=net.one97.paytm
-3180:05-26 11:32:29.658  3065  3065 I auditd  : type=1400 audit(0.0:195): avc:  denied  { read } for  comm="ndroid.systemui" name="measured_fps" dev="sysfs" ino=117039 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:vendor_sysfs_graphics:s0 tclass=file permissive=0 app=com.android.systemui
-3202:05-26 11:33:14.214 11705 11705 I auditd  : type=1400 audit(0.0:196): avc:  denied  { read } for  comm="getenforce" name="enforce" dev="selinuxfs" ino=4 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:selinuxfs:s0 tclass=file permissive=0 app=net.one97.paytm
-3203:05-26 11:33:14.214  9563  9563 I auditd  : type=1400 audit(0.0:197): avc:  denied  { read } for  comm="Thread-50" name="enforce" dev="selinuxfs" ino=4 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:selinuxfs:s0 tclass=file permissive=0 app=net.one97.paytm
-3204:05-26 11:33:14.218  9563  9563 I auditd  : type=1400 audit(0.0:198): avc:  denied  { read } for  comm="Thread-50" name="cache" dev="dm-1" ino=17 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:cache_file:s0 tclass=lnk_file permissive=0 app=net.one97.paytm
-3205:05-26 11:33:14.218  9563  9563 I auditd  : type=1400 audit(0.0:199): avc:  denied  { read } for  comm="Thread-50" name="cache" dev="dm-1" ino=17 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:cache_file:s0 tclass=lnk_file permissive=0 app=net.one97.paytm
-3259:05-26 11:33:37.446  1445  1445 I auditd  : type=1400 audit(0.0:200): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-3262:05-26 11:33:39.510  3065  3065 I auditd  : type=1400 audit(0.0:201): avc:  denied  { read } for  comm="ndroid.systemui" name="measured_fps" dev="sysfs" ino=117039 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:vendor_sysfs_graphics:s0 tclass=file permissive=0 app=com.android.systemui
-3345:05-26 11:34:12.478  1445  1445 I auditd  : type=1400 audit(0.0:202): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-3346:05-26 11:34:12.838  4571  4571 I auditd  : type=1400 audit(0.0:203): avc:  denied  { read } for  comm="prjkt.gamespace" name="u:object_r:incremental_prop:s0" dev="tmpfs" ino=261 scontext=u:r:system_app:s0 tcontext=u:object_r:incremental_prop:s0 tclass=file permissive=0
-3347:05-26 11:34:12.838  4571  4571 I auditd  : type=1400 audit(0.0:204): avc:  denied  { read } for  comm="prjkt.gamespace" name="filesystems" dev="proc" ino=4026532056 scontext=u:r:system_app:s0 tcontext=u:object_r:proc_filesystems:s0 tclass=file permissive=0
-3351:05-26 11:34:17.678  1445  1445 I auditd  : type=1400 audit(0.0:205): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-3440:05-26 11:34:22.578  1445  1445 I auditd  : type=1400 audit(0.0:206): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-3506:05-26 11:34:39.550  1445  1445 I auditd  : type=1400 audit(0.0:207): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-3507:05-26 11:34:40.614  9788  9788 I auditd  : type=1400 audit(0.0:208): avc:  denied  { read } for  comm="Thread-28" name="cache" dev="dm-1" ino=17 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:cache_file:s0 tclass=lnk_file permissive=0 app=com.pubg.imobile
-3516:05-26 11:34:41.766  9788  9788 I auditd  : type=1400 audit(0.0:209): avc:  denied  { read } for  comm="Adjust-pool-49-" name="tcp" dev="proc" ino=4026532034 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_net_tcp_udp:s0 tclass=file permissive=0 app=com.pubg.imobile
-3517:05-26 11:34:41.766  9788  9788 I auditd  : type=1400 audit(0.0:210): avc:  denied  { read } for  comm="Adjust-pool-49-" name="drivers" dev="proc" ino=4026531854 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_tty_drivers:s0 tclass=file permissive=0 app=com.pubg.imobile
-3518:05-26 11:34:41.770  9788  9788 I auditd  : type=1400 audit(0.0:211): avc:  denied  { read } for  comm="Adjust-pool-49-" name="version" dev="proc" ino=4026532013 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_version:s0 tclass=file permissive=0 app=com.pubg.imobile
-3519:05-26 11:34:41.770  9788  9788 I auditd  : type=1400 audit(0.0:212): avc:  denied  { read } for  comm="Adjust-pool-49-" name="u:object_r:qemu_hw_prop:s0" dev="tmpfs" ino=340 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:qemu_hw_prop:s0 tclass=file permissive=0 app=com.pubg.imobile
-3520:05-26 11:34:41.770  9788  9788 I auditd  : type=1400 audit(0.0:213): avc:  denied  { read } for  comm="Adjust-pool-49-" name="u:object_r:qemu_sf_lcd_density_prop:s0" dev="tmpfs" ino=341 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:qemu_sf_lcd_density_prop:s0 tclass=file permissive=0 app=com.pubg.imobile
-3521:05-26 11:34:41.938  9788  9788 I auditd  : type=1400 audit(0.0:214): avc:  denied  { read } for  comm="Adjust-pool-47-" name="tcp" dev="proc" ino=4026532034 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_net_tcp_udp:s0 tclass=file permissive=0 app=com.pubg.imobile
-3522:05-26 11:34:41.938  9788  9788 I auditd  : type=1400 audit(0.0:215): avc:  denied  { read } for  comm="Adjust-pool-47-" name="drivers" dev="proc" ino=4026531854 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_tty_drivers:s0 tclass=file permissive=0 app=com.pubg.imobile
-3523:05-26 11:34:41.938  9788  9788 I auditd  : type=1400 audit(0.0:216): avc:  denied  { read } for  comm="Adjust-pool-47-" name="version" dev="proc" ino=4026532013 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_version:s0 tclass=file permissive=0 app=com.pubg.imobile
-3526:05-26 11:34:42.468  1050  1050 I auditd  : avc:  denied  { find } for pid=3542 uid=10384 name=vendor.qti.qspmhal.IQspmhal/default scontext=u:r:permissioncontroller_app:s0:c128,c257,c512,c768 tcontext=u:object_r:vendor_hal_qspmhal_service:s0 tclass=service_manager permissive=0
-3532:05-26 11:34:46.042  9788  9788 I auditd  : type=1400 audit(0.0:220): avc:  denied  { read } for  comm="Adjust-pool-56-" name="tcp" dev="proc" ino=4026532034 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_net_tcp_udp:s0 tclass=file permissive=0 app=com.pubg.imobile
-3533:05-26 11:34:46.042  9788  9788 I auditd  : type=1400 audit(0.0:221): avc:  denied  { read } for  comm="Adjust-pool-56-" name="drivers" dev="proc" ino=4026531854 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_tty_drivers:s0 tclass=file permissive=0 app=com.pubg.imobile
-3534:05-26 11:34:46.042  9788  9788 I auditd  : type=1400 audit(0.0:222): avc:  denied  { read } for  comm="Adjust-pool-56-" name="version" dev="proc" ino=4026532013 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_version:s0 tclass=file permissive=0 app=com.pubg.imobile
-3535:05-26 11:34:46.042  9788  9788 I auditd  : type=1400 audit(0.0:223): avc:  denied  { read } for  comm="Adjust-pool-56-" name="u:object_r:qemu_hw_prop:s0" dev="tmpfs" ino=340 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:qemu_hw_prop:s0 tclass=file permissive=0 app=com.pubg.imobile
-3536:05-26 11:34:46.042  9788  9788 I auditd  : type=1400 audit(0.0:224): avc:  denied  { read } for  comm="Adjust-pool-56-" name="u:object_r:qemu_sf_lcd_density_prop:s0" dev="tmpfs" ino=341 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:qemu_sf_lcd_density_prop:s0 tclass=file permissive=0 app=com.pubg.imobile
-3538:05-26 11:34:47.722  9788  9788 I auditd  : type=1400 audit(0.0:236): avc:  denied  { read } for  comm="Adjust-pool-49-" name="tcp" dev="proc" ino=4026532034 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_net_tcp_udp:s0 tclass=file permissive=0 app=com.pubg.imobile
-3539:05-26 11:34:47.722  9788  9788 I auditd  : type=1400 audit(0.0:237): avc:  denied  { read } for  comm="Adjust-pool-49-" name="drivers" dev="proc" ino=4026531854 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_tty_drivers:s0 tclass=file permissive=0 app=com.pubg.imobile
-3540:05-26 11:34:47.722  9788  9788 I auditd  : type=1400 audit(0.0:238): avc:  denied  { read } for  comm="Adjust-pool-49-" name="version" dev="proc" ino=4026532013 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_version:s0 tclass=file permissive=0 app=com.pubg.imobile
-3541:05-26 11:34:47.722  9788  9788 I auditd  : type=1400 audit(0.0:239): avc:  denied  { read } for  comm="Adjust-pool-49-" name="u:object_r:qemu_hw_prop:s0" dev="tmpfs" ino=340 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:qemu_hw_prop:s0 tclass=file permissive=0 app=com.pubg.imobile
-3542:05-26 11:34:47.722  9788  9788 I auditd  : type=1400 audit(0.0:240): avc:  denied  { read } for  comm="Adjust-pool-49-" name="u:object_r:qemu_sf_lcd_density_prop:s0" dev="tmpfs" ino=341 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:qemu_sf_lcd_density_prop:s0 tclass=file permissive=0 app=com.pubg.imobile
-3586:05-26 11:34:51.034  9788  9788 I auditd  : type=1400 audit(0.0:241): avc:  denied  { read } for  comm="Adjust-pool-49-" name="tcp" dev="proc" ino=4026532034 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_net_tcp_udp:s0 tclass=file permissive=0 app=com.pubg.imobile
-3587:05-26 11:34:51.034  9788  9788 I auditd  : type=1400 audit(0.0:242): avc:  denied  { read } for  comm="Adjust-pool-49-" name="drivers" dev="proc" ino=4026531854 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_tty_drivers:s0 tclass=file permissive=0 app=com.pubg.imobile
-3588:05-26 11:34:51.034  9788  9788 I auditd  : type=1400 audit(0.0:243): avc:  denied  { read } for  comm="Adjust-pool-49-" name="version" dev="proc" ino=4026532013 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_version:s0 tclass=file permissive=0 app=com.pubg.imobile
-3589:05-26 11:34:51.034  9788  9788 I auditd  : type=1400 audit(0.0:244): avc:  denied  { read } for  comm="Adjust-pool-49-" name="u:object_r:qemu_hw_prop:s0" dev="tmpfs" ino=340 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:qemu_hw_prop:s0 tclass=file permissive=0 app=com.pubg.imobile
-3590:05-26 11:34:51.034  9788  9788 I auditd  : type=1400 audit(0.0:245): avc:  denied  { read } for  comm="Adjust-pool-49-" name="u:object_r:qemu_sf_lcd_density_prop:s0" dev="tmpfs" ino=341 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:qemu_sf_lcd_density_prop:s0 tclass=file permissive=0 app=com.pubg.imobile
-3592:05-26 11:34:55.274  9788  9788 I auditd  : type=1400 audit(0.0:246): avc:  denied  { execmod } for  comm="Thread-96" path="/data/app/~~9l8nUTZ54mEAnbKYTM_LrQ==/com.pubg.imobile-3TeR71Z5G3zjPDZVOsZWJw==/lib/arm64/libUE4.so" dev="dm-44" ino=41254 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:apk_data_file:s0 tclass=file permissive=0 app=com.pubg.imobile
-3593:05-26 11:34:55.318  9788  9788 I auditd  : type=1400 audit(0.0:247): avc:  denied  { search } for  comm="Thread-96" name="input" dev="sysfs" ino=107172 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:vendor_sysfs_input:s0 tclass=dir permissive=0 app=com.pubg.imobile
-3594:05-26 11:34:55.318  9788  9788 I auditd  : type=1400 audit(0.0:248): avc:  denied  { search } for  comm="Thread-96" name="input" dev="sysfs" ino=107172 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:vendor_sysfs_input:s0 tclass=dir permissive=0 app=com.pubg.imobile
-3595:05-26 11:34:55.318  9788  9788 I auditd  : type=1400 audit(0.0:249): avc:  denied  { search } for  comm="Thread-96" name="input" dev="sysfs" ino=107172 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:vendor_sysfs_input:s0 tclass=dir permissive=0 app=com.pubg.imobile
-3596:05-26 11:34:55.318  9788  9788 I auditd  : type=1400 audit(0.0:250): avc:  denied  { search } for  comm="Thread-96" name="input" dev="sysfs" ino=107172 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:vendor_sysfs_input:s0 tclass=dir permissive=0 app=com.pubg.imobile
-3598:05-26 11:34:58.030  9788  9788 I auditd  : type=1400 audit(0.0:282): avc:  denied  { read } for  comm="Adjust-pool-49-" name="tcp" dev="proc" ino=4026532034 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_net_tcp_udp:s0 tclass=file permissive=0 app=com.pubg.imobile
-3599:05-26 11:34:58.030  9788  9788 I auditd  : type=1400 audit(0.0:283): avc:  denied  { read } for  comm="Adjust-pool-49-" name="drivers" dev="proc" ino=4026531854 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_tty_drivers:s0 tclass=file permissive=0 app=com.pubg.imobile
-3600:05-26 11:34:58.034  9788  9788 I auditd  : type=1400 audit(0.0:284): avc:  denied  { read } for  comm="Adjust-pool-49-" name="version" dev="proc" ino=4026532013 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_version:s0 tclass=file permissive=0 app=com.pubg.imobile
-3601:05-26 11:34:58.034  9788  9788 I auditd  : type=1400 audit(0.0:285): avc:  denied  { read } for  comm="Adjust-pool-49-" name="u:object_r:qemu_hw_prop:s0" dev="tmpfs" ino=340 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:qemu_hw_prop:s0 tclass=file permissive=0 app=com.pubg.imobile
-3602:05-26 11:34:58.034  9788  9788 I auditd  : type=1400 audit(0.0:286): avc:  denied  { read } for  comm="Adjust-pool-49-" name="u:object_r:qemu_sf_lcd_density_prop:s0" dev="tmpfs" ino=341 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:qemu_sf_lcd_density_prop:s0 tclass=file permissive=0 app=com.pubg.imobile
-3608:05-26 11:35:04.098  9788  9788 I auditd  : type=1400 audit(0.0:287): avc:  denied  { read } for  comm="Adjust-pool-49-" name="tcp" dev="proc" ino=4026532034 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_net_tcp_udp:s0 tclass=file permissive=0 app=com.pubg.imobile
-3609:05-26 11:35:04.098  9788  9788 I auditd  : type=1400 audit(0.0:288): avc:  denied  { read } for  comm="Adjust-pool-49-" name="drivers" dev="proc" ino=4026531854 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_tty_drivers:s0 tclass=file permissive=0 app=com.pubg.imobile
-3610:05-26 11:35:04.098  9788  9788 I auditd  : type=1400 audit(0.0:289): avc:  denied  { read } for  comm="Adjust-pool-49-" name="version" dev="proc" ino=4026532013 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:proc_version:s0 tclass=file permissive=0 app=com.pubg.imobile
-3611:05-26 11:35:04.098  9788  9788 I auditd  : type=1400 audit(0.0:290): avc:  denied  { read } for  comm="Adjust-pool-49-" name="u:object_r:qemu_hw_prop:s0" dev="tmpfs" ino=340 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:qemu_hw_prop:s0 tclass=file permissive=0 app=com.pubg.imobile
-3612:05-26 11:35:04.102  9788  9788 I auditd  : type=1400 audit(0.0:291): avc:  denied  { read } for  comm="Adjust-pool-49-" name="u:object_r:qemu_sf_lcd_density_prop:s0" dev="tmpfs" ino=341 scontext=u:r:untrusted_app:s0:c156,c257,c512,c768 tcontext=u:object_r:qemu_sf_lcd_density_prop:s0 tclass=file permissive=0 app=com.pubg.imobile
-3658:05-26 11:35:37.162  1445  1445 I auditd  : type=1400 audit(0.0:292): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-3663:05-26 11:35:43.158  1445  1445 I auditd  : type=1400 audit(0.0:293): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-3664:05-26 11:35:45.882  1445  1445 I auditd  : type=1400 audit(0.0:294): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-3678:05-26 11:35:59.590  1445  1445 I auditd  : type=1400 audit(0.0:295): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-3680:05-26 11:36:00.010 10057 10057 I auditd  : type=1400 audit(0.0:296): avc:  denied  { read } for  comm="Lacrima_single_" name="sdcard" dev="tmpfs" ino=34 scontext=u:r:untrusted_app:s0:c149,c257,c512,c768 tcontext=u:object_r:mnt_sdcard_file:s0 tclass=lnk_file permissive=0 app=com.instagram.android
-3681:05-26 11:36:00.018 10057 10057 I auditd  : type=1400 audit(0.0:297): avc:  denied  { read } for  comm="Lacrima_single_" name="sdcard" dev="tmpfs" ino=34 scontext=u:r:untrusted_app:s0:c149,c257,c512,c768 tcontext=u:object_r:mnt_sdcard_file:s0 tclass=lnk_file permissive=0 app=com.instagram.android
-3694:05-26 11:36:03.846 13171 13171 I auditd  : type=1400 audit(0.0:302): avc:  denied  { read } for  comm="Lacrima_single_" name="sdcard" dev="tmpfs" ino=34 scontext=u:r:untrusted_app:s0:c149,c257,c512,c768 tcontext=u:object_r:mnt_sdcard_file:s0 tclass=lnk_file permissive=0 app=com.instagram.android
-3695:05-26 11:36:03.846 13171 13171 I auditd  : type=1400 audit(0.0:303): avc:  denied  { read } for  comm="Lacrima_single_" name="sdcard" dev="tmpfs" ino=34 scontext=u:r:untrusted_app:s0:c149,c257,c512,c768 tcontext=u:object_r:mnt_sdcard_file:s0 tclass=lnk_file permissive=0 app=com.instagram.android
-3706:05-26 11:36:12.434 10057 10057 I auditd  : type=1400 audit(0.0:309): avc:  denied  { execmod } for  comm="SWPool3_t1of1" path="/data/app/~~iGDaJ0FuI6Uy0Z3I9m_yYg==/com.instagram.android-O-7G62x4trddhCdcTAVEpQ==/oat/arm64/base.odex" dev="dm-44" ino=27464 scontext=u:r:untrusted_app:s0:c149,c257,c512,c768 tcontext=u:object_r:dalvikcache_data_file:s0 tclass=file permissive=0 app=com.instagram.android
-3707:05-26 11:36:12.658  8822  8822 I auditd  : type=1400 audit(0.0:310): avc:  denied  { read } for  comm="binder:8822_6" name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=85 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
-3719:05-26 11:36:26.590  1445  1445 I auditd  : type=1400 audit(0.0:312): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-3735:05-26 11:36:34.054  1445  1445 I auditd  : type=1400 audit(0.0:313): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-3750:05-26 11:36:39.006  2646  2646 I auditd  : type=1400 audit(0.0:314): avc:  denied  { search } for  comm="CachedAppOptimi" name="hw" dev="proc" ino=4026532506 scontext=u:r:system_server:s0 tcontext=u:object_r:vendor_proc_hw:s0 tclass=dir permissive=0
-3751:05-26 11:36:39.006  2646  2646 I auditd  : type=1400 audit(0.0:315): avc:  denied  { search } for  comm="CachedAppOptimi" name="config" dev="proc" ino=4026532500 scontext=u:r:system_server:s0 tcontext=u:object_r:vendor_proc_hw:s0 tclass=dir permissive=0
-3752:05-26 11:36:39.830 13803 13803 I auditd  : type=1400 audit(0.0:316): avc:  denied  { read } for  comm="Lacrima_single_" name="sdcard" dev="tmpfs" ino=34 scontext=u:r:untrusted_app:s0:c149,c257,c512,c768 tcontext=u:object_r:mnt_sdcard_file:s0 tclass=lnk_file permissive=0 app=com.instagram.android
-3753:05-26 11:36:39.830 13803 13803 I auditd  : type=1400 audit(0.0:317): avc:  denied  { read } for  comm="Lacrima_single_" name="sdcard" dev="tmpfs" ino=34 scontext=u:r:untrusted_app:s0:c149,c257,c512,c768 tcontext=u:object_r:mnt_sdcard_file:s0 tclass=lnk_file permissive=0 app=com.instagram.android
-3768:05-26 11:36:44.898  8822  8822 I auditd  : type=1400 audit(0.0:326): avc:  denied  { read } for  comm="binder:8822_5" name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=85 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
-3839:05-26 11:37:37.682  1445  1445 I auditd  : type=1400 audit(0.0:328): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-3846:05-26 11:37:38.274 13671 13671 I auditd  : type=1400 audit(0.0:329): avc:  denied  { read } for  comm="pool-17-thread-" name="version" dev="proc" ino=4026532013 scontext=u:r:untrusted_app:s0:c151,c257,c512,c768 tcontext=u:object_r:proc_version:s0 tclass=file permissive=0 app=com.openai.chatgpt
-3974:05-26 11:38:26.866 14734 14734 I auditd  : type=1400 audit(0.0:330): avc:  denied  { read } for  comm="getenforce" name="enforce" dev="selinuxfs" ino=4 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:selinuxfs:s0 tclass=file permissive=0 app=net.one97.paytm
-3975:05-26 11:38:26.870  9563  9563 I auditd  : type=1400 audit(0.0:331): avc:  denied  { read } for  comm="Thread-76" name="enforce" dev="selinuxfs" ino=4 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:selinuxfs:s0 tclass=file permissive=0 app=net.one97.paytm
-3976:05-26 11:38:26.874  9563  9563 I auditd  : type=1400 audit(0.0:332): avc:  denied  { read } for  comm="Thread-76" name="cache" dev="dm-1" ino=17 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:cache_file:s0 tclass=lnk_file permissive=0 app=net.one97.paytm
-3977:05-26 11:38:26.874  9563  9563 I auditd  : type=1400 audit(0.0:333): avc:  denied  { read } for  comm="Thread-76" name="cache" dev="dm-1" ino=17 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:cache_file:s0 tclass=lnk_file permissive=0 app=net.one97.paytm
-4040:05-26 11:38:38.682  1115  1115 I auditd  : type=1400 audit(0.0:334): avc:  denied  { read } for  comm="android.system." name="name" dev="sysfs" ino=124106 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-4041:05-26 11:38:38.686  1115  1115 I auditd  : type=1400 audit(0.0:335): avc:  denied  { read } for  comm="android.system." name="active_count" dev="sysfs" ino=124107 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-4042:05-26 11:38:38.686  1115  1115 I auditd  : type=1400 audit(0.0:336): avc:  denied  { read } for  comm="android.system." name="last_change_ms" dev="sysfs" ino=124114 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-4043:05-26 11:38:38.686  1115  1115 I auditd  : type=1400 audit(0.0:337): avc:  denied  { read } for  comm="android.system." name="max_time_ms" dev="sysfs" ino=124113 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-4044:05-26 11:38:38.686  1115  1115 I auditd  : type=1400 audit(0.0:338): avc:  denied  { read } for  comm="android.system." name="total_time_ms" dev="sysfs" ino=124112 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-4045:05-26 11:38:38.686  1115  1115 I auditd  : type=1400 audit(0.0:339): avc:  denied  { read } for  comm="android.system." name="active_time_ms" dev="sysfs" ino=124111 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-4046:05-26 11:38:38.686  1115  1115 I auditd  : type=1400 audit(0.0:340): avc:  denied  { read } for  comm="android.system." name="event_count" dev="sysfs" ino=124108 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-4047:05-26 11:38:38.686  1115  1115 I auditd  : type=1400 audit(0.0:341): avc:  denied  { read } for  comm="android.system." name="expire_count" dev="sysfs" ino=124110 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-4048:05-26 11:38:38.686  1115  1115 I auditd  : type=1400 audit(0.0:342): avc:  denied  { read } for  comm="android.system." name="prevent_suspend_time_ms" dev="sysfs" ino=124115 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-4141:05-26 11:38:39.934 13672 13672 I auditd  : type=1400 audit(0.0:355): avc:  denied  { read } for  comm="binder:13672_2" name="u:object_r:incremental_prop:s0" dev="tmpfs" ino=261 scontext=u:r:system_app:s0 tcontext=u:object_r:incremental_prop:s0 tclass=file permissive=0
-4142:05-26 11:38:39.934 13672 13672 I auditd  : type=1400 audit(0.0:356): avc:  denied  { read } for  comm="binder:13672_2" name="filesystems" dev="proc" ino=4026532056 scontext=u:r:system_app:s0 tcontext=u:object_r:proc_filesystems:s0 tclass=file permissive=0
-4332:05-26 11:38:44.978  1445  1445 I auditd  : type=1400 audit(0.0:357): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-4516:05-26 11:39:06.298  1445  1445 I auditd  : type=1400 audit(0.0:358): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-4645:05-26 11:39:11.078  1445  1445 I auditd  : type=1400 audit(0.0:359): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-4693:05-26 11:39:25.402  1445  1445 I auditd  : type=1400 audit(0.0:360): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-4713:05-26 11:39:38.094  1445  1445 I auditd  : type=1400 audit(0.0:361): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-4723:05-26 11:39:42.434  1445  1445 I auditd  : type=1400 audit(0.0:362): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-4762:05-26 11:39:49.966  1445  1445 I auditd  : type=1400 audit(0.0:363): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-4779:05-26 11:39:54.358  1445  1445 I auditd  : type=1400 audit(0.0:364): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-4820:05-26 11:40:06.062  1445  1445 I auditd  : type=1400 audit(0.0:365): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-5048:05-26 11:40:12.130  1445  1445 I auditd  : type=1400 audit(0.0:366): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-5122:05-26 11:40:22.466  1445  1445 I auditd  : type=1400 audit(0.0:367): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-5138:05-26 11:40:27.910  1445  1445 I auditd  : type=1400 audit(0.0:368): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-5147:05-26 11:40:30.866  4138  4138 I auditd  : type=1400 audit(0.0:369): avc:  denied  { read } for  comm="lowpool[19]" name="u:object_r:incremental_prop:s0" dev="tmpfs" ino=261 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:incremental_prop:s0 tclass=file permissive=0 app=com.google.android.gms
-5148:05-26 11:40:30.866  4138  4138 I auditd  : type=1400 audit(0.0:370): avc:  denied  { read } for  comm="lowpool[19]" name="filesystems" dev="proc" ino=4026532056 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:proc_filesystems:s0 tclass=file permissive=0 app=com.google.android.gms
-5149:05-26 11:40:30.866  4138  4138 I auditd  : type=1400 audit(0.0:371): avc:  denied  { read } for  comm="lowpool[19]" name="filesystems" dev="proc" ino=4026532056 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:proc_filesystems:s0 tclass=file permissive=0 app=com.google.android.gms
-5314:05-26 11:40:46.934  1445  1445 I auditd  : type=1400 audit(0.0:372): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-5416:05-26 11:41:02.682  1445  1445 I auditd  : type=1400 audit(0.0:373): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-5499:05-26 11:41:10.622  1445  1445 I auditd  : type=1400 audit(0.0:374): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-5544:05-26 11:41:14.418  1445  1445 I auditd  : type=1400 audit(0.0:375): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-5610:05-26 11:41:18.954  1445  1445 I auditd  : type=1400 audit(0.0:376): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-5775:05-26 11:41:38.470  1445  1445 I auditd  : type=1400 audit(0.0:377): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-5989:05-26 11:41:52.558 16311 16311 I auditd  : type=1400 audit(0.0:378): avc:  denied  { setattr } for  comm="ThreadPoolForeg" name="model-info.pb" dev="dm-44" ino=39511 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c53,c257,c512,c768 tclass=file permissive=0
-5990:05-26 11:41:52.558 16310 16310 I auditd  : type=1400 audit(0.0:379): avc:  denied  { setattr } for  comm="ThreadPoolForeg" name="model-info.pb" dev="dm-44" ino=39158 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c53,c257,c512,c768 tclass=file permissive=0
-5991:05-26 11:41:52.558 16311 16311 I auditd  : type=1400 audit(0.0:380): avc:  denied  { setattr } for  comm="ThreadPoolForeg" name="model.tflite" dev="dm-44" ino=39536 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c53,c257,c512,c768 tclass=file permissive=0
-5992:05-26 11:41:52.558 16310 16310 I auditd  : type=1400 audit(0.0:381): avc:  denied  { setattr } for  comm="ThreadPoolForeg" name="model.tflite" dev="dm-44" ino=39404 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c53,c257,c512,c768 tclass=file permissive=0
-6093:05-26 11:42:00.022  1115  1115 I auditd  : type=1400 audit(0.0:382): avc:  denied  { read } for  comm="binder:1115_4" name="name" dev="sysfs" ino=124106 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-6094:05-26 11:42:00.022  1115  1115 I auditd  : type=1400 audit(0.0:383): avc:  denied  { read } for  comm="binder:1115_4" name="active_count" dev="sysfs" ino=124107 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-6095:05-26 11:42:00.022  1115  1115 I auditd  : type=1400 audit(0.0:384): avc:  denied  { read } for  comm="binder:1115_4" name="last_change_ms" dev="sysfs" ino=124114 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-6096:05-26 11:42:00.022  1115  1115 I auditd  : type=1400 audit(0.0:385): avc:  denied  { read } for  comm="binder:1115_4" name="max_time_ms" dev="sysfs" ino=124113 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-6097:05-26 11:42:00.022  1115  1115 I auditd  : type=1400 audit(0.0:386): avc:  denied  { read } for  comm="binder:1115_4" name="total_time_ms" dev="sysfs" ino=124112 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-6098:05-26 11:42:00.022  1115  1115 I auditd  : type=1400 audit(0.0:387): avc:  denied  { read } for  comm="binder:1115_4" name="active_time_ms" dev="sysfs" ino=124111 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-6099:05-26 11:42:00.022  1115  1115 I auditd  : type=1400 audit(0.0:388): avc:  denied  { read } for  comm="binder:1115_4" name="event_count" dev="sysfs" ino=124108 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-6100:05-26 11:42:00.022  1115  1115 I auditd  : type=1400 audit(0.0:389): avc:  denied  { read } for  comm="binder:1115_4" name="expire_count" dev="sysfs" ino=124110 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-6163:05-26 11:42:02.682  8822  8822 I auditd  : type=1400 audit(0.0:404): avc:  denied  { read } for  comm="binder:8822_2" name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=85 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
-6174:05-26 11:42:02.886  8822  8822 I auditd  : type=1400 audit(0.0:405): avc:  denied  { read } for  comm="binder:8822_2" name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=85 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
-6187:05-26 11:42:03.182  8822  8822 I auditd  : type=1400 audit(0.0:406): avc:  denied  { read } for  comm="binder:8822_2" name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=85 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
-6220:05-26 11:42:04.354  8822  8822 I auditd  : type=1400 audit(0.0:407): avc:  denied  { read } for  comm="binder:8822_5" name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=85 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
-6249:05-26 11:42:05.638  2646  2646 I auditd  : type=1400 audit(0.0:408): avc:  denied  { write } for  comm="CachedAppOptimi" dev="tmpfs" ino=15912 scontext=u:r:system_server:s0 tcontext=u:object_r:app_zygote_tmpfs:s0:c512,c768 tclass=file permissive=0
-6273:05-26 11:42:07.278  1445  1445 I auditd  : type=1400 audit(0.0:409): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-6408:05-26 11:42:13.102  2646  2646 I auditd  : type=1400 audit(0.0:410): avc:  denied  { search } for  comm="CachedAppOptimi" name="hw" dev="proc" ino=4026532506 scontext=u:r:system_server:s0 tcontext=u:object_r:vendor_proc_hw:s0 tclass=dir permissive=0
-6409:05-26 11:42:13.102  2646  2646 I auditd  : type=1400 audit(0.0:411): avc:  denied  { search } for  comm="CachedAppOptimi" name="config" dev="proc" ino=4026532500 scontext=u:r:system_server:s0 tcontext=u:object_r:vendor_proc_hw:s0 tclass=dir permissive=0
-6976:05-26 11:42:55.526 16841 16841 I auditd  : type=1400 audit(0.0:412): avc:  denied  { setattr } for  comm="ThreadPoolForeg" name="cr_en-gb_500000_index.bin" dev="dm-44" ino=40591 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c53,c257,c512,c768 tclass=file permissive=0
-6977:05-26 11:42:55.530 16841 16841 I auditd  : type=1400 audit(0.0:413): avc:  denied  { setattr } for  comm="ThreadPoolForeg" name="manifest.json" dev="dm-44" ino=41075 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c53,c257,c512,c768 tclass=file permissive=0
-6978:05-26 11:42:55.530 16841 16841 I auditd  : type=1400 audit(0.0:414): avc:  denied  { setattr } for  comm="ThreadPoolForeg" name="verified_contents.json" dev="dm-44" ino=41242 scontext=u:r:isolated_app:s0:c512,c768 tcontext=u:object_r:app_data_file:s0:c53,c257,c512,c768 tclass=file permissive=0
-7010:05-26 11:43:51.418  1445  1445 I auditd  : type=1400 audit(0.0:415): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-7040:05-26 11:45:58.006  1445  1445 I auditd  : type=1400 audit(0.0:416): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-7056:05-26 11:46:03.290  1445  1445 I auditd  : type=1400 audit(0.0:417): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-7605:05-26 11:47:58.106  1445  1445 I auditd  : type=1400 audit(0.0:419): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-7855:05-26 11:48:08.134  1445  1445 I auditd  : type=1400 audit(0.0:420): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-8028:05-26 11:48:14.482 17612 17612 I auditd  : type=1400 audit(0.0:421): avc:  denied  { read } for  comm="getenforce" name="enforce" dev="selinuxfs" ino=4 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:selinuxfs:s0 tclass=file permissive=0 app=net.one97.paytm
-8029:05-26 11:48:14.486 17338 17338 I auditd  : type=1400 audit(0.0:422): avc:  denied  { read } for  comm="Thread-3" name="enforce" dev="selinuxfs" ino=4 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:selinuxfs:s0 tclass=file permissive=0 app=net.one97.paytm
-8030:05-26 11:48:14.486 17338 17338 I auditd  : type=1400 audit(0.0:423): avc:  denied  { read } for  comm="Thread-3" name="cache" dev="dm-1" ino=17 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:cache_file:s0 tclass=lnk_file permissive=0 app=net.one97.paytm
-8031:05-26 11:48:14.486 17338 17338 I auditd  : type=1400 audit(0.0:424): avc:  denied  { read } for  comm="Thread-3" name="cache" dev="dm-1" ino=17 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:cache_file:s0 tclass=lnk_file permissive=0 app=net.one97.paytm
-8049:05-26 11:48:17.730  1115  1115 I auditd  : type=1400 audit(0.0:425): avc:  denied  { read } for  comm="binder:1115_6" name="name" dev="sysfs" ino=124106 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8050:05-26 11:48:17.730  1115  1115 I auditd  : type=1400 audit(0.0:426): avc:  denied  { read } for  comm="binder:1115_6" name="active_count" dev="sysfs" ino=124107 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8051:05-26 11:48:17.730  1115  1115 I auditd  : type=1400 audit(0.0:427): avc:  denied  { read } for  comm="binder:1115_6" name="last_change_ms" dev="sysfs" ino=124114 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8052:05-26 11:48:17.730  1115  1115 I auditd  : type=1400 audit(0.0:428): avc:  denied  { read } for  comm="binder:1115_6" name="max_time_ms" dev="sysfs" ino=124113 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8053:05-26 11:48:17.730  1115  1115 I auditd  : type=1400 audit(0.0:429): avc:  denied  { read } for  comm="binder:1115_6" name="total_time_ms" dev="sysfs" ino=124112 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8054:05-26 11:48:17.730  1115  1115 I auditd  : type=1400 audit(0.0:430): avc:  denied  { read } for  comm="binder:1115_6" name="active_time_ms" dev="sysfs" ino=124111 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8055:05-26 11:48:17.730  1115  1115 I auditd  : type=1400 audit(0.0:431): avc:  denied  { read } for  comm="binder:1115_6" name="event_count" dev="sysfs" ino=124108 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8056:05-26 11:48:17.730  1115  1115 I auditd  : type=1400 audit(0.0:432): avc:  denied  { read } for  comm="binder:1115_6" name="expire_count" dev="sysfs" ino=124110 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8057:05-26 11:48:17.730  1115  1115 I auditd  : type=1400 audit(0.0:433): avc:  denied  { read } for  comm="binder:1115_6" name="prevent_suspend_time_ms" dev="sysfs" ino=124115 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8137:05-26 11:48:25.982  1445  1445 I auditd  : type=1400 audit(0.0:446): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-8155:05-26 11:48:29.426  1445  1445 I auditd  : type=1400 audit(0.0:447): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-8384:05-26 11:50:04.026  1115  1115 I auditd  : type=1400 audit(0.0:448): avc:  denied  { read } for  comm="binder:1115_5" name="name" dev="sysfs" ino=124106 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8385:05-26 11:50:04.026  1115  1115 I auditd  : type=1400 audit(0.0:449): avc:  denied  { read } for  comm="binder:1115_5" name="active_count" dev="sysfs" ino=124107 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8386:05-26 11:50:04.026  1115  1115 I auditd  : type=1400 audit(0.0:450): avc:  denied  { read } for  comm="binder:1115_5" name="last_change_ms" dev="sysfs" ino=124114 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8388:05-26 11:50:04.026  1115  1115 I auditd  : type=1400 audit(0.0:451): avc:  denied  { read } for  comm="binder:1115_5" name="max_time_ms" dev="sysfs" ino=124113 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8389:05-26 11:50:04.026  1115  1115 I auditd  : type=1400 audit(0.0:452): avc:  denied  { read } for  comm="binder:1115_5" name="total_time_ms" dev="sysfs" ino=124112 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8390:05-26 11:50:04.026  1115  1115 I auditd  : type=1400 audit(0.0:453): avc:  denied  { read } for  comm="binder:1115_5" name="active_time_ms" dev="sysfs" ino=124111 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8391:05-26 11:50:04.026  1115  1115 I auditd  : type=1400 audit(0.0:454): avc:  denied  { read } for  comm="binder:1115_5" name="event_count" dev="sysfs" ino=124108 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8392:05-26 11:50:04.026  1115  1115 I auditd  : type=1400 audit(0.0:455): avc:  denied  { read } for  comm="binder:1115_5" name="expire_count" dev="sysfs" ino=124110 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8540:05-26 11:50:09.963  1115  1115 I auditd  : type=1400 audit(0.0:468): avc:  denied  { read } for  comm="binder:1115_6" name="name" dev="sysfs" ino=124106 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8541:05-26 11:50:09.963  1115  1115 I auditd  : type=1400 audit(0.0:469): avc:  denied  { read } for  comm="binder:1115_6" name="active_count" dev="sysfs" ino=124107 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8542:05-26 11:50:09.963  1115  1115 I auditd  : type=1400 audit(0.0:470): avc:  denied  { read } for  comm="binder:1115_6" name="last_change_ms" dev="sysfs" ino=124114 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8543:05-26 11:50:09.963  1115  1115 I auditd  : type=1400 audit(0.0:471): avc:  denied  { read } for  comm="binder:1115_6" name="max_time_ms" dev="sysfs" ino=124113 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8544:05-26 11:50:09.963  1115  1115 I auditd  : type=1400 audit(0.0:472): avc:  denied  { read } for  comm="binder:1115_6" name="total_time_ms" dev="sysfs" ino=124112 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-8777:05-26 11:50:15.467  1445  1445 I auditd  : type=1400 audit(0.0:489): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-8840:05-26 11:50:28.091  1445  1445 I auditd  : type=1400 audit(0.0:490): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-8902:05-26 11:51:08.755  1445  1445 I auditd  : type=1400 audit(0.0:491): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-8987:05-26 11:51:13.455  1445  1445 I auditd  : type=1400 audit(0.0:492): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-9002:05-26 11:51:14.199 13676 13676 I auditd  : type=1400 audit(0.0:493): avc:  denied  { read } for  comm="pool-17-thread-" name="version" dev="proc" ino=4026532013 scontext=u:r:untrusted_app:s0:c151,c257,c512,c768 tcontext=u:object_r:proc_version:s0 tclass=file permissive=0 app=com.openai.chatgpt
-9129:05-26 11:51:24.827  1445  1445 I auditd  : type=1400 audit(0.0:494): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-9212:05-26 11:51:33.551  1445  1445 I auditd  : type=1400 audit(0.0:495): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-9293:05-26 11:51:41.111  1445  1445 I auditd  : type=1400 audit(0.0:496): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-9311:05-26 11:51:45.095  1445  1445 I auditd  : type=1400 audit(0.0:497): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-9438:05-26 11:51:55.839  1445  1445 I auditd  : type=1400 audit(0.0:498): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-9592:05-26 11:52:18.835  1445  1445 I auditd  : type=1400 audit(0.0:499): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-10029:05-26 11:55:38.055  1115  1115 I auditd  : type=1400 audit(0.0:500): avc:  denied  { read } for  comm="binder:1115_5" name="name" dev="sysfs" ino=124106 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10030:05-26 11:55:38.055  1115  1115 I auditd  : type=1400 audit(0.0:501): avc:  denied  { read } for  comm="binder:1115_5" name="active_count" dev="sysfs" ino=124107 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10031:05-26 11:55:38.055  1115  1115 I auditd  : type=1400 audit(0.0:502): avc:  denied  { read } for  comm="binder:1115_5" name="last_change_ms" dev="sysfs" ino=124114 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10032:05-26 11:55:38.059  1115  1115 I auditd  : type=1400 audit(0.0:503): avc:  denied  { read } for  comm="binder:1115_5" name="max_time_ms" dev="sysfs" ino=124113 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10033:05-26 11:55:38.059  1115  1115 I auditd  : type=1400 audit(0.0:504): avc:  denied  { read } for  comm="binder:1115_5" name="total_time_ms" dev="sysfs" ino=124112 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10034:05-26 11:55:38.059  1115  1115 I auditd  : type=1400 audit(0.0:505): avc:  denied  { read } for  comm="binder:1115_5" name="active_time_ms" dev="sysfs" ino=124111 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10035:05-26 11:55:38.059  1115  1115 I auditd  : type=1400 audit(0.0:506): avc:  denied  { read } for  comm="binder:1115_5" name="event_count" dev="sysfs" ino=124108 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10036:05-26 11:55:38.059  1115  1115 I auditd  : type=1400 audit(0.0:507): avc:  denied  { read } for  comm="binder:1115_5" name="expire_count" dev="sysfs" ino=124110 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10037:05-26 11:55:38.059  1115  1115 I auditd  : type=1400 audit(0.0:508): avc:  denied  { read } for  comm="binder:1115_5" name="prevent_suspend_time_ms" dev="sysfs" ino=124115 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10166:05-26 11:55:41.455 19735 19735 I auditd  : type=1400 audit(0.0:520): avc:  denied  { read } for  comm="getenforce" name="enforce" dev="selinuxfs" ino=4 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:selinuxfs:s0 tclass=file permissive=0 app=net.one97.paytm
-10167:05-26 11:55:41.459 17338 17338 I auditd  : type=1400 audit(0.0:521): avc:  denied  { read } for  comm="Thread-47" name="enforce" dev="selinuxfs" ino=4 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:selinuxfs:s0 tclass=file permissive=0 app=net.one97.paytm
-10168:05-26 11:55:41.459 17338 17338 I auditd  : type=1400 audit(0.0:522): avc:  denied  { read } for  comm="Thread-47" name="cache" dev="dm-1" ino=17 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:cache_file:s0 tclass=lnk_file permissive=0 app=net.one97.paytm
-10169:05-26 11:55:41.459 17338 17338 I auditd  : type=1400 audit(0.0:523): avc:  denied  { read } for  comm="Thread-47" name="cache" dev="dm-1" ino=17 scontext=u:r:untrusted_app:s0:c146,c257,c512,c768 tcontext=u:object_r:cache_file:s0 tclass=lnk_file permissive=0 app=net.one97.paytm
-10219:05-26 11:55:43.311  1115  1115 I auditd  : type=1400 audit(0.0:524): avc:  denied  { read } for  comm="binder:1115_5" name="name" dev="sysfs" ino=124106 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10220:05-26 11:55:43.311  1115  1115 I auditd  : type=1400 audit(0.0:525): avc:  denied  { read } for  comm="binder:1115_5" name="active_count" dev="sysfs" ino=124107 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10221:05-26 11:55:43.311  1115  1115 I auditd  : type=1400 audit(0.0:526): avc:  denied  { read } for  comm="binder:1115_5" name="last_change_ms" dev="sysfs" ino=124114 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10222:05-26 11:55:43.311  1115  1115 I auditd  : type=1400 audit(0.0:527): avc:  denied  { read } for  comm="binder:1115_5" name="max_time_ms" dev="sysfs" ino=124113 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10223:05-26 11:55:43.311  1115  1115 I auditd  : type=1400 audit(0.0:528): avc:  denied  { read } for  comm="binder:1115_5" name="total_time_ms" dev="sysfs" ino=124112 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10224:05-26 11:55:43.311  1115  1115 I auditd  : type=1400 audit(0.0:529): avc:  denied  { read } for  comm="binder:1115_5" name="active_time_ms" dev="sysfs" ino=124111 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10502:05-26 11:55:59.931  1115  1115 I auditd  : type=1400 audit(0.0:547): avc:  denied  { read } for  comm="binder:1115_5" name="name" dev="sysfs" ino=124106 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10503:05-26 11:55:59.931  1115  1115 I auditd  : type=1400 audit(0.0:548): avc:  denied  { read } for  comm="binder:1115_5" name="active_count" dev="sysfs" ino=124107 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10504:05-26 11:55:59.931  1115  1115 I auditd  : type=1400 audit(0.0:549): avc:  denied  { read } for  comm="binder:1115_5" name="last_change_ms" dev="sysfs" ino=124114 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10505:05-26 11:55:59.931  1115  1115 I auditd  : type=1400 audit(0.0:550): avc:  denied  { read } for  comm="binder:1115_5" name="max_time_ms" dev="sysfs" ino=124113 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10506:05-26 11:55:59.931  1115  1115 I auditd  : type=1400 audit(0.0:551): avc:  denied  { read } for  comm="binder:1115_5" name="total_time_ms" dev="sysfs" ino=124112 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-10531:05-26 11:56:01.535  3065  3065 I auditd  : type=1400 audit(0.0:568): avc:  denied  { read } for  comm="ndroid.systemui" name="u:object_r:usb_uvc_enabled_prop:s0" dev="tmpfs" ino=417 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:usb_uvc_enabled_prop:s0 tclass=file permissive=0 app=com.android.systemui
-10693:05-26 11:56:13.543  1445  1445 I auditd  : type=1400 audit(0.0:569): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-10694:05-26 11:56:13.543  1445  1445 W writer  : type=1400 audit(0.0:569): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-11883:05-26 11:56:31.639  1445  1445 I auditd  : type=1400 audit(0.0:570): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-11884:05-26 11:56:31.639  1445  1445 W writer  : type=1400 audit(0.0:570): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-12572:05-26 11:56:36.943  1445  1445 I auditd  : type=1400 audit(0.0:571): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-12573:05-26 11:56:36.943  1445  1445 W writer  : type=1400 audit(0.0:571): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-13822:05-26 11:56:46.071  1445  1445 I auditd  : type=1400 audit(0.0:572): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-13823:05-26 11:56:46.071  1445  1445 W writer  : type=1400 audit(0.0:572): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-14573:05-26 11:56:52.079  1445  1445 I auditd  : type=1400 audit(0.0:573): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-14574:05-26 11:56:52.079  1445  1445 W writer  : type=1400 audit(0.0:573): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-15787:05-26 11:56:59.615  1445  1445 I auditd  : type=1400 audit(0.0:574): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-15788:05-26 11:56:59.615  1445  1445 W writer  : type=1400 audit(0.0:574): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-16372:05-26 11:57:03.771  1115  1115 I auditd  : type=1400 audit(0.0:575): avc:  denied  { read } for  comm="binder:1115_6" name="name" dev="sysfs" ino=124106 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16373:05-26 11:57:03.771  1115  1115 W binder:1115_6: type=1400 audit(0.0:575): avc:  denied  { read } for  name="name" dev="sysfs" ino=124106 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16383:05-26 11:57:03.771  1115  1115 I auditd  : type=1400 audit(0.0:576): avc:  denied  { read } for  comm="binder:1115_6" name="active_count" dev="sysfs" ino=124107 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16385:05-26 11:57:03.771  1115  1115 W binder:1115_6: type=1400 audit(0.0:576): avc:  denied  { read } for  name="active_count" dev="sysfs" ino=124107 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16386:05-26 11:57:03.771  1115  1115 I auditd  : type=1400 audit(0.0:577): avc:  denied  { read } for  comm="binder:1115_6" name="last_change_ms" dev="sysfs" ino=124114 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16387:05-26 11:57:03.771  1115  1115 W binder:1115_6: type=1400 audit(0.0:577): avc:  denied  { read } for  name="last_change_ms" dev="sysfs" ino=124114 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16388:05-26 11:57:03.771  1115  1115 I auditd  : type=1400 audit(0.0:578): avc:  denied  { read } for  comm="binder:1115_6" name="max_time_ms" dev="sysfs" ino=124113 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16389:05-26 11:57:03.771  1115  1115 W binder:1115_6: type=1400 audit(0.0:578): avc:  denied  { read } for  name="max_time_ms" dev="sysfs" ino=124113 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16390:05-26 11:57:03.771  1115  1115 I auditd  : type=1400 audit(0.0:579): avc:  denied  { read } for  comm="binder:1115_6" name="total_time_ms" dev="sysfs" ino=124112 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16391:05-26 11:57:03.771  1115  1115 W binder:1115_6: type=1400 audit(0.0:579): avc:  denied  { read } for  name="total_time_ms" dev="sysfs" ino=124112 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16392:05-26 11:57:03.771  1115  1115 I auditd  : type=1400 audit(0.0:580): avc:  denied  { read } for  comm="binder:1115_6" name="active_time_ms" dev="sysfs" ino=124111 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16393:05-26 11:57:03.771  1115  1115 W binder:1115_6: type=1400 audit(0.0:580): avc:  denied  { read } for  name="active_time_ms" dev="sysfs" ino=124111 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16394:05-26 11:57:03.771  1115  1115 I auditd  : type=1400 audit(0.0:581): avc:  denied  { read } for  comm="binder:1115_6" name="event_count" dev="sysfs" ino=124108 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16395:05-26 11:57:03.771  1115  1115 W binder:1115_6: type=1400 audit(0.0:581): avc:  denied  { read } for  name="event_count" dev="sysfs" ino=124108 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16397:05-26 11:57:03.771  1115  1115 I auditd  : type=1400 audit(0.0:582): avc:  denied  { read } for  comm="binder:1115_6" name="expire_count" dev="sysfs" ino=124110 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16398:05-26 11:57:03.771  1115  1115 W binder:1115_6: type=1400 audit(0.0:582): avc:  denied  { read } for  name="expire_count" dev="sysfs" ino=124110 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16886:05-26 11:57:06.655  1115  1115 I auditd  : type=1400 audit(0.0:595): avc:  denied  { read } for  comm="binder:1115_6" name="name" dev="sysfs" ino=124106 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16887:05-26 11:57:06.655  1115  1115 W binder:1115_6: type=1400 audit(0.0:595): avc:  denied  { read } for  name="name" dev="sysfs" ino=124106 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16896:05-26 11:57:06.655  1115  1115 I auditd  : type=1400 audit(0.0:596): avc:  denied  { read } for  comm="binder:1115_6" name="active_count" dev="sysfs" ino=124107 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16897:05-26 11:57:06.655  1115  1115 W binder:1115_6: type=1400 audit(0.0:596): avc:  denied  { read } for  name="active_count" dev="sysfs" ino=124107 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16898:05-26 11:57:06.655  1115  1115 I auditd  : type=1400 audit(0.0:597): avc:  denied  { read } for  comm="binder:1115_6" name="last_change_ms" dev="sysfs" ino=124114 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16899:05-26 11:57:06.655  1115  1115 W binder:1115_6: type=1400 audit(0.0:597): avc:  denied  { read } for  name="last_change_ms" dev="sysfs" ino=124114 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16903:05-26 11:57:06.655  1115  1115 I auditd  : type=1400 audit(0.0:598): avc:  denied  { read } for  comm="binder:1115_6" name="max_time_ms" dev="sysfs" ino=124113 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16905:05-26 11:57:06.655  1115  1115 W binder:1115_6: type=1400 audit(0.0:598): avc:  denied  { read } for  name="max_time_ms" dev="sysfs" ino=124113 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16912:05-26 11:57:06.655  1115  1115 I auditd  : type=1400 audit(0.0:599): avc:  denied  { read } for  comm="binder:1115_6" name="total_time_ms" dev="sysfs" ino=124112 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-16913:05-26 11:57:06.655  1115  1115 W binder:1115_6: type=1400 audit(0.0:599): avc:  denied  { read } for  name="total_time_ms" dev="sysfs" ino=124112 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=file permissive=0
-17197:05-26 11:57:08.911  3065  3065 I auditd  : type=1400 audit(0.0:615): avc:  denied  { read } for  comm="ndroid.systemui" name="u:object_r:usb_uvc_enabled_prop:s0" dev="tmpfs" ino=417 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:usb_uvc_enabled_prop:s0 tclass=file permissive=0 app=com.android.systemui
-17198:05-26 11:57:08.911  3065  3065 W ndroid.systemui: type=1400 audit(0.0:615): avc:  denied  { read } for  name="u:object_r:usb_uvc_enabled_prop:s0" dev="tmpfs" ino=417 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:usb_uvc_enabled_prop:s0 tclass=file permissive=0 app=com.android.systemui
-17815:05-26 11:57:13.947  1445  1445 I auditd  : type=1400 audit(0.0:616): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-17816:05-26 11:57:13.947  1445  1445 W writer  : type=1400 audit(0.0:616): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-18309:05-26 11:57:24.631  1445  1445 I auditd  : type=1400 audit(0.0:617): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-18310:05-26 11:57:24.631  1445  1445 W writer  : type=1400 audit(0.0:617): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-19187:05-26 11:57:57.883  1445  1445 I auditd  : type=1400 audit(0.0:618): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-19188:05-26 11:57:57.883  1445  1445 W writer  : type=1400 audit(0.0:618): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-20604:05-26 11:58:00.803  1445  1445 I auditd  : type=1400 audit(0.0:619): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-20605:05-26 11:58:00.803  1445  1445 W writer  : type=1400 audit(0.0:619): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-21947:05-26 11:58:04.939  1445  1445 I auditd  : type=1400 audit(0.0:620): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-21948:05-26 11:58:04.939  1445  1445 W writer  : type=1400 audit(0.0:620): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-23661:05-26 11:58:14.839  1445  1445 I auditd  : type=1400 audit(0.0:650): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-23662:05-26 11:58:14.839  1445  1445 W writer  : type=1400 audit(0.0:650): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-24328:05-26 11:58:26.751  1445  1445 I auditd  : type=1400 audit(0.0:651): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-24329:05-26 11:58:26.751  1445  1445 W writer  : type=1400 audit(0.0:651): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-25620:05-26 11:58:33.443  1445  1445 I auditd  : type=1400 audit(0.0:652): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-25621:05-26 11:58:33.443  1445  1445 W writer  : type=1400 audit(0.0:652): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-26435:05-26 11:58:45.383  1445  1445 I auditd  : type=1400 audit(0.0:653): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-26437:05-26 11:58:45.383  1445  1445 W writer  : type=1400 audit(0.0:653): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-26912:05-26 11:58:51.463  1445  1445 I auditd  : type=1400 audit(0.0:654): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-26913:05-26 11:58:51.463  1445  1445 W writer  : type=1400 audit(0.0:654): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-28385:05-26 11:59:07.131  1445  1445 I auditd  : type=1400 audit(0.0:655): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-28386:05-26 11:59:07.131  1445  1445 W writer  : type=1400 audit(0.0:655): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-28682:05-26 11:59:07.279 19977 19977 I auditd  : type=1400 audit(0.0:656): avc:  denied  { read } for  comm="binder:19977_9" name="u:object_r:incremental_prop:s0" dev="tmpfs" ino=261 scontext=u:r:system_app:s0 tcontext=u:object_r:incremental_prop:s0 tclass=file permissive=0
-28683:05-26 11:59:07.279 19977 19977 W binder:19977_9: type=1400 audit(0.0:656): avc:  denied  { read } for  name="u:object_r:incremental_prop:s0" dev="tmpfs" ino=261 scontext=u:r:system_app:s0 tcontext=u:object_r:incremental_prop:s0 tclass=file permissive=0
-28684:05-26 11:59:07.279 19977 19977 I auditd  : type=1400 audit(0.0:657): avc:  denied  { read } for  comm="binder:19977_9" name="filesystems" dev="proc" ino=4026532056 scontext=u:r:system_app:s0 tcontext=u:object_r:proc_filesystems:s0 tclass=file permissive=0
-28685:05-26 11:59:07.279 19977 19977 W binder:19977_9: type=1400 audit(0.0:657): avc:  denied  { read } for  name="filesystems" dev="proc" ino=4026532056 scontext=u:r:system_app:s0 tcontext=u:object_r:proc_filesystems:s0 tclass=file permissive=0
-31932:05-26 11:59:22.235  1445  1445 I auditd  : type=1400 audit(0.0:658): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-31933:05-26 11:59:22.235  1445  1445 W writer  : type=1400 audit(0.0:658): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-32824:05-26 11:59:24.875  1445  1445 I auditd  : type=1400 audit(0.0:659): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-32825:05-26 11:59:24.875  1445  1445 W writer  : type=1400 audit(0.0:659): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-33224:05-26 11:59:27.231  1445  1445 I auditd  : type=1400 audit(0.0:660): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-33225:05-26 11:59:27.231  1445  1445 W writer  : type=1400 audit(0.0:660): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-33908:05-26 11:59:32.099  1445  1445 I auditd  : type=1400 audit(0.0:661): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-33909:05-26 11:59:32.099  1445  1445 W writer  : type=1400 audit(0.0:661): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-34803:05-26 11:59:37.351  1445  1445 I auditd  : type=1400 audit(0.0:662): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-34804:05-26 11:59:37.351  1445  1445 W writer  : type=1400 audit(0.0:662): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-35534:05-26 11:59:38.783 21707 21707 I auditd  : type=1400 audit(0.0:665): avc:  denied  { execmod } for  comm=4173796E635461736B202331 path="/data/app/~~AE4m6d--onAHLROvt4hoaQ==/com.facebook.katana-oDlJvI4NJMXVFNKZP9ct3w==/oat/arm64/base.odex" dev="dm-44" ino=6309 scontext=u:r:untrusted_app:s0:c139,c257,c512,c768 tcontext=u:object_r:dalvikcache_data_file:s0 tclass=file permissive=0 app=com.facebook.katana
-35535:05-26 11:59:38.783 21707 21707 W com.facebook.katana: type=1400 audit(0.0:665): avc:  denied  { execmod } for  comm=4173796E635461736B202331 path="/data/app/~~AE4m6d--onAHLROvt4hoaQ==/com.facebook.katana-oDlJvI4NJMXVFNKZP9ct3w==/oat/arm64/base.odex" dev="dm-44" ino=6309 scontext=u:r:untrusted_app:s0:c139,c257,c512,c768 tcontext=u:object_r:dalvikcache_data_file:s0 tclass=file permissive=0 app=com.facebook.katana
-35637:05-26 11:59:38.807 21707 21707 I auditd  : type=1400 audit(0.0:666): avc:  denied  { read } for  comm="AppInit1" name="u:object_r:build_bootimage_prop:s0" dev="tmpfs" ino=121 scontext=u:r:untrusted_app:s0:c139,c257,c512,c768 tcontext=u:object_r:build_bootimage_prop:s0 tclass=file permissive=0 app=com.facebook.katana
-35638:05-26 11:59:38.807 21707 21707 W AppInit1: type=1400 audit(0.0:666): avc:  denied  { read } for  name="u:object_r:build_bootimage_prop:s0" dev="tmpfs" ino=121 scontext=u:r:untrusted_app:s0:c139,c257,c512,c768 tcontext=u:object_r:build_bootimage_prop:s0 tclass=file permissive=0 app=com.facebook.katana
-36993:05-26 11:59:41.751  1445  1445 I auditd  : type=1400 audit(0.0:667): avc:  denied  { search } for  comm="writer" name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-36994:05-26 11:59:41.751  1445  1445 W writer  : type=1400 audit(0.0:667): avc:  denied  { search } for  name="battery" dev="sysfs" ino=122826 scontext=u:r:hal_audio_default:s0 tcontext=u:object_r:vendor_sysfs_battery_supply:s0 tclass=dir permissive=0
-zaraknyu@DESKTOP-E35KJB8:~$
+## All proprietary files from this list, unless pinned and noted otherwise,
+## are from Motorola Moto G75 (paros) (16 W1UQ36H.73-28).
+## variant: RETBR
+
+# ADSP
+vendor/bin/adsprpcd
+vendor/bin/loadalgo
+vendor/etc/aualgo/ainr_tfv2.dat
+vendor/etc/aualgo/aualgo_comp_azs.conf
+vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc
+vendor/lib64/libadsp_default_listener.so
+vendor/lib64/libadspd.so
+vendor/lib64/libadsprpc.so
+vendor/lib64/libloadalgo_stub.so
+vendor/lib64/libsdsprpc.so
+
+# ADSP modules
+vendor/lib/rfsa/adsp/libCalculator_skel.so
+vendor/lib/rfsa/adsp/libQnnHtpV73.so
+vendor/lib/rfsa/adsp/libQnnHtpV73QemuDriver.so
+vendor/lib/rfsa/adsp/libQnnHtpV73Skel.so
+vendor/lib/rfsa/adsp/libarc_htp_driver_skel.so
+vendor/lib/rfsa/adsp/libdsp_streamer_binning.so
+
+# Audio
+vendor/lib64/hw/libaudiocorehal.default.so;DISABLE_DEPS;REQUIRED=manifest_audiocorehal_default.xml
+vendor/lib64/hw/libaudiocorehal.qti.so;DISABLE_DEPS
+vendor/lib64/hw/libaudioeffecthal.qti.so;DISABLE_DEPS;REQUIRED=audioeffectservice_qti.xml
+vendor/lib64/libadm.so
+vendor/lib64/libar-pal.so
+vendor/lib64/libaualgo_azp_component.so
+vendor/lib64/libaualgo_azp_wrapper.so
+vendor/lib64/libaualgo_foundation.so
+vendor/lib64/libaudio_log_utils.so
+vendor/lib64/libaudioplatformconverter.qti.so;DISABLE_DEPS
+vendor/lib64/libcapiv2svacnnvendor.so
+vendor/lib64/libcapiv2svarnnvendor.so
+vendor/lib64/libcapiv2uvvendor.so
+vendor/lib64/libdsd2pcm.so
+vendor/lib64/libeai_fixed.so
+vendor/lib64/libeai_float.so
+vendor/lib64/libext_tflite_c.so
+vendor/lib64/liblistensoundmodel2vendor.so
+vendor/lib64/liblistensoundmodelaidl.so
+vendor/lib64/libmcs.so
+vendor/lib64/libpal_net_if.so
+vendor/lib64/libqtigefar.so;DISABLE_DEPS
+vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V1-ndk.so
+
+# Audio - old AIDL dependencies
+vendor/lib64/android.hardware.bluetooth.audio-impl.so:vendor/lib64/android.hardware.bluetooth.audio-impl_prebuilt.so;FIX_SONAME
+vendor/lib64/libaudio_aidl_conversion_common_ndk.so:vendor/lib64/libaudio_aidl_conversion_common_ndk_prebuilt.so;DISABLE_DEPS;FIX_SONAME
+vendor/lib64/libaudioserviceexampleimpl.so;DISABLE_DEPS
+vendor/lib64/libbluetooth_audio_session_aidl.so:vendor/lib64/libbluetooth_audio_session_aidl_prebuilt.so;FIX_SONAME
+
+# Audio Misc
+vendor/etc/models/acd/event.eai
+vendor/etc/models/acd/music.eai
+vendor/etc/models/acd/speech.eai
+vendor/etc/ap_gain.bin
+vendor/etc/ap_gain_mmul.bin
+
+# Audio SoundFX
+vendor/lib64/soundfx/libbundleaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libdownmixaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libdynamicsprocessingaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libloudnessenhanceraidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libqcompostprocbundle.so;DISABLE_DEPS
+vendor/lib64/soundfx/libqcomvisualizer.so;DISABLE_DEPS
+vendor/lib64/soundfx/libqcomvoiceprocessing.so;DISABLE_DEPS
+vendor/lib64/soundfx/libreverbaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libvisualizeraidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libvolumelistener.so;DISABLE_DEPS
+
+# Bluetooth - from pdx257 72.1.A.2.127
+vendor/bin/hw/android.hardware.bluetooth@aidl-service-qti|26260568432049745737e7e5a4eb38d2260579d4
+vendor/etc/init/android.hardware.bluetooth@aidl-service-qti.rc|aba655e902c490e552af8e3a41177c8d98748ac2
+vendor/etc/vintf/manifest/bluetooth_hci.xml|13a5f20e77b01b8f78b916c6efbb4cf6bafa8205
+vendor/etc/vintf/manifest/bluetooth_sar.xml|6ecdea14f258c198ec1234d966c410beb291236b
+vendor/etc/vintf/manifest/bttpi-saidl.xml|a49eea4c62be9c856dfa842db8f08d2a87ff21dd
+vendor/etc/vintf/manifest/manifest_btaudiocoreservices_qti.xml|99c1c1cef69952852d30be97dd58067471825cbc
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|33fa5dfad99e1de144301e417bb603dd38c77570
+vendor/lib64/hw/android.hardware.bluetooth@aidl-impl-qti.so|53385c0413eb72788ce33a908e42c33622c35eab
+vendor/lib64/hw/mbedtls_qti.so|acefbe60ccc59621ae3b1a7c880979c9672c5997
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@aidl-impl.so|b930d1d7b829b8bdcbabeeeb8e2429f150a15269
+vendor/lib64/hw/vendor.qti.hardware.bttpi-impl.so|7feca794a783e37f986503d8c72d494ee6acae19
+vendor/lib64/libbtnv.so|c002576d44dc559b688bf1d78c5bf627720b4875
+vendor/lib64/libsoc_helper.so|fe54074bf6d9e37cd2c8c076a43e74f09526ba8a
+vendor/lib64/vendor.qti.hardware.bluetooth_sar-V1-ndk.so|50c9ea0a88b168727957fb88e682c7a2afaed779
+vendor/lib64/vendor.qti.hardware.bttpi-V3-ndk.so|856786a9216b9679604906cbc3875dc2f0f64660
+vendor/lib64/vendor.qti.hardware.fm-V1-ndk.so|2f383fde083013a9597872d4cae9ac827b088cf8
+
+# Bluetooth (A2DP) - from pdx257 72.1.A.2.127
+vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so|f7493d5079e037f101e5b6499b0d039b71536394
+vendor/lib64/hw/android.hardware.bluetooth.audio_sw.so;DISABLE_DEPS|87a698117c392c2cc30ac012a56d25da734cc546
+vendor/lib64/hw/audio.bluetooth_qti.default.so|6f43000b9018af2facb494c601359d9f1883457c
+vendor/lib64/btaudio_offload_if.so|005226ff201c489927125121f456321d7ed67c50
+vendor/lib64/libbluetooth_audio_session_aidl_qti.so|7f768cf5d445e190e15bdb2b5250f6375b27a921
+vendor/lib64/libbluetooth_audio_session_qti.so|daf4f92df85699d34f16cac19753be91f13e6a02
+vendor/lib64/libbluetooth_audio_session_qti_2_1.so|1c2e6518d0df6fbb4698cfe9bf7fc9d701183191
+
+# Camera (ICP)
+vendor/firmware/CAMERA_ICP.elf
+vendor/firmware/CAMERA_ICP_170.elf
+
+# CDSP
+vendor/bin/cdsprpcd
+vendor/etc/init/vendor.qti.cdsprpc-service.rc
+vendor/lib64/libcdsp_default_listener.so
+vendor/lib64/libcdsprpc.so
+vendor/lib64/libmdsprpc.so
+vendor/lib64/libsysmon_cdsp_skel.so
+
+# Charger
+vendor/bin/charge_only_mode
+vendor/etc/charger_fw_fstab.qti
+
+# CNE
+vendor/app/CACertService/CACertService.apk
+vendor/app/CneApp/CneApp.apk;REQUIRED=CneApp.libvndfwk_detect_jni.qti_vendor_symlink
+vendor/app/IWlanService/IWlanService.apk
+vendor/bin/cnd
+vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml
+vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml
+vendor/etc/cne/wqeclient/ATT/ATT_profile3.xml
+vendor/etc/cne/wqeclient/ATT/ATT_profile4.xml
+vendor/etc/cne/wqeclient/ATT/ATT_profile5.xml
+vendor/etc/cne/wqeclient/ATT/ATT_profile6.xml
+vendor/etc/cne/wqeclient/ATT/ATT_profile7.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile1.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile15.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile16.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile17.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile18.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile19.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile2.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile20.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile21.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile3.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile32.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile4.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile5.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile6.xml
+vendor/etc/cne/wqeclient/ROW/ROW_profile7.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile1.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile2.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile3.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
+vendor/etc/cne/wqeclient/VZW/VZW_profile7.xml
+vendor/etc/cne/mwqem.conf
+vendor/etc/cne/profileMwqem.xml
+vendor/etc/default-permissions/com.qualcomm.qti.cne.xml
+vendor/etc/init/cnd.rc
+vendor/etc/sysconfig/cacert-oem-defined-uids.xml
+vendor/etc/vintf/manifest/cacert-saidl.xml
+vendor/etc/vintf/manifest/datafactoryservice-saidl.xml
+vendor/etc/vintf/manifest/mwqem-saidl.xml
+vendor/etc/vintf/manifest/vendor.qti.hardware.data.connectionaidl.xml
+vendor/etc/vintf/manifest/vendor.qti.hardware.data.iwlandata.xml
+vendor/lib64/libCneAppJni.so
+vendor/lib64/libWlanServiceJni.so
+vendor/lib64/libcne.so
+vendor/lib64/libcneapiclient.so
+vendor/lib64/libcneoplookup.so
+vendor/lib64/libcneqmiutils.so
+vendor/lib64/libjnihelper.so
+vendor/lib64/libshsc.so
+vendor/lib64/libwms.so
+vendor/lib64/libwqe.so
+vendor/lib64/libxml.so
+vendor/lib64/vendor.libmwqemiptablemgr.so
+vendor/lib64/vendor.qti.data.factoryservice-V1-ndk.so
+vendor/lib64/vendor.qti.data.mwqemaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.cacertaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.data.cneaidlservice.internal.api-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.data.cneaidlservice.internal.constants-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.data.cneaidlservice.internal.server-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.data.dynamicddsaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.data.flowaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.data.iwlandata-V2-ndk.so
+vendor/lib64/vendor.qti.hardware.data.lceaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.data.qmiaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.mwqemadapteraidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.latencyaidlservice-V1-ndk.so
+
+# Connection Security
+vendor/bin/qwesd
+vendor/etc/init/qwesd.rc
+vendor/etc/seccomp_policy/qwesd@2.0.policy
+vendor/etc/ssg/ta_config.json
+vendor/etc/ssg/tz_whitelist.json
+
+# Configstore
+vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore-service
+vendor/etc/init/vendor.qti.hardware.capabilityconfigstore-service.rc
+vendor/etc/vintf/manifest/vendor.qti.hardware.capabilityconfigstore-service.xml
+vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore-impl.so
+vendor/lib64/vendor.qti.hardware.capabilityconfigstore-V1-ndk.so
+
+# Diag
+system/lib64/vendor.qti.diaghal-V1-ndk.so
+system_ext/lib64/libdiag_system.so
+system_ext/lib64/libdiagatbparser_system.so
+system_ext/lib64/vendor.qti.diaghal@1.0.so
+vendor/bin/diag-router
+vendor/etc/init/vendor.qti.diag_userdebug.rc
+vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml
+vendor/lib64/libdiag.so
+vendor/lib64/libdiagjni.so
+vendor/lib64/vendor.qti.diaghal-V1-ndk.so;MODULE_SUFFIX=_vendor
+
+# Display (HDR)
+vendor/lib64/libhdr_tm.so
+
+# Display (HWC)
+vendor/bin/qdcmss
+vendor/bin/qguard
+vendor/etc/init/qdcmss.rc
+vendor/etc/init/qguard.rc
+vendor/etc/qguard.json
+vendor/etc/snapdragon_color_libs_config.xml
+vendor/lib64/libdigital-dimming.so
+vendor/lib64/libdpps.so
+vendor/lib64/libmemutils.so
+vendor/lib64/libqdcm-algo.so
+vendor/lib64/libqdcm-json-mode-parser.so
+vendor/lib64/libqdcm-mode-parser.so
+vendor/lib64/libsnapdragoncolor-manager.so
+vendor/lib64/libsnapdragoncolor-qdcm.so
+vendor/lib64/libtinyxml2_1.so
+vendor/lib64/libubwcp.so
+
+# Display (SDM)
+vendor/etc/clstc_config_library.xml
+vendor/lib64/libdisplayqos.so
+vendor/lib64/libdisplayskuutils.so
+vendor/lib64/libintervmipc.so
+vendor/lib64/libqrtrclient.so
+vendor/lib64/libqseed3.so
+vendor/lib64/librcmask.so
+vendor/lib64/libsdm-color.so
+vendor/lib64/libsdm-colormgr-algo.so
+vendor/lib64/libsdm-disp-vndapis.so
+vendor/lib64/libsdmextension.so
+vendor/lib64/libtestutils.so
+vendor/lib64/libvmfilexfer.so
+
+
+# Display postprocessing
+vendor/bin/hw/vendor.qti.hardware.display.color-service
+vendor/bin/ppd
+vendor/etc/init/vendor.qti.hardware.display.color-service.rc
+vendor/lib64/libcolor-default.so
+vendor/lib64/libdisp-aba.so
+
+# DPM
+system_ext/bin/dpmd
+system_ext/etc/dpm/dpm.conf
+system_ext/etc/init/dpmd.rc
+system_ext/etc/permissions/com.qti.dpmframework.xml
+system_ext/etc/permissions/dpmapi.xml
+system_ext/framework/com.qti.dpmframework.jar
+system_ext/framework/dpmapi.jar
+system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so
+system_ext/lib64/libdpmctmgr.so
+system_ext/lib64/libdpmfdmgr.so
+system_ext/lib64/libdpmframework.so
+system_ext/lib64/libdpmtcm.so
+system_ext/lib64/vendor.qti.hardware.dpmaidlservice-V1-ndk.so
+system_ext/lib64/vendor.qti.hardware.dpmservice@1.0.so
+system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
+vendor/bin/vendor.dpmd
+vendor/etc/dpm_vndr/vendor.dpm.conf
+vendor/etc/init/vendor.dpmd.rc
+vendor/etc/vintf/manifest/dpm-saidl.xml
+vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.libdpmctmgr.so
+vendor/lib64/vendor.libdpmfdmgr.so
+vendor/lib64/vendor.libdpmframework.so
+vendor/lib64/vendor.libdpmtcm.so
+vendor/lib64/vendor.qti.hardware.dpmaidlservice-V1-ndk.so;MODULE_SUFFIX=_vendor
+
+# DSP
+vendor/bin/dspservice
+vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
+vendor/lib64/vendor.qti.hardware.dsp-V1-ndk.so
+
+# DSP Modules
+vendor/lib64/rfs/dsp/bm2n31.bin
+vendor/lib64/rfs/dsp/bm2n32.bin
+vendor/lib64/rfs/dsp/bm2n33.bin
+vendor/lib64/rfs/dsp/bm2n34.bin
+vendor/lib64/rfs/dsp/bm2n35.bin
+vendor/lib64/rfs/dsp/bm2n36.bin
+vendor/lib64/rfs/dsp/bm2n37.bin
+vendor/lib64/rfs/dsp/bm2n54.bin
+vendor/lib64/rfs/dsp/bm2n55.bin
+vendor/lib64/rfs/dsp/bm2n56.bin
+vendor/lib64/rfs/dsp/libadsp_jpege_skel.so
+vendor/lib64/rfs/dsp/libapn_dsp_skel.so
+vendor/lib64/rfs/dsp/libbitml_nsp_skel.so
+vendor/lib64/rfs/dsp/libbitml_nsp_v2_skel.so
+vendor/lib64/rfs/dsp/libcamera_nn_skel.so
+vendor/lib64/rfs/dsp/libdspCV_skel.so
+vendor/lib64/rfs/dsp/libfastcvadsp.so
+vendor/lib64/rfs/dsp/libfastcvdsp_skel.so
+vendor/lib64/rfs/dsp/libhdr_skel.so
+vendor/lib64/rfs/dsp/libhme_dsp_skel.so
+vendor/lib64/rfs/dsp/libmctfengine_skel.so
+vendor/lib64/rfs/dsp/libsw2dlut_dsp_skel.so
+
+# Euicc
+product/etc/permissions/privapp-permissions-com.google.android.euicc.xml
+product/priv-app/EuiccGoogle/EuiccGoogle.apk;PRESIGNED
+
+# FASTCV
+vendor/lib64/libfastcvdsp_stub.so
+vendor/lib64/libfastcvopt.so
+
+# FM
+vendor/lib64/hw/vendor.qti.hardware.fm-impl.so
+vendor/lib64/vendor.qti.hardware.fm@1.0.so
+
+# Gatekeeper
+vendor/bin/hw/android.hardware.gatekeeper-service-qti
+vendor/etc/init/android.hardware.gatekeeper-service-qti.rc
+vendor/lib64/hw/libqtigatekeeper.so
+
+# GNSS
+vendor/bin/hw/android.hardware.gnss-aidl-service-qti
+vendor/bin/edgnss-daemon
+vendor/bin/engine-service
+vendor/bin/loc_launcher
+vendor/bin/lowi-server
+vendor/bin/mlid
+vendor/bin/qsap_location
+vendor/bin/xtra-daemon
+vendor/bin/xtwifi-client
+vendor/etc/init/android.hardware.gnss-aidl-service-qti.rc
+vendor/etc/init/loc-launcher.rc
+vendor/etc/init/vendor.qsap.location.rc
+vendor/etc/seccomp_policy/gnss@2.0-base.policy
+vendor/etc/seccomp_policy/gnss@2.0-edgnss-daemon.policy
+vendor/etc/seccomp_policy/gnss@2.0-qsap-location.policy
+vendor/etc/seccomp_policy/gnss@2.0-xtra-daemon.policy
+vendor/etc/seccomp_policy/gnss@2.0-xtwifi-client.policy
+vendor/etc/vintf/manifest/android.hardware.gnss-aidl-service-qti.xml
+vendor/etc/vintf/manifest/vendor.qti.gnss-service.xml
+vendor/etc/apdr.conf
+vendor/etc/gnss_antenna_info.conf
+vendor/etc/izat.conf
+vendor/etc/lowi.conf
+vendor/etc/sap.conf
+vendor/etc/sec_config
+vendor/etc/xtwifi.conf
+vendor/lib64/hw/android.hardware.gnss-aidl-impl-qti.so
+vendor/lib64/libbatching.so
+vendor/lib64/libcacertclient.so
+vendor/lib64/libcdfw.so
+vendor/lib64/libcdfw_remote_api.so
+vendor/lib64/libdataitems.so
+vendor/lib64/libengineplugin.so
+vendor/lib64/libgdtap.so
+vendor/lib64/libgeofencing.so
+vendor/lib64/libgnss.so
+vendor/lib64/libgnsspps.so
+vendor/lib64/libgps.utils.so
+vendor/lib64/libizat_client_api.so
+vendor/lib64/libizat_core.so
+vendor/lib64/liblbs_core.so
+vendor/lib64/libloc_api_v02.so
+vendor/lib64/libloc_api_wds.so
+vendor/lib64/libloc_base_util.so
+vendor/lib64/libloc_core.so
+vendor/lib64/libloc_eng_hub.so
+vendor/lib64/libloc_mq_client.so
+vendor/lib64/libloc_qwes_iface.so
+vendor/lib64/libloc_socket.so
+vendor/lib64/libloc_util.so
+vendor/lib64/liblocation_api.so
+vendor/lib64/liblocation_api_msg.so
+vendor/lib64/liblocation_client_api.so
+vendor/lib64/liblocation_integration_api.so
+vendor/lib64/liblocation_qesdk.so
+vendor/lib64/liblocationservice.so
+vendor/lib64/liblocationservice_glue.so
+vendor/lib64/liblocdiagiface.so
+vendor/lib64/liblowi_client.so
+vendor/lib64/liblowi_common.so
+vendor/lib64/liblowi_wifihal.so
+vendor/lib64/libslimclient.so
+vendor/lib64/libsynergy_loc_api.so
+vendor/lib64/libsys_info_cache.so
+vendor/lib64/libwifiobserver.so
+vendor/lib64/libxtadapter.so
+vendor/lib64/vendor.qti.gnss-V7-ndk.so
+vendor/lib64/vendor.qti.gnss-service.so
+
+# Graphics (Adreno)
+vendor/lib64/egl/eglSubDriverAndroid.so
+vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so
+vendor/lib64/egl/libGLESv1_CM_adreno.so
+vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so
+vendor/lib64/egl/libVkLayer_ADRENO_qprofiler.so
+vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so
+vendor/lib64/egl/libq3dtools_esx.so
+vendor/lib64/libCB.so
+vendor/lib64/libOpenCL.so
+vendor/lib64/libOpenCL_adreno.so
+vendor/lib64/libadreno_app_profiles.so
+vendor/lib64/libadreno_compiler_cl.so
+vendor/lib64/libadreno_utils.so
+vendor/lib64/libgpudataproducer.so
+vendor/lib64/libgsl.so
+vendor/lib64/libkcl.so
+vendor/lib64/libkernelmanager.so
+vendor/lib64/libllvm-glnext.so
+vendor/lib64/libllvm-qcom.so
+vendor/lib64/libllvm-qgl.so
+
+# Graphics (Adreno firmware)
+vendor/firmware/a630_sqe.fw
+vendor/firmware/a710_sqe.fw
+vendor/firmware/a710_zap.b00
+vendor/firmware/a710_zap.b01
+vendor/firmware/a710_zap.b02
+vendor/firmware/a710_zap.elf
+vendor/firmware/a710_zap.mbn
+vendor/firmware/a710_zap.mdt
+vendor/firmware/gen6_3_26_0_zap.b00
+vendor/firmware/gen6_3_26_0_zap.b01
+vendor/firmware/gen6_3_26_0_zap.b02
+vendor/firmware/gen6_3_26_0_zap.elf
+vendor/firmware/gen6_3_26_0_zap.mbn
+vendor/firmware/gen6_3_26_0_zap.mdt
+vendor/firmware/gmu_gen70000.bin
+
+# Graphics (Vulkan)
+vendor/lib64/hw/vulkan.adreno.so
+
+# Identity
+vendor/bin/hw/android.hardware.identity-service-qti
+vendor/etc/init/android.hardware.identity-service-qti.rc
+vendor/etc/vintf/manifest/manifest_identity_credential.xml
+vendor/lib64/libqtiidentitycredential.so
+
+# IRQ balance
+vendor/bin/msm_irqbalance
+vendor/etc/msm_irqbalance.conf
+
+# Keymint
+vendor/bin/hw/android.hardware.security.keymint-service-qti
+vendor/etc/init/android.hardware.security.keymint-service-qti.rc
+vendor/etc/vintf/manifest/android.hardware.security.keymint-service-qti.xml
+vendor/lib64/libkeymasterdeviceutils.so
+vendor/lib64/libkeymasterprovision.so
+vendor/lib64/libkeymasterutils.so
+vendor/lib64/libqtikeymaster4.so
+vendor/lib64/libqtikeymint.so
+
+# Media
+system_ext/lib64/libmmosal.so
+system_ext/lib64/libmmparser_lite.so
+vendor/bin/hw/vendor.qti.media.c2@1.0-service
+vendor/bin/hw/vendor.qti.media.c2audio@1.0-service
+vendor/bin/init.qti.media.sh
+vendor/etc/init/vendor.qti.media.c2@1.0-service.rc
+vendor/etc/init/vendor.qti.media.c2audio@1.0-service.rc
+vendor/etc/media_parrot_v0/video_system_specs.json
+vendor/etc/media_parrot_v1/video_system_specs.json
+vendor/etc/media_parrot_v2/video_system_specs.json
+vendor/etc/seccomp_policy/codec2.vendor.base-arm64.policy
+vendor/etc/seccomp_policy/codec2.vendor.ext-arm64.policy
+vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml
+vendor/lib64/libEvrcSwCodec.so
+vendor/lib64/libQcelp13SwCodec.so
+vendor/lib64/libmmosal_vendor.so
+vendor/lib64/libqc2audio_base.so
+vendor/lib64/libqc2audio_basecodec.so
+vendor/lib64/libqc2audio_core.so
+vendor/lib64/libqc2audio_hooks.so
+vendor/lib64/libqc2audio_hwaudiocodec.so
+vendor/lib64/libqc2audio_platform.so
+vendor/lib64/libqc2audio_swaudiocodec.so
+vendor/lib64/libqc2audio_utils.so
+vendor/lib64/libqcodec2_base.so
+vendor/lib64/libqcodec2_basecodec.so
+vendor/lib64/libqcodec2_core.so
+vendor/lib64/libqcodec2_filterbase.so
+vendor/lib64/libqcodec2_hooks.so
+vendor/lib64/libqcodec2_mockfilter.so
+vendor/lib64/libqcodec2_mockqc2filter.so
+vendor/lib64/libqcodec2_platform.so
+vendor/lib64/libqcodec2_utils.so
+vendor/lib64/libqcodec2_v4l2codec.so
+vendor/lib64/libvideotxr.so
+vendor/lib64/qti.video.utils.videobufferlayout.so
+
+# Media configs
+vendor/etc/media_profiles_V1_0.xml
+
+# Media configs (parrot)
+vendor/etc/media_codecs_parrot_v0.xml
+vendor/etc/media_codecs_performance_parrot_v0.xml
+vendor/etc/media_profiles_parrot_v0.xml
+
+# Media configs (ravelin)
+vendor/etc/media_codecs_performance_ravelin.xml
+vendor/etc/media_codecs_performance_ravelin.xml
+vendor/etc/media_codecs_ravelin.xml
+vendor/etc/media_profiles_ravelin.xml
+
+# Memory
+vendor/lib64/libvmmem.so
+
+# Neural networks
+vendor/lib64/libQnnChrometraceProfilingReader.so
+vendor/lib64/libQnnCpu.so
+vendor/lib64/libQnnDsp.so
+vendor/lib64/libQnnDspNetRunExtensions.so
+vendor/lib64/libQnnGpu.so
+vendor/lib64/libQnnGpuNetRunExtensions.so
+vendor/lib64/libQnnGpuProfilingReader.so
+vendor/lib64/libQnnHta.so
+vendor/lib64/libQnnHtaNetRunExtensions.so
+vendor/lib64/libQnnHtp.so
+vendor/lib64/libQnnHtpNetRunExtensions.so
+vendor/lib64/libQnnHtpOptraceProfilingReader.so
+vendor/lib64/libQnnHtpPrepare.so
+vendor/lib64/libQnnHtpProfilingReader.so
+vendor/lib64/libQnnHtpV73CalculatorStub.so
+vendor/lib64/libQnnHtpV73Stub.so
+vendor/lib64/libQnnJsonProfilingReader.so
+vendor/lib64/libQnnModelDlc.so
+vendor/lib64/libQnnSaver.so
+vendor/lib64/libQnnSystem.so
+vendor/lib64/libhta_hexagon_runtime_qnn.so;FIX_SONAME
+
+# OEM
+vendor/bin/motobox;SYMLINK=vendor/bin/expat
+vendor/etc/vhw.xml
+
+# Peripheral manager
+vendor/bin/pm-proxy
+vendor/bin/pm-service
+vendor/lib64/libadropbox.so
+vendor/lib64/libperipheral_client.so
+vendor/lib64/libspcom.so
+
+# Power-off alarm
+vendor/bin/hw/vendor.qti.hardware.alarm-service
+vendor/bin/power_off_alarm
+vendor/etc/init/vendor.qti.hardware.alarm-service.rc
+vendor/etc/vintf/manifest/vendor.qti.hardware.alarm.xml
+vendor/lib64/hw/vendor.qti.hardware.alarm-impl.so
+vendor/lib64/vendor.qti.hardware.alarm-V1-ndk.so
+
+# QCC (System)
+system_ext/app/QCC/QCC.apk
+system_ext/bin/qccsyshal_aidl-service
+system_ext/etc/init/vendor.qti.qccsyshal_aidl-service.rc
+system_ext/etc/permissions/com.qti.qcc.vendor_qcc.xml
+system_ext/etc/vintf/manifest/vendor.qti.qccsyshal_aidl-service.xml
+system_ext/lib64/libqcc.so
+system_ext/lib64/libqcc_file_agent_sys.so
+system_ext/lib64/libqccfileservice.so
+system_ext/lib64/vendor.qti.hardware.qccsyshal@1.0.so
+system_ext/lib64/vendor.qti.hardware.qccsyshal@1.1.so
+system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2.so
+system_ext/lib64/vendor.qti.hardware.qccvndhal@1.0.so
+system_ext/lib64/vendor.qti.qccsyshal_aidl-V1-ndk.so
+system_ext/lib64/vendor.qti.qccsyshal_aidl-halimpl.so
+system_ext/lib64/vendor.qti.qccvndhal_aidl-V1-ndk.so
+
+# QCC (Vendor)
+vendor/bin/qcc-vendor
+vendor/etc/init/init.qccvendor.rc
+vendor/etc/vintf/manifest/vendor.qti.qccvndhal_aidl-service.xml
+vendor/lib64/libqcc_file_agent.so
+vendor/lib64/libqcc_sdk.so
+vendor/lib64/vendor.qti.qccsyshal_aidl-V1-ndk.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.qti.qccvndhal_aidl-V1-ndk.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.qti.qccvndhal_aidl-halimpl.so
+
+# QESDK
+vendor/bin/qesdk-manager
+vendor/etc/init/qesdk-manager.rc
+vendor/etc/seccomp_policy/qesdk.policy
+vendor/etc/vintf/manifest/qesdk-manager.xml
+vendor/lib64/libqesdk2_0.so
+vendor/lib64/libqesdk_manager.so
+vendor/lib64/libqesdoem_query_sys.so
+vendor/lib64/vendor.qti.qesdhal-impl.so
+vendor/lib64/vendor.qti.qesdhal@1.0.so
+vendor/lib64/vendor.qti.qesdhal@1.1.so
+vendor/lib64/vendor.qti.qesdhal@1.2.so
+vendor/lib64/vendor.qti.qesdhal@1.3.so
+vendor/lib64/vendor.qti.qesdhalaidl-V2-ndk.so
+vendor/lib64/vendor.qti.qesdsys-V4-ndk.so
+
+# QMI
+system/etc/sysconfig/qti_whitelist.xml
+vendor/bin/qmi_motext_hook
+vendor/bin/qmipriod
+vendor/bin/qrtr-cfg
+vendor/bin/qrtr-lookup
+vendor/bin/qrtr-ns
+vendor/etc/init/qmipriod.debug.rc
+vendor/etc/init/qmipriod.rc
+vendor/etc/init/vendor.qti.smp2p.rc
+vendor/etc/seccomp_policy/qti-systemd.policy
+vendor/lib64/libidl.so
+vendor/lib64/libmdmcutback.so
+vendor/lib64/libmdmdetect.so
+vendor/lib64/libmotext_inf.so
+vendor/lib64/libqcci_legacy.so
+vendor/lib64/libqmi.so
+vendor/lib64/libqmi_cci.so
+vendor/lib64/libqmi_client_helper.so
+vendor/lib64/libqmi_client_qmux.so
+vendor/lib64/libqmi_common_so.so
+vendor/lib64/libqmi_csi.so
+vendor/lib64/libqmi_csvt_srvc.so
+vendor/lib64/libqmi_encdec.so
+vendor/lib64/libqmi_legacy.so
+vendor/lib64/libqmiextservices.so
+vendor/lib64/libqmimotext.so
+vendor/lib64/libqmiservices.so
+vendor/lib64/libqmiservices_ext.so
+vendor/lib64/libqrtr.so
+vendor/lib64/libqsocket.so
+vendor/lib64/libsmemlog.so
+
+# QSEECOM
+vendor/bin/hw/vendor.qti.hardware.qseecom@1.0-service
+vendor/bin/qseecomd
+vendor/etc/init/qseecomd.rc
+vendor/etc/init/vendor.qti.hardware.qseecom@1.0-service.rc
+vendor/etc/vintf/manifest/vendor.qti.hardware.qseecom@1.0-service.xml
+vendor/etc/gpfspath_oem_config.xml
+vendor/lib64/hw/vendor.qti.hardware.qseecom@1.0-impl.so
+vendor/lib64/libGPreqcancel.so
+vendor/lib64/libGPreqcancel_svc.so
+vendor/lib64/libQSEEComAPI.so
+vendor/lib64/libdrmfs.so
+vendor/lib64/libdrmtime.so
+vendor/lib64/libgpt.so
+vendor/lib64/libops.so
+vendor/lib64/libqisl.so
+vendor/lib64/libqwes.so
+vendor/lib64/librpmb.so
+vendor/lib64/libseclog.so
+vendor/lib64/libspl.so
+vendor/lib64/libssd.so
+vendor/lib64/vendor.qti.hardware.qseecom-V1-ndk.so
+
+# QSPA
+system_ext/etc/init/qspa_system.rc
+system_ext/etc/qspa/qspa_default.rc
+
+# QSPM
+vendor/bin/vendor.qti.qspmhal-service
+vendor/etc/init/vendor.qti.qspmhal-service.rc
+vendor/etc/seccomp_policy/qspm.policy
+vendor/etc/vintf/manifest/vendor.qti.qspmhal-service.xml
+vendor/lib64/libqspm-mem-utils-vendor.so
+vendor/lib64/vendor.qti.qspmhal-V1-ndk.so
+vendor/lib64/vendor.qti.qspmhal-impl.so
+
+# RIL - UIM
+product/app/uimgbaservice/uimgbaservice.apk
+product/etc/permissions/UimGba.xml
+product/etc/permissions/UimGbaManager.xml
+product/etc/permissions/UimService.xml
+product/framework/uimgbalibrary.jar
+product/framework/uimgbamanagerlibrary.jar
+product/framework/uimservicelibrary.jar
+vendor/etc/vintf/manifest/vendor.qti.hardware.radio.uim.xml
+vendor/etc/vintf/manifest/vendor.qti.hardware.radio.uim_remote_client.xml
+vendor/etc/vintf/manifest/vendor.qti.hardware.radio.uim_remote_server.xml
+vendor/lib64/qcrilNr_aidl_UimLpaService.so
+vendor/lib64/qcrilNr_aidl_UimRemoteClient.so
+vendor/lib64/qcrilNr_aidl_UimRemoteServer.so
+vendor/lib64/qcrilNr_aidl_UimService.so
+vendor/lib64/vendor.qti.hardware.radio.uim-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.radio.uim_remote_client-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.radio.uim_remote_server-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
+
+# RIL - system_ext
+system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+system_ext/etc/permissions/qcrilhook.xml
+system_ext/etc/permissions/qti_libpermissions.xml
+system_ext/etc/permissions/qti_permissions.xml
+system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml
+system_ext/framework/qcrilhook.jar
+system_ext/priv-app/QtiTelephony/QtiTelephony.apk;REQUIRED=QtiTelephonyCompat
+system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+
+# RIL
+vendor/bin/hw/qcrilNrd
+vendor/bin/adpl
+vendor/bin/init.qcrild.sh
+vendor/bin/ks
+vendor/bin/nicmd
+vendor/bin/pd-mapper
+vendor/bin/port-bridge
+vendor/bin/qms
+vendor/bin/qti
+vendor/bin/rmt_storage
+vendor/bin/shsusrd
+vendor/bin/tlpd
+vendor/bin/vendor.qti.syshealthmon-service
+vendor/etc/data/dsi_config.xml
+vendor/etc/data/nicm_config.xml
+vendor/etc/data/tlpd_oem_config.xml
+vendor/etc/init/dataadpl.rc
+vendor/etc/init/dataqti.rc
+vendor/etc/init/nicmd.rc
+vendor/etc/init/port-bridge.rc
+vendor/etc/init/qcrilNrd.rc
+vendor/etc/init/qms.rc
+vendor/etc/init/shsusrd.rc
+vendor/etc/init/tlpd.rc
+vendor/etc/init/vendor.qti.rmt_storage.rc
+vendor/etc/init/vendor.qti.syshealthmon-service.rc
+vendor/etc/permissions/noRil/apq_excluded_telephony_features.xml
+vendor/etc/qcril_database/upgrade/config/0006.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
+vendor/etc/qcril_database/upgrade/config/0007.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
+vendor/etc/qcril_database/upgrade/config/0008.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
+vendor/etc/qcril_database/upgrade/config/0009.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
+vendor/etc/qcril_database/upgrade/config/0010.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
+vendor/etc/qcril_database/upgrade/config/0011.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
+vendor/etc/qcril_database/upgrade/config/0012.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
+vendor/etc/qcril_database/upgrade/config/0013.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
+vendor/etc/qcril_database/upgrade/config/0014.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
+vendor/etc/qcril_database/upgrade/config/0015.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
+vendor/etc/qcril_database/upgrade/ecc/mot_generated_ecc_qcrildb.sql;FILEGROUP=proprietary_rildb_ecc_sql_files
+vendor/etc/qcril_database/upgrade/other/0002_version_add_wps_config_qcrilnr.sql;FILEGROUP=proprietary_rildb_other_sql_files
+vendor/etc/qcril_database/upgrade/other/0003_version_update_wps_config_qcrilnr.sql;FILEGROUP=proprietary_rildb_other_sql_files
+vendor/etc/qcril_database/upgrade/other/0006_version_change_property_table_qcrilnr.sql;FILEGROUP=proprietary_rildb_other_sql_files
+vendor/etc/qcril_database/upgrade/other/0014_version_update_modules.sql;FILEGROUP=proprietary_rildb_other_sql_files
+vendor/etc/qcril_database/upgrade/other/0015_version_add_iccid_clir_pref_table.sql;FILEGROUP=proprietary_rildb_other_sql_files
+vendor/etc/seccomp_policy/qcrilnr@2.0.policy
+vendor/etc/seccomp_policy/qms.policy
+vendor/etc/seccomp_policy/syshealthmon.policy
+vendor/etc/ssg/ta_config.json
+vendor/etc/ssg/tz_whitelist.json
+vendor/etc/vintf/manifest/android.hardware.radio.config.xml
+vendor/etc/vintf/manifest/android.hardware.radio.data.xml
+vendor/etc/vintf/manifest/android.hardware.radio.messaging.xml
+vendor/etc/vintf/manifest/android.hardware.radio.modem.xml
+vendor/etc/vintf/manifest/android.hardware.radio.network.xml
+vendor/etc/vintf/manifest/android.hardware.radio.sap.xml
+vendor/etc/vintf/manifest/android.hardware.radio.sim.xml
+vendor/etc/vintf/manifest/android.hardware.radio.voice.xml
+vendor/etc/vintf/manifest/android.hardware.secure_element.xml
+vendor/etc/vintf/manifest/atfwd-saidl.xml
+vendor/etc/vintf/manifest/dataconnection-saidl.xml
+vendor/etc/vintf/manifest/deviceinfo-saidl.xml
+vendor/etc/vintf/manifest/qcrilhook-saidl.xml
+vendor/etc/vintf/manifest/qms-saidl.xml
+vendor/etc/vintf/manifest/qtiradio-saidl.xml
+vendor/etc/vintf/manifest/vendor.qti.hardware.radio.am.xml
+vendor/etc/vintf/manifest/vendor.qti.hardware.radio.lpa.xml
+vendor/etc/vintf/manifest/vendor.qti.hardware.radio.qtiradioconfig.xml
+vendor/etc/vintf/manifest/vendor.qti.syshealthmon-service.xml
+vendor/etc/telephony_packages.xml
+vendor/lib64/deviceInfoServiceModuleNr.so
+vendor/lib64/libATFWD.so
+vendor/lib64/libQtiRilLoadable.so
+vendor/lib64/libQtiSocket.so
+vendor/lib64/libconfigdb.so
+vendor/lib64/libdsi_netctrl.so
+vendor/lib64/libdsutils.so
+vendor/lib64/liblog_vendor.so
+vendor/lib64/liblqe.so
+vendor/lib64/libnicm.so
+vendor/lib64/libnicm_dsi.so
+vendor/lib64/libnicm_interface.so
+vendor/lib64/libnicm_internal.so
+vendor/lib64/libnicm_modemproxy.so
+vendor/lib64/libnicm_netlink.so
+vendor/lib64/libnicm_recovery.so
+vendor/lib64/libnicm_utils.so
+vendor/lib64/libnicm_vh.so
+vendor/lib64/libpdmapper.so
+vendor/lib64/libpdnotifier.so
+vendor/lib64/libqcmaputils.so
+vendor/lib64/libqcrilDataModule.so
+vendor/lib64/libqcrilNr.so
+vendor/lib64/libqcrilNrCellInfoModule.so
+vendor/lib64/libqcrilNrFramework.so
+vendor/lib64/libqcrilNrImsModule.so
+vendor/lib64/libqcrilNrLogger.so
+vendor/lib64/libqcrilNrPbmModule.so
+vendor/lib64/libqcrilNrQtiBus.so
+vendor/lib64/libqcrilNrQtiMutex.so
+vendor/lib64/libqcrilNrSmsModule.so
+vendor/lib64/libqcrilNrSocketModule.so
+vendor/lib64/libqcrilNrVoiceModule.so
+vendor/lib64/libqcrildataaidl.so
+vendor/lib64/libqcrildatactl.so
+vendor/lib64/libqcrildataqos.so
+vendor/lib64/libqdi.so
+vendor/lib64/libqdpr.so
+vendor/lib64/libqms.so
+vendor/lib64/libqms_client.so
+vendor/lib64/libril-db.so
+vendor/lib64/libril-legacy.so
+vendor/lib64/libril-qc-ltedirectdisc.so
+vendor/lib64/libril-qc-radioconfig.so
+vendor/lib64/librilqmimiscservices.so
+vendor/lib64/libsystem_health_mon2.so
+vendor/lib64/libtlpd.so
+vendor/lib64/libtlpd_configmgr.so
+vendor/lib64/libtlpd_crypto.so
+vendor/lib64/libtlpd_internal.so
+vendor/lib64/libtlpd_logger.so
+vendor/lib64/qcrilInterfaces.so
+vendor/lib64/qcrilIntermodulemsgs.so
+vendor/lib64/qcrilMarshal.so
+vendor/lib64/qcrilNrQmiModule.so
+vendor/lib64/qcrilNrSecureMode.so
+vendor/lib64/qcrilNr_aidl_IQtiRadioConfig.so
+vendor/lib64/qcrilNr_aidl_IRadioConfig.so
+vendor/lib64/qcrilNr_aidl_IRadioMessaging.so
+vendor/lib64/qcrilNr_aidl_IRadioModem.so
+vendor/lib64/qcrilNr_aidl_IRadioNetwork.so
+vendor/lib64/qcrilNr_aidl_IRadioSap.so
+vendor/lib64/qcrilNr_aidl_IRadioSim.so
+vendor/lib64/qcrilNr_aidl_IRadioVoice.so
+vendor/lib64/qcrilNr_aidl_SecureElementService.so
+vendor/lib64/qcrilNr_aidl_common.so
+vendor/lib64/qcril_client.so
+vendor/lib64/qcrild_libqcrilnr.so
+vendor/lib64/qcrild_libqcrilnrutils.so
+vendor/lib64/qtiPeripheralMgr.so
+vendor/lib64/qtiril-utils.so
+vendor/lib64/qtiwakelock.so
+vendor/lib64/vendor.qti.hardware.data.connectionaidl-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.data.connectionfactory-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.data.dataactivity-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.data.ka-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.radio.am-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.radio.atfwd-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.radio.common-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.radio.internal.deviceinfo-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.radio.lpa-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.radio.qcrilhook-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.radio.qtiradio-V14-ndk.so
+vendor/lib64/vendor.qti.hardware.radio.qtiradioconfig-V6-ndk.so
+vendor/lib64/vendor.qti.syshealthmon-V1-ndk.so
+
+# RIL - IMS (Motorola)
+system/etc/permissions/moto-telephony.xml:system_ext/etc/permissions/moto-telephony.xml
+system/framework/moto-telephony.jar:system_ext/framework/moto-telephony.jar
+
+# RIL - IMS - system_ext
+system_ext/app/ImsRcsService/ImsRcsService.apk
+system_ext/etc/permissions/vendor.qti.imsdatachannel.xml
+system_ext/etc/permissions/vendor.qti.ims.rcsservice.xml
+system_ext/framework/vendor.qti.ims.connection-V1.0-java.jar
+system_ext/framework/vendor.qti.ims.connectionaidlservice-V1-java.jar
+system_ext/framework/vendor.qti.ims.datachannelservice-V2-java.jar
+system_ext/framework/vendor.qti.ims.datachannelservice-V3-java.jar
+system_ext/framework/vendor.qti.ims.factory-V2.0-java.jar
+system_ext/framework/vendor.qti.ims.factory-V2.1-java.jar
+system_ext/framework/vendor.qti.ims.factory-V2.2-java.jar
+system_ext/framework/vendor.qti.ims.factoryaidlservice-V1-java.jar
+system_ext/framework/vendor.qti.ims.rcssip-V1.0-java.jar
+system_ext/framework/vendor.qti.ims.rcssip-V1.1-java.jar
+system_ext/framework/vendor.qti.ims.rcssip-V1.2-java.jar
+system_ext/framework/vendor.qti.ims.rcssipaidlservice-V1-java.jar
+system_ext/framework/vendor.qti.ims.rcsuce-V1.0-java.jar
+system_ext/framework/vendor.qti.ims.rcsuce-V1.1-java.jar
+system_ext/framework/vendor.qti.ims.rcsuce-V1.2-java.jar
+system_ext/framework/vendor.qti.ims.rcsuceaidlservice-V1-java.jar
+system_ext/framework/vendor.qti.imsdatachannel.jar
+system_ext/lib64/lib-imsvideocodec.so
+system_ext/lib64/lib-imsvt.so
+system_ext/lib64/lib-imsvtextutils.so
+system_ext/lib64/lib-imsvtutils.so
+system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so
+system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so
+system_ext/lib64/vendor.qti.ImsRtpService-V1-ndk.so
+system_ext/lib64/vendor.qti.ImsRtpService-V2-ndk.so
+system_ext/lib64/vendor.qti.ims.datachannelservice-V2-ndk.so
+system_ext/lib64/vendor.qti.ims.datachannelservice-V3-ndk.so
+system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
+system_ext/lib64/vendor.qti.imsrtpservice@3.1.so
+system_ext/priv-app/ims/ims.apk
+
+# RIL - IMS
+vendor/bin/ims-dataservice-daemon
+vendor/bin/ims_rtp_daemon
+vendor/bin/imsdaemon
+vendor/etc/init/ims-dataservice-daemon.rc
+vendor/etc/init/ims_rtp_daemon.rc
+vendor/etc/init/imsdaemon.rc
+vendor/etc/seccomp_policy/imsrtp.policy
+vendor/etc/vintf/manifest/ImsRtpService-aidl.xml
+vendor/etc/vintf/manifest/imsdcservice-saidl.xml
+vendor/etc/vintf/manifest/vendor.qti.hardware.radio.ims.xml
+vendor/etc/vintf/manifest/vendor.qti.ims.factoryaidlservice.xml
+vendor/etc/vintf/manifest/vendor.qti.ims.imscmaidlservice.xml
+vendor/etc/vintf/manifest/vendor.qti.ims.uceaidlservice.xml
+vendor/lib64/lib-imscommon.so
+vendor/lib64/lib-imsdcservice.so
+vendor/lib64/lib-imsdpl.so
+vendor/lib64/lib-imsqimf.so
+vendor/lib64/lib-imsrcsservice.so
+vendor/lib64/lib-imsservice.so
+vendor/lib64/lib-imsvtcore.so
+vendor/lib64/lib-imsxml.so
+vendor/lib64/lib-rtpcommon.so
+vendor/lib64/lib-rtpcore.so
+vendor/lib64/lib-rtpsl.so
+vendor/lib64/librcc.so
+vendor/lib64/vendor.qti.ImsRtpService-V1-ndk.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.qti.ImsRtpService-aidl-Impl.so
+vendor/lib64/vendor.qti.hardware.radio.ims-V16-ndk.so
+vendor/lib64/vendor.qti.ims.callcapabilityaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.ims.configaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.ims.connectionaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.ims.factoryaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.ims.imscmaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.ims.rcssipaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.ims.rcsuceaidlservice-V1-ndk.so
+vendor/lib64/vendor.qti.ims.uceaidlservice-V1-ndk.so
+
+# Sensors
+vendor/bin/init.qcom.sensors.sh
+vendor/bin/sensors.qti
+vendor/bin/sscrpcd
+vendor/etc/init/init.vendor.sensors.rc
+vendor/etc/init/vendor.sensors.qti.rc
+vendor/etc/init/vendor.sensors.sscrpcd.rc
+vendor/etc/sensors/hals.conf
+vendor/lib64/libsensorcal.so
+vendor/lib64/libsensorndkbridge.so
+vendor/lib64/libsensorslog.so
+vendor/lib64/libsns_device_mode_stub.so
+vendor/lib64/libsns_direct_channel_stub.so
+vendor/lib64/libsns_registry_skel.so
+vendor/lib64/libsnsapi.so
+vendor/lib64/libsnsdiaglog.so
+vendor/lib64/libssc.so
+vendor/lib64/libssc_default_listener.so
+
+# Sensors (Motorola)
+vendor/bin/sns_mot_client
+vendor/lib64/motorola.hardware.sensors-V1-ndk.so
+vendor/lib64/sensors.moto.so
+vendor/lib64/sensors.ssc.so
+
+# SMC Invoke
+vendor/lib64/libminkdescriptor.so
+vendor/lib64/libminksocket_vendor.so
+vendor/lib64/libqcbor.so
+
+# Snapdragon Computer Vision Engine
+vendor/lib64/libscveCommon.so
+vendor/lib64/libscveCommon_stub.so
+vendor/lib64/libscveObjectSegmentation.so
+vendor/lib64/libscveObjectTracker.so
+vendor/lib64/libscveObjectTracker_stub.so
+
+# Soter
+vendor/bin/hw/vendor.qti.hardware.soter-service
+vendor/etc/init/vendor.qti.hardware.soter-service.rc
+vendor/etc/vintf/manifest/vendor.qti.hardware.soter-service.xml
+vendor/lib64/hw/vendor.qti.hardware.soter-impl.so
+vendor/lib64/vendor.qti.hardware.soter-V1-ndk.so
+
+# Synx
+vendor/lib64/libos.so
+vendor/lib64/libsynx.so
+vendor/lib64/libthreadutils.so
+
+# TFTP
+vendor/bin/tftp_server
+vendor/etc/init/vendor.qti.tftp.rc
+
+# Thermal engine
+vendor/bin/thermal-engine-v2
+vendor/etc/init/init_thermal-engine-v2.rc
+vendor/lib64/liblmthermallistner.so
+vendor/lib64/libthermalclient.so
+
+# Time services
+vendor/app/TimeService/TimeService.apk
+vendor/bin/time_daemon
+vendor/etc/init/init.time_daemon.rc
+vendor/lib64/libtime_genoff.so
+
+# Trusted Execution Environment connector
+vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
+vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc
+vendor/etc/vintf/manifest/vendor.qti.hardware.qteeconnector@1.0-service.xml
+vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
+vendor/lib64/libGPMTEEC_vendor.so
+vendor/lib64/libGPQTEEC_vendor.so
+vendor/lib64/libGPTEE_vendor.so
+vendor/lib64/libQTEEConnector_vendor.so
+vendor/lib64/vendor.qti.hardware.qteeconnector-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
+
+# Venus firmware
+vendor/firmware/venus.mbn
+vendor/firmware/venus_4mb.mbn
+vendor/firmware/venus_4mb_ecdsa.mbn
+vendor/firmware/venus_4mb_unsigned.mbn
+vendor/firmware/venus_4mb_v6.mbn
+vendor/firmware/venus_4mb_v6_rsa.mbn
+vendor/firmware/venus_4mb_v7.mbn
+vendor/firmware/venus_4mb_v7_3.mb
+vendor/firmware/venus_5mb.mbn
+vendor/firmware/venus_5mb_ecdsa.mbn
+vendor/firmware/venus_5mb_unsigned.mbn
+vendor/firmware/venus_5mb_v6.mbn
+vendor/firmware/venus_5mb_v6_rsa.mbn
+vendor/firmware/venus_5mb_v7.mbn
+vendor/firmware/venus_5mb_v7_3.mbn
+vendor/firmware/venus_ecdsa.mbn
+vendor/firmware/venus_unsigned.mbn
+vendor/firmware/venus_v6.mbn
+vendor/firmware/venus_v6_rsa.mbn
+vendor/firmware/venus_v7.mbn
+vendor/firmware/venus_v7_3.mbn
+
+# VPP
+vendor/lib64/vendor.qti.hardware.vpp@1.1.so
+vendor/lib64/vendor.qti.hardware.vpp@1.2.so
+vendor/lib64/vendor.qti.hardware.vpp@1.3.so
+
+# VPU firmware
+vendor/firmware/vpu20_1v.mbn
+vendor/firmware/vpu20_4v.mbn
+
+# Widevine DRM
+vendor/apex/com.google.android.widevine-12498615.apex
+vendor/etc/qcom_widevine_licenses.pfm
+vendor/lib64/libcpion.so
+vendor/lib64/liboemcrypto.so
+vendor/lib64/libtrustedapploader.so
+
+# Wi-Fi
+vendor/bin/cnss-daemon
+vendor/etc/init/init.vendor.wlan.rc
+vendor/etc/wifi/vendor_cmd.xml
