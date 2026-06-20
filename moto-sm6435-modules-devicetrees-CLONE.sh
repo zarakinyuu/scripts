@@ -156,3 +156,159 @@ git clone https://github.com/MotorolaMobilityLLC/vendor-qcom-opensource-wlan-qca
 rm -rf qcom/opensource/wlan/qcacld-3.0/.git
 git add qcom/opensource/wlan/qcacld-3.0/
 git commit -s -m "Update 'qcom/opensource/wlan/qcacld-3.0/' from TAG MMI-W1WAA36.48-12-40"
+
+
+
+
+############################################# KERNEL DEVICE TREES ###############################################################
+
+
+# display
+git clone https://github.com/MotorolaMobilityLLC/kernel-display-devicetree -b MMI-W1WAA36.48-12-40 qcom/display
+rm -rf qcom/display/.git
+git add qcom/display
+git commit -s -m "Add 'qcom/display/' from TAG MMI-W1WAA36.48-12-40
+
+repo: https://github.com/MotorolaMobilityLLC/kernel-display-devicetree
+
+Signed-off-by: zaraknyu <razenxizu@gmail.com>"
+
+# dsp
+git clone https://github.com/MotorolaMobilityLLC/kernel-dsp-devicetree -b MMI-W1WAA36.48-12-40 qcom/dsp
+rm -rf qcom/dsp/.git
+git add qcom/dsp
+git commit -s -m "Add 'qcom/dsp/' from TAG MMI-W1WAA36.48-12-40
+
+repo: https://github.com/MotorolaMobilityLLC/kernel-dsp-devicetree
+
+Signed-off-by: zaraknyu <razenxizu@gmail.com>"
+
+# eSE
+git clone https://github.com/MotorolaMobilityLLC/kernel-ese-devicetree -b MMI-W1WAA36.48-12-40 qcom/eSE
+rm -rf qcom/eSE/.git
+git add qcom/eSE
+git commit -s -m "Add 'qcom/eSE/' from TAG MMI-W1WAA36.48-12-40
+
+repo: https://github.com/MotorolaMobilityLLC/kernel-eSE-devicetree
+
+Signed-off-by: zaraknyu <razenxizu@gmail.com>"
+
+# graphics
+git clone https://github.com/MotorolaMobilityLLC/kernel-graphics-devicetree -b MMI-W1WAA36.48-12-40 qcom/graphics
+rm -rf qcom/graphics/.git
+git add qcom/graphics
+git commit -s -m "Add 'qcom/graphics/' from TAG MMI-W1WAA36.48-12-40
+
+repo: https://github.com/MotorolaMobilityLLC/kernel-graphics-devicetree
+
+Signed-off-by: zaraknyu <razenxizu@gmail.com>"
+
+# mm
+git clone https://github.com/MotorolaMobilityLLC/kernel-mm-devicetree -b MMI-W1WAA36.48-12-40 qcom/mm
+rm -rf qcom/mm/.git
+git add qcom/mm
+git commit -s -m "Add 'qcom/mm/' from TAG MMI-W1WAA36.48-12-40
+
+repo: https://github.com/MotorolaMobilityLLC/kernel-mm-devicetree
+
+Signed-off-by: zaraknyu <razenxizu@gmail.com>"
+
+# mm-sys
+git clone https://github.com/MotorolaMobilityLLC/kernel-mm-sys-devicetree -b MMI-W1WAA36.48-12-40 qcom/mm-sys
+rm -rf qcom/mm-sys/.git
+git add qcom/mm-sys
+git commit -s -m "Add 'qcom/mm-sys/' from TAG MMI-W1WAA36.48-12-40
+
+repo: https://github.com/MotorolaMobilityLLC/kernel-mm-sys-devicetree
+
+Signed-off-by: zaraknyu <razenxizu@gmail.com>"
+
+# mmrm
+git clone https://github.com/MotorolaMobilityLLC/kernel-mmrm-devicetree -b MMI-W1WAA36.48-12-40 qcom/mmrm
+rm -rf qcom/mmrm/.git
+git add qcom/mmrm
+git commit -s -m "Add 'qcom/mmrm/' from TAG MMI-W1WAA36.48-12-40
+
+repo: https://github.com/MotorolaMobilityLLC/kernel-mmrm-devicetree
+
+Signed-off-by: zaraknyu <razenxizu@gmail.com>"
+
+# nfc
+git clone https://github.com/MotorolaMobilityLLC/kernel-nfc-devicetree -b MMI-W1WAA36.48-12-40 qcom/nfc
+rm -rf qcom/nfc/.git
+git add qcom/nfc
+git commit -s -m "Add 'qcom/nfc/' from TAG MMI-W1WAA36.48-12-40
+
+repo: https://github.com/MotorolaMobilityLLC/kernel-nfc-devicetree
+
+Signed-off-by: zaraknyu <razenxizu@gmail.com>"
+
+# synx
+git clone https://github.com/MotorolaMobilityLLC/kernel-synx-devicetree -b MMI-W1WAA36.48-12-40 qcom/synx
+rm -rf qcom/synx/.git
+git add qcom/synx
+git commit -s -m "Add 'qcom/synx/' from TAG MMI-W1WAA36.48-12-40
+
+repo: https://github.com/MotorolaMobilityLLC/kernel-synx-devicetree
+
+Signed-off-by: zaraknyu <razenxizu@gmail.com>"
+
+# video
+git clone https://github.com/MotorolaMobilityLLC/kernel-video-devicetree -b MMI-W1WAA36.48-12-40 qcom/video
+rm -rf qcom/video/.git
+git add qcom/video
+git commit -s -m "Add 'qcom/video/' from TAG MMI-W1WAA36.48-12-40
+
+repo: https://github.com/MotorolaMobilityLLC/kernel-video-devicetree
+
+Signed-off-by: zaraknyu <razenxizu@gmail.com>"
+
+# wlan
+git clone https://github.com/MotorolaMobilityLLC/kernel-wlan-devicetree -b MMI-W1WAA36.48-12-40 qcom/wlan
+rm -rf qcom/wlan/.git
+git add qcom/wlan
+git commit -s -m "Add 'qcom/wlan/' from TAG MMI-W1WAA36.48-12-40
+
+repo: https://github.com/MotorolaMobilityLLC/kernel-wlan-devicetree
+
+Signed-off-by: zaraknyu <razenxizu@gmail.com>"
+
+# audio
+git clone https://github.com/MotorolaMobilityLLC/kernel-audio-devicetree -b MMI-W1WAA36.48-12-40 qcom/audio
+rm -rf qcom/audio/.git
+git add qcom/audio
+git commit -s -m "Add 'qcom/audio/' from TAG MMI-W1WAA36.48-12-40
+
+repo: https://github.com/MotorolaMobilityLLC/kernel-audio-devicetree
+
+Signed-off-by: zaraknyu <razenxizu@gmail.com>"
+
+# Cmera
+git clone https://github.com/MotorolaMobilityLLC/kernel-camera-devicetree -b MMI-W1WAA36.48-12-40 qcom/camera
+rm -rf qcom/camera/.git
+git add qcom/camera
+git commit -s -m "Add 'qcom/camera/' from TAG MMI-W1WAA36.48-12-40
+
+repo: https://github.com/MotorolaMobilityLLC/kernel-camera-devicetree
+
+Signed-off-by: zaraknyu <razenxizu@gmail.com>"
+
+# bt
+git clone https://github.com/MotorolaMobilityLLC/kernel-bt-devicetree -b MMI-W1WAA36.48-12-40 qcom/bt
+rm -rf qcom/bt/.git
+git add qcom/bt
+git commit -s -m "Add 'qcom/bt/' from TAG MMI-W1WAA36.48-12-40
+
+repo: https://github.com/MotorolaMobilityLLC/kernel-bt-devicetree
+
+Signed-off-by: zaraknyu <razenxizu@gmail.com>"
+
+# data
+git clone https://github.com/MotorolaMobilityLLC/kernel-data-devicetree -b MMI-W1WAA36.48-12-40 qcom/data
+rm -rf qcom/data/.git
+git add qcom/data
+git commit -s -m "Add 'qcom/data/' from TAG MMI-W1WAA36.48-12-40
+
+repo: https://github.com/MotorolaMobilityLLC/kernel-data-devicetree
+
+Signed-off-by: zaraknyu <razenxizu@gmail.com>"
