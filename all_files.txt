@@ -3,8 +3,6 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
-
-PRODUCT_PACKAGES += \
     audioadsprpcd \
     audiohalservice.qti \
     libagm_compress_plugin \
@@ -13,24 +11,38 @@ PRODUCT_PACKAGES += \
     libagmipcservice \
     libaudiochargerlistener \
     libbatterylistener \
-    libcustomva_intf \
     libfmpal \
     libhfp_pal \
-    libhotword_intf \
-    libpaleventnotifier \
+    libmediautils_vendor.vendor \
+    libmemunreachable.vendor \
     libpalipcservice \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
     libsndcardparser \
     libsoundtriggerhal.qti \
-    libvui_intf \
-    qtiaudiohalvendorextn
+    libvolumelistener \
+    qtiaudiohalvendorextn \
+    qti-audio-types-aidl-V1-ndk.vendor
+
+PRODUCT_PACKAGES += \
+    libalsautilsv2.vendor \
+    libbundleaidl \
+    libdownmixaidl \
+    libdynamicsprocessingaidl \
+    libloudnessenhanceraidl \
+    libreverbaidl \
+    libvisualizeraidl
 
 PRODUCT_PACKAGES += \
     android.hardware.audio.common-V1-ndk.vendor \
     android.hardware.audio.core-V2-ndk.vendor \
     android.hardware.audio.core.sounddose-V1-ndk.vendor \
     libalsautilsv2.vendor \
+    libaudioaidlcommon.vendor \
     libaudioutils_shim \
     libmediautils_vendor.vendor \
     libmemunreachable.vendor
 
-AUDIO_HAL_DIR := hardware/qcom-caf/sm8750/audio/primary-hal
+AUDIO_HAL_DIR := hardware/qcom-caf/sm8450-6.6/audio/primary-hal
+CONFIG_HAL_SRC_DIR := $(AUDIO_HAL_DIR)/configs/parrot
