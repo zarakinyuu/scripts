@@ -1,4 +1,4 @@
-# All proprietary files from this list, unless pinned and noted otherwise,
+## All proprietary files from this list, unless pinned and noted otherwise,
 ## are from Motorola Moto g57 power (mumba) (16 WWAAS36V.48-12-ST12.1-5b6d8).
 ## variant: RETCN
 
@@ -55,32 +55,27 @@ vendor/lib64/libaudioplatformconverter.qti.so;DISABLE_DEPS
 vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2uvvendor.so
+vendor/lib64/libdapparamstorage.so
 vendor/lib64/libdsd2pcm.so
 vendor/lib64/libeai_fixed.so
 vendor/lib64/libeai_float.so
 vendor/lib64/libext_tflite_c.so
 vendor/lib64/liblistensoundmodel2vendor.so
 vendor/lib64/liblistensoundmodelaidl.so
+vendor/lib64/libspatializerparamstorage.so
 vendor/lib64/libmcs.so
 vendor/lib64/libpal_net_if.so
 vendor/lib64/libqtigefar.so;DISABLE_DEPS
 vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V1-ndk.so
 
 # Audio configs
-vendor/etc/audio/sku_parrot/audio_effects.xml
-vendor/etc/audio/sku_parrot/audio_effects_config.xml
 vendor/etc/audio/sku_parrot/audio_effects_config_stub.xml
-vendor/etc/audio/sku_parrot/audio_policy_configuration.xml
-vendor/etc/audio/sku_parrot/mixer_paths_parrot_qrd.xml
-vendor/etc/audio/sku_parrot/resourcemanager_parrot_qrd.xml
-vendor/etc/audio/sku_parrot_qssi/audio_policy_configuration.xml
-vendor/etc/audio/sku_parrotlite/audio_effects.xml
-vendor/etc/audio/sku_parrotlite/audio_effects_config.xml
-vendor/etc/audio/sku_parrotlite/mixer_paths_parrot_qrd.xml
-vendor/etc/audio/sku_parrotlite/resourcemanager_parrot_qrd.xml
 vendor/etc/audio_effects.xml
 vendor/etc/audio_ext_spkr.conf
+vendor/etc/audio_policy_volumes.xml
 vendor/etc/bluetooth_qti_hearing_aid_audio_policy_configuration.xml
+vendor/etc/default_volume_tables.xml
+vendor/etc/r_submix_audio_policy_configuration.xml
 vendor/etc/stub_audio_policy_configuration.xml
 vendor/etc/usecaseKvManager.xml
 
@@ -116,34 +111,32 @@ vendor/lib64/soundfx/libswspatializeraidl.so;DISABLE_DEPS
 vendor/lib64/soundfx/libvisualizeraidl.so;DISABLE_DEPS
 vendor/lib64/soundfx/libvolumelistener.so;DISABLE_DEPS
 
-# Bluetooth - from pdx257 72.1.A.2.127
-vendor/bin/hw/android.hardware.bluetooth@aidl-service-qti|26260568432049745737e7e5a4eb38d2260579d4
-vendor/etc/init/android.hardware.bluetooth@aidl-service-qti.rc|aba655e902c490e552af8e3a41177c8d98748ac2
-vendor/etc/vintf/manifest/bluetooth_hci.xml|13a5f20e77b01b8f78b916c6efbb4cf6bafa8205
-vendor/etc/vintf/manifest/bluetooth_sar.xml|6ecdea14f258c198ec1234d966c410beb291236b
-vendor/etc/vintf/manifest/bttpi-saidl.xml|a49eea4c62be9c856dfa842db8f08d2a87ff21dd
-vendor/etc/vintf/manifest/manifest_btaudiocoreservices_qti.xml|99c1c1cef69952852d30be97dd58067471825cbc
-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|33fa5dfad99e1de144301e417bb603dd38c77570
-vendor/lib64/hw/android.hardware.bluetooth@aidl-impl-qti.so|53385c0413eb72788ce33a908e42c33622c35eab
-vendor/lib64/hw/mbedtls_qti.so|acefbe60ccc59621ae3b1a7c880979c9672c5997
-vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@aidl-impl.so|b930d1d7b829b8bdcbabeeeb8e2429f150a15269
-vendor/lib64/hw/vendor.qti.hardware.bttpi-impl.so|7feca794a783e37f986503d8c72d494ee6acae19
-vendor/lib64/libbtnv.so|c002576d44dc559b688bf1d78c5bf627720b4875
-vendor/lib64/libsoc_helper.so|fe54074bf6d9e37cd2c8c076a43e74f09526ba8a
-vendor/lib64/vendor.qti.hardware.bluetooth_sar-V1-ndk.so|50c9ea0a88b168727957fb88e682c7a2afaed779
-vendor/lib64/vendor.qti.hardware.bttpi-V3-ndk.so|856786a9216b9679604906cbc3875dc2f0f64660
-
-# Bluetooth (A2DP) - from pdx257 72.1.A.2.127
-vendor/lib64/btaudio_offload_if.so|005226ff201c489927125121f456321d7ed67c50
-vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so|f7493d5079e037f101e5b6499b0d039b71536394
-vendor/lib64/hw/android.hardware.bluetooth.audio_sw.so;DISABLE_DEPS|87a698117c392c2cc30ac012a56d25da734cc546
-vendor/lib64/hw/audio.bluetooth_qti.default.so|6f43000b9018af2facb494c601359d9f1883457c
-vendor/lib64/libbluetooth_audio_session_aidl_qti.so|7f768cf5d445e190e15bdb2b5250f6375b27a921
-vendor/lib64/libbluetooth_audio_session_qti.so|daf4f92df85699d34f16cac19753be91f13e6a02
-vendor/lib64/libbluetooth_audio_session_qti_2_1.so|1c2e6518d0df6fbb4698cfe9bf7fc9d701183191
-
-# BT
+# Bluetooth
+vendor/bin/hw/android.hardware.bluetooth@aidl-service-qti
+vendor/etc/init/android.hardware.bluetooth@aidl-service-qti.rc
+vendor/etc/vintf/manifest/bluetooth_hci.xml
+vendor/etc/vintf/manifest/bluetooth_sar.xml
+vendor/etc/vintf/manifest/bttpi-saidl.xml
+vendor/etc/vintf/manifest/manifest_btaudiocoreservices_qti.xml
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib64/hw/android.hardware.bluetooth@aidl-impl-qti.so
+vendor/lib64/hw/mbedtls_qti.so
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@aidl-impl.so
+vendor/lib64/hw/vendor.qti.hardware.bttpi-impl.so
 vendor/lib64/libbt-hidlclient.so
+vendor/lib64/libbtnv.so
+vendor/lib64/libsoc_helper.so
+vendor/lib64/vendor.qti.hardware.bluetooth_sar-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.bttpi-V3-ndk.so
+
+# Bluetooth (A2DP)
+vendor/lib64/btaudio_offload_if.so
+vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so
+vendor/lib64/hw/android.hardware.bluetooth.audio_sw.so;DISABLE_DEPS
+vendor/lib64/hw/audio.bluetooth_qti.default.so
+vendor/lib64/libbluetooth_audio_session_aidl_qti.so
+vendor/lib64/libbluetooth_audio_session_qti.so
+vendor/lib64/libbluetooth_audio_session_qti_2_1.so
 
 # CDSP
 vendor/bin/cdsprpcd
@@ -156,12 +149,26 @@ vendor/lib64/libsysmon_cdsp_skel.so
 # Charger
 vendor/etc/charger_fw_fstab.qti
 
+# SXF
+vendor/bin/hw/motosxf
+vendor/etc/init/motosxf.rc
+vendor/etc/motosxf_conf_profile
+vendor/etc/vintf/manifest/vendor.motorola.hardware.sxf.service.xml
+vendor/lib64/libverdict.so
+vendor/lib64/motorola.hardware.sxf-V2-ndk.so
+
 # Latency
 vendor/lib64/vendor.qti.hardware.data.latency@1.0.so
 vendor/lib64/vendor.qti.latency@2.0.so
 vendor/lib64/vendor.qti.latency@2.1.so
 vendor/lib64/vendor.qti.latency@2.2.so
 vendor/lib64/vendor.qti.latencyaidlservice-V1-ndk.so
+
+# FDR
+vendor/bin/hw/motorola.hardware.fdr-service
+vendor/etc/init/motorola.hardware.fdr.service.rc
+vendor/etc/vintf/manifest/motorola.hardware.fdr.service.xml
+vendor/lib64/motorola.hardware.fdr-V1-ndk.so
 
 # Camera
 vendor/bin/hw/vendor.qti.camera.provider-service_64
@@ -197,7 +204,6 @@ vendor/lib64/libcalculator.so;FIX_SONAME
 vendor/lib64/libcamera_nn_stub.so
 vendor/lib64/libcamerapostproc.so
 vendor/lib64/libchilog.so
-vendor/lib64/libverdict.so
 vendor/lib64/libcom.qti.chinodeutils.so
 vendor/lib64/libhdr10plus.so
 vendor/lib64/libhdr_impl.so
@@ -673,8 +679,6 @@ product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoog
 product/priv-app/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND.apk
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 system_ext/framework/com.android.hotwordenrollment.common.util.jar
-product/etc/sysconfig/hotword-hiddenapi-package-whitelist.xml|f5d1e0305c250c70a4aa5ca043a90582ddc0fe2b
-product/etc/permissions/privapp-permissions-hotword.xml|db7c58e204be10d6017df56429cf9842d1300dc2
 
 # Input
 system/usr/keylayout/gpio-keys.kl:vendor/usr/keylayout/gpio-keys.kl
@@ -752,11 +756,6 @@ vendor/lib64/libfastcvopt.so
 vendor/lib64/hw/vendor.qti.hardware.fm-impl.so
 vendor/lib64/vendor.qti.hardware.fm-V1-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.fm@1.0.so;MODULE_SUFFIX=_vendor
-system/lib64/vendor.qti.hardware.fm-V1-ndk.so:system_ext/lib64/vendor.qti.hardware.fm-V1-ndk.so
-system_ext/lib64/fm_helium.so
-system_ext/lib64/libfm-hci.so
-system_ext/lib64/vendor.qti.hardware.fm@1.0.so
-vendor/etc/vintf/manifest/fm_hci.xml
 
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper-service-qti
@@ -796,7 +795,6 @@ vendor/lib64/libbatching.so
 vendor/lib64/libcacertclient.so
 vendor/lib64/libcdfw.so
 vendor/lib64/libcdfw_remote_api.so
-vendor/lib64/libqti-qesdk-secure.so
 vendor/lib64/libdataitems.so
 vendor/lib64/libengineplugin.so
 vendor/lib64/libgdtap.so
@@ -835,89 +833,17 @@ vendor/lib64/libxtadapter.so
 vendor/lib64/vendor.qti.gnss-V7-ndk.so
 vendor/lib64/vendor.qti.gnss-service.so
 
-# Performance
-vendor/bin/hw/vendor.qti.hardware.perf2-hal-service
-vendor/bin/poweropt-service
-vendor/bin/qsap_qapeservice
-vendor/etc/powerhint.xml
-vendor/etc/init/poweropt-service.rc
-vendor/etc/init/vendor.qsap.qapeservice.rc
-vendor/etc/init/vendor.qti.hardware.perf2-hal-service.rc
-vendor/etc/lm/prekill/prekill_2GB.data
-vendor/etc/lm/prekill/prekill_4GB.data
-vendor/etc/lm/prekill/prekill_6GB.data
-vendor/etc/lm/AppClassifierFeature.xml
-vendor/etc/lm/LightningLaunchesFeature.xml
-vendor/etc/lm/PreKillFeature.xml
-vendor/etc/lm/PrefAppsFeature.xml
-vendor/etc/lm/ProCompFeature.xml
-vendor/etc/lm/QAPE.xml
-vendor/etc/lm/QGPE.xml
-vendor/etc/lm/QGPEActionMap.xml
-vendor/etc/lm/SilkyScrollsFeature.xml
-vendor/etc/perf/avcsysnodesconfigs.xml
-vendor/etc/perf/commonresourceconfigs.xml
-vendor/etc/perf/commonsysnodesconfigs.xml
-vendor/etc/perf/perfboostsconfig.xml
-vendor/etc/perf/perfconfigstore.xml
-vendor/etc/perf/targetavcsysnodesconfigs.xml
-vendor/etc/perf/targetconfig.xml
-vendor/etc/perf/targetresourceconfigs.xml
-vendor/etc/perf/targetsysnodesconfigs.xml
-vendor/etc/perf/testcommonresourceconfigs.xml
-vendor/etc/perf/testtargetresourceconfigs.xml
-vendor/etc/pwr/PSMPowerOptFeature.xml
-vendor/etc/pwr/PowerFeatureConfig.xml
-vendor/etc/pwr/StandbyFeature.xml
-vendor/etc/pwr/VideoPowerOptFeature.xml
-vendor/etc/seccomp_policy/qsap_qapeservice.policy
-vendor/etc/vintf/manifest/vendor.qti.hardware.perf2.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.power.powermodule.xml
-vendor/lib64/libaodoptfeature.so
-vendor/lib64/libapengine.so
-vendor/lib64/libappclassifier.so
-vendor/lib64/libcamerapoweroptfeature.so
-vendor/lib64/libgamepoweroptfeature.so
-vendor/lib64/liblearningmodule.so
-vendor/lib64/liblightninglaunches.so
-vendor/lib64/liblmutils-ns.so
-vendor/lib64/liblmthermallistner.so
-vendor/lib64/libmemperfd.so
-vendor/lib64/libmeters-ns.so
-vendor/lib64/libmeters.so
-vendor/lib64/libperfconfig.so
-vendor/lib64/libperfdb.so
-vendor/lib64/libperfioctl.so
-vendor/lib64/libpowercore.so
-vendor/lib64/libprefapps.so
-vendor/lib64/libprekill.so
-vendor/lib64/libprocomp.so
-vendor/lib64/libpsmoptfeature.so
-vendor/lib64/libq-perflog.so
-vendor/lib64/libqapesdk.so;DISABLE_DEPS
-vendor/lib64/libqti-appclassifier.so
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqti-perfd.so
-vendor/lib64/libqti-perfextn-intf.so
-vendor/lib64/libqti-s3tf.so
-vendor/lib64/libqti-scenariod.so
-vendor/lib64/libqti-sslite.so
-vendor/lib64/libqti-util.so
-vendor/lib64/libqti-utils.so
-vendor/lib64/libsilkyscrolls.so
-vendor/lib64/libskewknob.so
-vendor/lib64/libstandbyfeature.so
-vendor/lib64/libvideooptfeature.so
-vendor/lib64/vendor.qti.hardware.perf2-V1-ndk.so
-vendor/lib64/vendor.qti.hardware.power.powermodule-V1-ndk.so
-vendor/lib64/motorola.hardware.power-V2-ndk.so
-
 # Public libraries
 system_ext/etc/public.libraries-qti.txt
 vendor/etc/public.libraries.txt
 
 # Capsense
 vendor/bin/capsense_reset
+
+# Touch firmware (recovery)
+vendor/firmware/ILITEK_FW_TXD:recovery/root/vendor/firmware/ILITEK_FW_TXD
+vendor/firmware/boe_chipone_firmware.bin:recovery/root/vendor/firmware/boe_chipone_firmware.bin
+vendor/firmware/csot_chipone_firmware.bin:recovery/root/vendor/firmware/csot_chipone_firmware.bin
 
 # Graphics (Adreno)
 vendor/lib64/egl/eglSubDriverAndroid.so
@@ -1030,6 +956,16 @@ vendor/odm/etc/permissions/sku_d/unavail.android.hardware.nfc.xml
 vendor/odm/etc/permissions/sku_dne/android.hardware.nfc.ese.xml
 vendor/odm/etc/permissions/sku_dne/android.hardware.se.omapi.ese.xml
 
+# IFAA
+vendor/bin/hw/com.motorola.hardware.ifaa-V1-service
+vendor/etc/init/com.motorola.hardware.ifaa-V1-service.rc
+vendor/etc/init/init.zuipoweroffalarm.rc
+vendor/etc/init/vendor.zuialarm.hardware.alarm-service.rc
+vendor/etc/vintf/manifest/vendor.zuialarm.hardware.alarm.xml
+vendor/lib64/com.motorola.hardware.ifaa-V1-ndk.so
+vendor/lib64/lib_ifaa_ca.so
+vendor/lib64/lib_ifaa_product.so
+
 # Qdutils
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
@@ -1039,8 +975,6 @@ vendor/bin/rpmbClient
 vendor/etc/init/motorola.hardware.rpmb.service.rc
 vendor/etc/vintf/manifest/manifest_IMoto_AIDL_Rpmb.xml
 vendor/lib64/librpmb.so
-vendor/lib64/lib_ifaa_ca.so
-vendor/lib64/lib_ifaa_product.so
 vendor/lib64/motorola.hardware.rpmb-V1-ndk.so
 
 # Media
@@ -1087,6 +1021,7 @@ vendor/lib64/qti.video.utils.videobufferlayout.so
 
 # Media Configs
 vendor/etc/media_codecs.xml
+vendor/etc/media_codecs_dolby_audio.xml
 vendor/etc/media_codecs_google_audio.xml
 vendor/etc/media_codecs_google_c2.xml
 vendor/etc/media_codecs_google_c2_audio.xml
@@ -1141,6 +1076,30 @@ vendor/firmware/venus_v6.mbn
 vendor/firmware/venus_v6_rsa.mbn
 vendor/firmware/venus_v7.mbn
 vendor/firmware/venus_v7_3.mbn
+
+# Dolby
+vendor/bin/hw/vendor.dolby.dms.service
+vendor/bin/hw/vendor.dolby.media.c2-default-service-dax
+vendor/etc/dolby/dax-default-spatializer.xml
+vendor/etc/dolby/dax-default.xml
+vendor/etc/dolby/dax-default_retin.xml
+vendor/etc/dolby/dax-moto_1.xml
+vendor/etc/dolby/dax-moto_2.xml
+vendor/etc/dolby/dax-moto_3.xml
+vendor/etc/init/dms-service.rc
+vendor/etc/init/vendor.dolby.media.c2-default-service-dax.rc
+vendor/etc/vintf/manifest/dms-service.xml
+vendor/etc/vintf/manifest/vendor.dolby.media.c2-default-service-dax.xml
+vendor/lib64/liboem_specific.so
+vendor/lib64/libdeccfg.so
+vendor/lib64/libdmshal.so
+vendor/lib64/libdlbdsservice.so
+vendor/lib64/libdlbpreg.so
+vendor/lib64/libcodec2_store_dolby.so
+vendor/lib64/libcodec2_soft_ac4dec.so
+vendor/lib64/libcodec2_soft_ddpdec.so
+vendor/lib64/vendor.dolby.dms-V1-ndk.so
+vendor/lib64/vendor.dolby.hardware.dms@2.0.so
 
 # PASR
 vendor/lib64/vendor.qti.memory.pasrmanager-V1-ndk.so
@@ -1237,7 +1196,6 @@ vendor/lib64/vendor.qti.qesdhal@1.2.so
 vendor/lib64/vendor.qti.qesdhal@1.3.so
 vendor/lib64/vendor.qti.qesdhalaidl-V2-ndk.so
 vendor/lib64/vendor.qti.qesdsys-V4-ndk.so
-vendor/lib64/vendor.qti.qesdsys-V3-ndk.so
 vendor/lib64/vendor.qti.snapdragonServices-V1-ndk.so
 vendor/lib64/vendor.qti.snapdragonServices.qape-V1-ndk.so
 
@@ -1316,6 +1274,18 @@ vendor/lib64/libqms.so
 vendor/lib64/libqspm-mem-utils-vendor.so
 vendor/lib64/vendor.qti.qspmhal-V1-ndk.so
 vendor/lib64/vendor.qti.qspmhal-impl.so
+
+# Motorola Health
+vendor/bin/hw/motorola.hardware.health-service
+vendor/bin/hw/motorola.hardware.health.storage-service
+vendor/etc/init/motorola.hardware.health.service.rc
+vendor/etc/init/motorola.hardware.health.storage.service.rc
+vendor/etc/vintf/manifest/motorola.hardware.health.service.xml
+vendor/etc/vintf/manifest/motorola.hardware.health.storage.service.xml
+vendor/lib64/libmotohid.so
+vendor/lib64/motorola.hardware.health.aidl-V1-ndk.so
+vendor/lib64/motorola.hardware.health.storage.aidl-V1-ndk.so
+vendor/lib64/motorola.hardware.health.storage@1.0.so
 
 # RIL - UIM
 product/app/uimgbaservice/uimgbaservice.apk
@@ -1693,9 +1663,6 @@ vendor/lib64/libthreadutils.so
 vendor/bin/tftp_server
 vendor/etc/init/vendor.qti.tftp.rc
 
-# SSR
-vendor/bin/ssr_setup
-
 # Thermal engine
 vendor/bin/thermal-engine-v2
 vendor/etc/init/init_thermal-engine-v2.rc
@@ -1756,9 +1723,6 @@ vendor/lib64/libtrustedapploader.so
 vendor/bin/cnss-daemon
 vendor/etc/init/init.vendor.wlan.rc
 vendor/etc/wifi/vendor_cmd.xml
-vendor/etc/wifi/adrastea/WCNSS_qcom_cfg.ini
-vendor/etc/wifi/p2p_supplicant_overlay.conf
-vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 # Vibrator
 vendor/lib64/vendor.qti.hardware.vibratorCL.impl.so
