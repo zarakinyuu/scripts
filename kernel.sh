@@ -1,7 +1,7 @@
 mkdir toolchains
 cd toolchains
-URL="https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/f60b8b55282f002f594f452ce22dfd6cf1fd7e3c/clang-r596125.tar.gz"
-echo "[+] Fetching Clang 22 ..."
+URL="https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/tags/android-14.0.0_r33/clang-r510928.tar.gz"
+echo "[+] Fetching Clang 18 ..."
 wget -q -O clang.tar.gz $URL
 tar -xf clang.tar.gz && rm clang.tar.gz && cd ..
 export PATH="$(pwd)/toolchains/bin:${PATH}"
