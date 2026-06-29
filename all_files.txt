@@ -55,19 +55,31 @@ vendor/lib64/libaudioplatformconverter.qti.so;DISABLE_DEPS
 vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2uvvendor.so
+vendor/lib64/libdapparamstorage.so
 vendor/lib64/libdsd2pcm.so
 vendor/lib64/libeai_fixed.so
 vendor/lib64/libeai_float.so
 vendor/lib64/libext_tflite_c.so
 vendor/lib64/liblistensoundmodel2vendor.so
 vendor/lib64/liblistensoundmodelaidl.so
+vendor/lib64/libspatializerparamstorage.so
 vendor/lib64/libmcs.so
 vendor/lib64/libpal_net_if.so
 vendor/lib64/libqtigefar.so;DISABLE_DEPS
 vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V1-ndk.so
 
 # Audio configs
+vendor/etc/audio/sku_parrot/audio_effects.xml
+vendor/etc/audio/sku_parrot/audio_effects_config.xml
 vendor/etc/audio/sku_parrot/audio_effects_config_stub.xml
+vendor/etc/audio/sku_parrot/audio_policy_configuration.xml
+vendor/etc/audio/sku_parrot/mixer_paths_parrot_qrd.xml
+vendor/etc/audio/sku_parrot/resourcemanager_parrot_qrd.xml
+vendor/etc/audio/sku_parrot_qssi/audio_policy_configuration.xml
+vendor/etc/audio/sku_parrotlite/audio_effects.xml
+vendor/etc/audio/sku_parrotlite/audio_effects_config.xml
+vendor/etc/audio/sku_parrotlite/mixer_paths_parrot_qrd.xml
+vendor/etc/audio/sku_parrotlite/resourcemanager_parrot_qrd.xml
 vendor/etc/audio_effects.xml
 vendor/etc/audio_ext_spkr.conf
 vendor/etc/audio_policy_volumes.xml
@@ -99,10 +111,12 @@ vendor/lib64/soundfx/libdownmixaidl.so;DISABLE_DEPS
 vendor/lib64/soundfx/libdynamicsprocessingaidl.so;DISABLE_DEPS
 vendor/lib64/soundfx/libloudnessenhanceraidl.so;DISABLE_DEPS
 vendor/lib64/soundfx/libldnhncr.so;DISABLE_DEPS
+vendor/lib64/soundfx/libswgamedapaidl.so;DISABLE_DEPS
 vendor/lib64/soundfx/libqcompostprocbundle.so;DISABLE_DEPS
 vendor/lib64/soundfx/libqcomvisualizer.so;DISABLE_DEPS
 vendor/lib64/soundfx/libqcomvoiceprocessing.so;DISABLE_DEPS
 vendor/lib64/soundfx/libreverbaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libswspatializeraidl.so;DISABLE_DEPS
 vendor/lib64/soundfx/libvisualizeraidl.so;DISABLE_DEPS
 vendor/lib64/soundfx/libvolumelistener.so;DISABLE_DEPS
 
@@ -146,26 +160,12 @@ vendor/lib64/libsysmon_cdsp_skel.so
 # Charger
 vendor/etc/charger_fw_fstab.qti
 
-# SXF
-vendor/bin/hw/motosxf
-vendor/etc/init/motosxf.rc
-vendor/etc/motosxf_conf_profile
-vendor/etc/vintf/manifest/vendor.motorola.hardware.sxf.service.xml
-vendor/lib64/libverdict.so
-vendor/lib64/motorola.hardware.sxf-V2-ndk.so
-
 # Latency
 vendor/lib64/vendor.qti.hardware.data.latency@1.0.so
 vendor/lib64/vendor.qti.latency@2.0.so
 vendor/lib64/vendor.qti.latency@2.1.so
 vendor/lib64/vendor.qti.latency@2.2.so
 vendor/lib64/vendor.qti.latencyaidlservice-V1-ndk.so
-
-# FDR
-vendor/bin/hw/motorola.hardware.fdr-service
-vendor/etc/init/motorola.hardware.fdr.service.rc
-vendor/etc/vintf/manifest/motorola.hardware.fdr.service.xml
-vendor/lib64/motorola.hardware.fdr-V1-ndk.so
 
 # Camera
 vendor/bin/hw/vendor.qti.camera.provider-service_64
@@ -676,6 +676,8 @@ product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoog
 product/priv-app/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND.apk
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 system_ext/framework/com.android.hotwordenrollment.common.util.jar
+product/etc/permissions/privapp-permissions-hotword.xml|db7c58e204be10d6017df56429cf9842d1300dc2
+product/etc/sysconfig/hotword-hiddenapi-package-whitelist.xml|f5d1e0305c250c70a4aa5ca043a90582ddc0fe2b
 
 # Input
 system/usr/keylayout/gpio-keys.kl:vendor/usr/keylayout/gpio-keys.kl
@@ -771,6 +773,7 @@ vendor/bin/xtra-daemon
 vendor/bin/xtwifi-client
 vendor/etc/apdr.conf
 vendor/etc/gnss_antenna_info.conf
+vendor/etc/gps.conf
 vendor/etc/init/android.hardware.gnss-aidl-service-qti.rc
 vendor/etc/init/loc-launcher.rc
 vendor/etc/init/vendor.qsap.location.rc
@@ -791,6 +794,7 @@ vendor/lib64/libbatching.so
 vendor/lib64/libcacertclient.so
 vendor/lib64/libcdfw.so
 vendor/lib64/libcdfw_remote_api.so
+vendor/lib64/libqti-qesdk-secure.so
 vendor/lib64/libdataitems.so
 vendor/lib64/libengineplugin.so
 vendor/lib64/libgdtap.so
@@ -828,6 +832,82 @@ vendor/lib64/libwifiobserver.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/vendor.qti.gnss-V7-ndk.so
 vendor/lib64/vendor.qti.gnss-service.so
+
+# Performance
+vendor/bin/hw/vendor.qti.hardware.perf2-hal-service
+vendor/bin/poweropt-service
+vendor/bin/qsap_qapeservice
+vendor/etc/powerhint.xml
+vendor/etc/init/poweropt-service.rc
+vendor/etc/init/vendor.qsap.qapeservice.rc
+vendor/etc/init/vendor.qti.hardware.perf2-hal-service.rc
+vendor/etc/lm/prekill/prekill_2GB.data
+vendor/etc/lm/prekill/prekill_4GB.data
+vendor/etc/lm/prekill/prekill_6GB.data
+vendor/etc/lm/AppClassifierFeature.xml
+vendor/etc/lm/LightningLaunchesFeature.xml
+vendor/etc/lm/PreKillFeature.xml
+vendor/etc/lm/PrefAppsFeature.xml
+vendor/etc/lm/ProCompFeature.xml
+vendor/etc/lm/QAPE.xml
+vendor/etc/lm/QGPE.xml
+vendor/etc/lm/QGPEActionMap.xml
+vendor/etc/lm/SilkyScrollsFeature.xml
+vendor/etc/perf/avcsysnodesconfigs.xml
+vendor/etc/perf/commonresourceconfigs.xml
+vendor/etc/perf/commonsysnodesconfigs.xml
+vendor/etc/perf/perfboostsconfig.xml
+vendor/etc/perf/perfconfigstore.xml
+vendor/etc/perf/targetavcsysnodesconfigs.xml
+vendor/etc/perf/targetconfig.xml
+vendor/etc/perf/targetresourceconfigs.xml
+vendor/etc/perf/targetsysnodesconfigs.xml
+vendor/etc/perf/testcommonresourceconfigs.xml
+vendor/etc/perf/testtargetresourceconfigs.xml
+vendor/etc/pwr/PSMPowerOptFeature.xml
+vendor/etc/pwr/PowerFeatureConfig.xml
+vendor/etc/pwr/StandbyFeature.xml
+vendor/etc/pwr/VideoPowerOptFeature.xml
+vendor/etc/seccomp_policy/qsap_qapeservice.policy
+vendor/etc/vintf/manifest/vendor.qti.hardware.perf2.xml
+vendor/etc/vintf/manifest/vendor.qti.hardware.power.powermodule.xml
+vendor/lib64/libaodoptfeature.so
+vendor/lib64/libapengine.so
+vendor/lib64/libappclassifier.so
+vendor/lib64/libcamerapoweroptfeature.so
+vendor/lib64/libgamepoweroptfeature.so
+vendor/lib64/liblearningmodule.so
+vendor/lib64/liblightninglaunches.so
+vendor/lib64/liblmutils-ns.so
+vendor/lib64/libmemperfd.so
+vendor/lib64/libmeters-ns.so
+vendor/lib64/libmeters.so
+vendor/lib64/libperfconfig.so
+vendor/lib64/libperfdb.so
+vendor/lib64/libperfioctl.so
+vendor/lib64/libpowercore.so
+vendor/lib64/libprefapps.so
+vendor/lib64/libprekill.so
+vendor/lib64/libprocomp.so
+vendor/lib64/libpsmoptfeature.so
+vendor/lib64/libq-perflog.so
+vendor/lib64/libqapesdk.so;DISABLE_DEPS
+vendor/lib64/libqti-appclassifier.so
+vendor/lib64/libqti-perfd-client.so
+vendor/lib64/libqti-perfd.so
+vendor/lib64/libqti-perfextn-intf.so
+vendor/lib64/libqti-s3tf.so
+vendor/lib64/libqti-scenariod.so
+vendor/lib64/libqti-sslite.so
+vendor/lib64/libqti-util.so
+vendor/lib64/libqti-utils.so
+vendor/lib64/libsilkyscrolls.so
+vendor/lib64/libskewknob.so
+vendor/lib64/libstandbyfeature.so
+vendor/lib64/libvideooptfeature.so
+vendor/lib64/vendor.qti.hardware.perf2-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.power.powermodule-V1-ndk.so
+vendor/lib64/motorola.hardware.power-V2-ndk.so
 
 # Public libraries
 system_ext/etc/public.libraries-qti.txt
@@ -890,6 +970,24 @@ vendor/etc/vintf/manifest/manifest_identity_credential.xml
 vendor/lib64/libqtiidentitycredential.so
 
 # Init
+vendor/bin/init.class_main.sh
+vendor/bin/init.kernel.post_boot-parrot.sh
+vendor/bin/init.kernel.post_boot-ravelin.sh
+vendor/bin/init.kernel.post_boot.sh
+vendor/bin/init.mmi.boot.sh
+vendor/bin/init.mmi.touch.sh
+vendor/bin/init.oem.fingerprint2.sh
+vendor/bin/init.oem.hw.sh
+vendor/bin/init.qcom.class_core.sh
+vendor/bin/init.qcom.early_boot.sh
+vendor/bin/init.qcom.post_boot.sh
+vendor/bin/init.qcom.sh
+vendor/bin/init.qti.kernel.sh
+vendor/bin/init.qti.keymaster.sh
+vendor/bin/init.qti.qcv.sh
+vendor/bin/init.qti.write.sh
+vendor/bin/system_dlkm_modprobe.sh
+vendor/bin/vendor_modprobe.sh
 vendor/etc/init/hw/init.mmi.charge_only.rc
 vendor/etc/init/init.qti.media.rc
 
@@ -952,26 +1050,8 @@ vendor/odm/etc/permissions/sku_d/unavail.android.hardware.nfc.xml
 vendor/odm/etc/permissions/sku_dne/android.hardware.nfc.ese.xml
 vendor/odm/etc/permissions/sku_dne/android.hardware.se.omapi.ese.xml
 
-# IFAA
-vendor/bin/hw/com.motorola.hardware.ifaa-V1-service
-vendor/etc/init/com.motorola.hardware.ifaa-V1-service.rc
-vendor/etc/init/init.zuipoweroffalarm.rc
-vendor/etc/init/vendor.zuialarm.hardware.alarm-service.rc
-vendor/etc/vintf/manifest/vendor.zuialarm.hardware.alarm.xml
-vendor/lib64/com.motorola.hardware.ifaa-V1-ndk.so
-vendor/lib64/lib_ifaa_ca.so
-vendor/lib64/lib_ifaa_product.so
-
 # Qdutils
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
-
-# Rpmb
-vendor/bin/hw/motorola.hardware.rpmb-service
-vendor/bin/rpmbClient
-vendor/etc/init/motorola.hardware.rpmb.service.rc
-vendor/etc/vintf/manifest/manifest_IMoto_AIDL_Rpmb.xml
-vendor/lib64/librpmb.so
-vendor/lib64/motorola.hardware.rpmb-V1-ndk.so
 
 # Media
 system_ext/lib64/libmmosal.so
@@ -1167,6 +1247,7 @@ vendor/lib64/vendor.qti.qesdhal@1.2.so
 vendor/lib64/vendor.qti.qesdhal@1.3.so
 vendor/lib64/vendor.qti.qesdhalaidl-V2-ndk.so
 vendor/lib64/vendor.qti.qesdsys-V4-ndk.so
+vendor/lib64/vendor.qti.qesdsys-V3-ndk.so
 vendor/lib64/vendor.qti.snapdragonServices-V1-ndk.so
 vendor/lib64/vendor.qti.snapdragonServices.qape-V1-ndk.so
 
@@ -1246,18 +1327,6 @@ vendor/lib64/libqspm-mem-utils-vendor.so
 vendor/lib64/vendor.qti.qspmhal-V1-ndk.so
 vendor/lib64/vendor.qti.qspmhal-impl.so
 
-# Motorola Health
-vendor/bin/hw/motorola.hardware.health-service
-vendor/bin/hw/motorola.hardware.health.storage-service
-vendor/etc/init/motorola.hardware.health.service.rc
-vendor/etc/init/motorola.hardware.health.storage.service.rc
-vendor/etc/vintf/manifest/motorola.hardware.health.service.xml
-vendor/etc/vintf/manifest/motorola.hardware.health.storage.service.xml
-vendor/lib64/libmotohid.so
-vendor/lib64/motorola.hardware.health.aidl-V1-ndk.so
-vendor/lib64/motorola.hardware.health.storage.aidl-V1-ndk.so
-vendor/lib64/motorola.hardware.health.storage@1.0.so
-
 # RIL - UIM
 product/app/uimgbaservice/uimgbaservice.apk
 product/etc/permissions/UimGba.xml
@@ -1322,22 +1391,23 @@ vendor/etc/init/tlpd.rc
 vendor/etc/init/vendor.qti.rmt_storage.rc
 vendor/etc/init/vendor.qti.syshealthmon-service.rc
 vendor/etc/permissions/noRil/apq_excluded_telephony_features.xml
-vendor/etc/qcril_database/upgrade/config/0006.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
-vendor/etc/qcril_database/upgrade/config/0007.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
-vendor/etc/qcril_database/upgrade/config/0008.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
-vendor/etc/qcril_database/upgrade/config/0009.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
-vendor/etc/qcril_database/upgrade/config/0010.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
-vendor/etc/qcril_database/upgrade/config/0011.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
-vendor/etc/qcril_database/upgrade/config/0012.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
-vendor/etc/qcril_database/upgrade/config/0013.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
-vendor/etc/qcril_database/upgrade/config/0014.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
-vendor/etc/qcril_database/upgrade/config/0015.0_config.sql;FILEGROUP=proprietary_rildb_config_sql_files
-vendor/etc/qcril_database/upgrade/ecc/mot_generated_ecc_qcrildb.sql;FILEGROUP=proprietary_rildb_ecc_sql_files
-vendor/etc/qcril_database/upgrade/other/0002_version_add_wps_config_qcrilnr.sql;FILEGROUP=proprietary_rildb_other_sql_files
-vendor/etc/qcril_database/upgrade/other/0003_version_update_wps_config_qcrilnr.sql;FILEGROUP=proprietary_rildb_other_sql_files
-vendor/etc/qcril_database/upgrade/other/0006_version_change_property_table_qcrilnr.sql;FILEGROUP=proprietary_rildb_other_sql_files
-vendor/etc/qcril_database/upgrade/other/0014_version_update_modules.sql;FILEGROUP=proprietary_rildb_other_sql_files
-vendor/etc/qcril_database/upgrade/other/0015_version_add_iccid_clir_pref_table.sql;FILEGROUP=proprietary_rildb_other_sql_files
+vendor/etc/qcril_database/qcrilNr.db
+vendor/etc/qcril_database/upgrade/config/0006.0_config.sql
+vendor/etc/qcril_database/upgrade/config/0007.0_config.sql
+vendor/etc/qcril_database/upgrade/config/0008.0_config.sql
+vendor/etc/qcril_database/upgrade/config/0009.0_config.sql
+vendor/etc/qcril_database/upgrade/config/0010.0_config.sql
+vendor/etc/qcril_database/upgrade/config/0011.0_config.sql
+vendor/etc/qcril_database/upgrade/config/0012.0_config.sql
+vendor/etc/qcril_database/upgrade/config/0013.0_config.sql
+vendor/etc/qcril_database/upgrade/config/0014.0_config.sql
+vendor/etc/qcril_database/upgrade/config/0015.0_config.sql
+vendor/etc/qcril_database/upgrade/ecc/mot_generated_ecc_qcrildb.sql
+vendor/etc/qcril_database/upgrade/other/0002_version_add_wps_config_qcrilnr.sql
+vendor/etc/qcril_database/upgrade/other/0003_version_update_wps_config_qcrilnr.sql
+vendor/etc/qcril_database/upgrade/other/0006_version_change_property_table_qcrilnr.sql
+vendor/etc/qcril_database/upgrade/other/0014_version_update_modules.sql
+vendor/etc/qcril_database/upgrade/other/0015_version_add_iccid_clir_pref_table.sql
 vendor/etc/seccomp_policy/qcrilnr@2.0.policy
 vendor/etc/seccomp_policy/qms.policy
 vendor/etc/seccomp_policy/syshealthmon.policy
@@ -1694,6 +1764,9 @@ vendor/lib64/libtrustedapploader.so
 vendor/bin/cnss-daemon
 vendor/etc/init/init.vendor.wlan.rc
 vendor/etc/wifi/vendor_cmd.xml
+vendor/etc/wifi/adrastea/WCNSS_qcom_cfg.ini
+vendor/etc/wifi/p2p_supplicant_overlay.conf
+vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 # Vibrator
 vendor/lib64/vendor.qti.hardware.vibratorCL.impl.so
@@ -1702,79 +1775,3 @@ vendor/lib64/vendor.qti.hardware.vibratorCL.impl.so
 vendor/firmware/ILITEK_FW_TXD
 vendor/firmware/boe_chipone_firmware.bin
 vendor/firmware/csot_chipone_firmware.bin
-
-# WiFi Display
-system/framework/WfdCommon.jar;BOOT_JAR
-system_ext/bin/wfdservice64
-system_ext/etc/init/wfdservice.rc
-system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml
-system_ext/etc/seccomp_policy/wfdservice64.policy
-system_ext/etc/wfdconfigsink.xml
-system_ext/lib64/libmmrtpdecoder.so
-system_ext/lib64/libmmrtpencoder.so
-system_ext/lib64/libwfdavenhancements.so
-system_ext/lib64/libwfdclient.so
-system_ext/lib64/libwfdcommonutils.so
-system_ext/lib64/libwfdconfigutils.so
-system_ext/lib64/libwfddisplayconfig.so
-system_ext/lib64/libwfdmminterface.so
-system_ext/lib64/libwfdmmsink.so
-system_ext/lib64/libwfdmmsrc_system.so
-system_ext/lib64/libwfdnative.so;SYMLINK=system_ext/priv-app/WfdService/lib/arm64/libwfdnative.so
-system_ext/lib64/libwfdrtsp.so
-system_ext/lib64/libwfdservice.so
-system_ext/lib64/libwfdsinksm.so
-system_ext/lib64/libwfduibcinterface.so
-system_ext/lib64/libwfduibcsink.so
-system_ext/lib64/libwfduibcsinkinterface.so
-system_ext/lib64/libwfduibcsrc.so
-system_ext/lib64/libwfduibcsrcinterface.so
-system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
-system_ext/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so
-system_ext/priv-app/WfdService/WfdService.apk
-vendor/bin/tsa_hdcp_service
-vendor/bin/wfdhdcphalservice
-vendor/bin/wfdvndservice
-vendor/bin/wifidisplayhalservice
-vendor/etc/ArmHDCP_QTI_Android.cfg
-vendor/etc/init/android.hardware.drm@1.1-service.wfdhdcp.rc
-vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
-vendor/etc/init/vendor.tsa.hdcp-IHDCPInterface.rc
-vendor/etc/init/wfdvndservice.rc
-vendor/etc/seccomp_policy/wfdhdcphalservice.policy
-vendor/etc/seccomp_policy/wfdvndservice.policy
-vendor/etc/seccomp_policy/wifidisplayhalservice.policy
-vendor/etc/wfd.hdcp.bin
-vendor/etc/wfdconfig.xml
-vendor/lib64/aidl_hdcp_interface-V1-ndk.so
-vendor/lib64/libDxHdcp.so
-vendor/lib64/libDxHdcp_ext.so
-vendor/lib64/libFileMux_proprietary.so
-vendor/lib64/libmiracast.so
-vendor/lib64/libmm-hdcpmgr.so
-vendor/lib64/libmmrtpdecoder_vendor.so
-vendor/lib64/libmmrtpencoder_vendor.so
-vendor/lib64/libwfdaac_vendor.so
-vendor/lib64/libwfdcodecv4l2_proprietary.so
-vendor/lib64/libwfdcommonutils_proprietary.so
-vendor/lib64/libwfdconfigutils_proprietary.so
-vendor/lib64/libwfddisplayconfig_vendor.so
-vendor/lib64/libwfdhdcpcp.so
-vendor/lib64/libwfdhdcpservice_proprietary.so
-vendor/lib64/libwfdmminterface_proprietary.so
-vendor/lib64/libwfdmmservice_proprietary.so
-vendor/lib64/libwfdmmsrc_proprietary.so
-vendor/lib64/libwfdmodulehdcpsession.so
-vendor/lib64/libwfdrtsp_vendor.so
-vendor/lib64/libwfdsessionmodule.so
-vendor/lib64/libwfdsourcesession_proprietary.so
-vendor/lib64/libwfdsourcesm_proprietary.so
-vendor/lib64/libwfduibcinterface_vendor.so
-vendor/lib64/libwfduibcsink_vendor.so
-vendor/lib64/libwfduibcsinkinterface_vendor.so
-vendor/lib64/libwfduibcsrc_vendor.so
-vendor/lib64/libwfduibcsrcinterface_vendor.so
-vendor/lib64/libwfdutils_proprietary.so
-vendor/lib64/vendor.qti.hardware.sigma_miracast_aidl-V1-ndk.so
-vendor/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
