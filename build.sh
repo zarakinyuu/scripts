@@ -15,4 +15,4 @@ git clone https://github.com/LineageOS/android_hardware_motorola -b lineage-23.2
 
 . build/envsetup.sh
 lunch lineage_mumba-bp4a-userdebug
-mka bacon -j$(nproc --all)
+m evolution
