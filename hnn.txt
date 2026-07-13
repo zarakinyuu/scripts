@@ -1,550 +1,509 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<!-- Copyright (c) 2016-2020, The Linux Foundation. All rights reserved
-     Not a Contribution.
--->
-<!-- Copyright (C) 2015 The Android Open Source Project
 
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
--->
-
-<!--
-Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
-
-Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
-SPDX-License-Identifier: BSD-3-Clause-Clear
--->
-
-<audioPolicyConfiguration version="7.0" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <!-- version section contains a “version” tag in the form “major.minor” e.g version=”1.0” -->
-
-    <!-- Global configuration Decalaration -->
-    <globalConfiguration speaker_drc_enabled="true" call_screen_mode_supported="true"/>
-
-
-    <!-- Modules section:
-        There is one section per audio HW module present on the platform.
-        Each module section will contains two mandatory tags for audio HAL “halVersion” and “name”.
-        The module names are the same as in current .conf file:
-                “primary”, “A2DP”, “remote_submix”, “USB”
-        Each module will contain the following sections:
-        “devicePorts”: a list of device descriptors for all input and output devices accessible via this
-        module.
-        This contains both permanently attached devices and removable devices.
-        “mixPorts”: listing all output and input streams exposed by the audio HAL
-        “routes”: list of possible connections between input and output devices or between stream and
-        devices.
-            "route": is defined by an attribute:
-                -"type": <mux|mix> means all sources are mutual exclusive (mux) or can be mixed (mix)
-                -"sink": the sink involved in this route
-                -"sources": all the sources than can be connected to the sink via vis route
-        “attachedDevices”: permanently attached devices.
-        The attachedDevices section is a list of devices names. The names correspond to device names
-        defined in <devicePorts> section.
-        “defaultOutputDevice”: device to be used by default when no policy rule applies
-    -->
-    <modules>
-        <!-- Primary Audio HAL -->
-        <module name="primary" halVersion="2.0">
-            <attachedDevices>
-                <item>Earpiece</item>
-                <item>Speaker</item>
-                <item>Telephony Tx</item>
-                <item>Built-In Mic</item>
-                <item>Built-In Back Mic</item>
-                <item>FM Tuner</item>
-                <item>Telephony Rx</item>
-                <item>Echo Reference</item>
-            </attachedDevices>
-            <defaultOutputDevice>Speaker</defaultOutputDevice>
-            <mixPorts>
-                <mixPort name="primary output" role="source" flags="AUDIO_OUTPUT_FLAG_FAST AUDIO_OUTPUT_FLAG_PRIMARY">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </mixPort>
-                <mixPort name="raw" role="source"
-                        flags="AUDIO_OUTPUT_FLAG_FAST AUDIO_OUTPUT_FLAG_RAW">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </mixPort>
-                <mixPort name="haptics output" role="source">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO_HAPTIC_A"/>
-                </mixPort>
-                <mixPort name="deep_buffer" role="source"
-                        flags="AUDIO_OUTPUT_FLAG_DEEP_BUFFER">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                    <profile name="" format="AUDIO_FORMAT_PCM_8_24_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                    <profile name="" format="AUDIO_FORMAT_PCM_24_BIT_PACKED"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                    <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </mixPort>
-                <mixPort name="mmap_no_irq_out" role="source" flags="AUDIO_OUTPUT_FLAG_DIRECT AUDIO_OUTPUT_FLAG_MMAP_NOIRQ">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                    <profile name="" format="AUDIO_FORMAT_PCM_8_24_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                    <profile name="" format="AUDIO_FORMAT_PCM_24_BIT_PACKED"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                    <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </mixPort>
-                <mixPort name="hifi_playback" role="source" />
-                <mixPort name="spatial output" role="source" flags="AUDIO_OUTPUT_FLAG_SPATIALIZER">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </mixPort>
-                <mixPort name="direct_pcm" role="source" recommendedMuteDurationMs="160"
-                        flags="AUDIO_OUTPUT_FLAG_DIRECT">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 64000 88200 96000 128000 176400 192000"
-                             channelMasks="AUDIO_CHANNEL_OUT_MONO AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_2POINT1 AUDIO_CHANNEL_OUT_QUAD AUDIO_CHANNEL_OUT_PENTA AUDIO_CHANNEL_OUT_5POINT1 AUDIO_CHANNEL_OUT_6POINT1 AUDIO_CHANNEL_OUT_7POINT1"/>
-                    <profile name="" format="AUDIO_FORMAT_PCM_8_24_BIT"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 64000 88200 96000 128000 176400 192000 352800 384000"
-                             channelMasks="AUDIO_CHANNEL_OUT_MONO AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_2POINT1 AUDIO_CHANNEL_OUT_QUAD AUDIO_CHANNEL_OUT_PENTA AUDIO_CHANNEL_OUT_5POINT1 AUDIO_CHANNEL_OUT_6POINT1 AUDIO_CHANNEL_OUT_7POINT1"/>
-                    <profile name="" format="AUDIO_FORMAT_PCM_24_BIT_PACKED"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 64000 88200 96000 128000 176400 192000 352800 384000"
-                             channelMasks="AUDIO_CHANNEL_OUT_MONO AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_2POINT1 AUDIO_CHANNEL_OUT_QUAD AUDIO_CHANNEL_OUT_PENTA AUDIO_CHANNEL_OUT_5POINT1 AUDIO_CHANNEL_OUT_6POINT1 AUDIO_CHANNEL_OUT_7POINT1"/>
-                  <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 64000 88200 96000 128000 176400 192000 352800 384000"
-                             channelMasks="AUDIO_CHANNEL_OUT_MONO AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_2POINT1 AUDIO_CHANNEL_OUT_QUAD AUDIO_CHANNEL_OUT_PENTA AUDIO_CHANNEL_OUT_5POINT1 AUDIO_CHANNEL_OUT_6POINT1 AUDIO_CHANNEL_OUT_7POINT1"/>
-                </mixPort>
-                <mixPort name="compressed_offload" role="source"
-                         flags="AUDIO_OUTPUT_FLAG_DIRECT AUDIO_OUTPUT_FLAG_COMPRESS_OFFLOAD AUDIO_OUTPUT_FLAG_NON_BLOCKING AUDIO_OUTPUT_FLAG_GAPLESS_OFFLOAD">
-                    <profile name="" format="AUDIO_FORMAT_MP3"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
-                    <profile name="" format="AUDIO_FORMAT_FLAC"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 64000 88200 96000 128000 176400 192000"
-                             channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
-                    <profile name="" format="AUDIO_FORMAT_ALAC"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 64000 88200 96000 128000 176400 192000"
-                             channelMasks="AUDIO_CHANNEL_OUT_MONO AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_2POINT1 AUDIO_CHANNEL_OUT_QUAD AUDIO_CHANNEL_OUT_PENTA AUDIO_CHANNEL_OUT_5POINT1 AUDIO_CHANNEL_OUT_6POINT1 AUDIO_CHANNEL_OUT_7POINT1"/>
-                    <profile name="" format="AUDIO_FORMAT_APE"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 64000 88200 96000 128000 176400 192000"
-                             channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
-                    <profile name="" format="AUDIO_FORMAT_AAC_LC"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 64000 88200 96000"
-                             channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
-                    <profile name="" format="AUDIO_FORMAT_AAC_HE_V1"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 64000 88200 96000"
-                             channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
-                    <profile name="" format="AUDIO_FORMAT_AAC_HE_V2"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 64000 88200 96000"
-                             channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
-                    <profile name="" format="AUDIO_FORMAT_DTS"
-                             samplingRates="32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_OUT_MONO AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_2POINT1 AUDIO_CHANNEL_OUT_QUAD AUDIO_CHANNEL_OUT_PENTA AUDIO_CHANNEL_OUT_5POINT1"/>
-                    <profile name="" format="AUDIO_FORMAT_DTS_HD"
-                             samplingRates="32000 44100 48000 64000 88200 96000 128000 176400 192000"
-                             channelMasks="AUDIO_CHANNEL_OUT_MONO AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_2POINT1 AUDIO_CHANNEL_OUT_QUAD AUDIO_CHANNEL_OUT_PENTA AUDIO_CHANNEL_OUT_5POINT1 AUDIO_CHANNEL_OUT_6POINT1 AUDIO_CHANNEL_OUT_7POINT1"/>
-                    <!--<profile name="" format="AUDIO_FORMAT_WMA"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_OUT_MONO AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_2POINT1 AUDIO_CHANNEL_OUT_QUAD AUDIO_CHANNEL_OUT_PENTA AUDIO_CHANNEL_OUT_5POINT1 AUDIO_CHANNEL_OUT_6POINT1 AUDIO_CHANNEL_OUT_7POINT1"/>
-                    <profile name="" format="AUDIO_FORMAT_WMA_PRO"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 64000 88200 96000"
-                             channelMasks="AUDIO_CHANNEL_OUT_MONO AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_2POINT1 AUDIO_CHANNEL_OUT_QUAD AUDIO_CHANNEL_OUT_PENTA AUDIO_CHANNEL_OUT_5POINT1 AUDIO_CHANNEL_OUT_6POINT1 AUDIO_CHANNEL_OUT_7POINT1"/>-->
-                    <profile name="" format="AUDIO_FORMAT_VORBIS"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 64000 88200 96000 128000 176400 192000"
-                             channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
-                    <profile name="" format="AUDIO_FORMAT_AAC_ADTS_LC"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 64000 88200 96000"
-                             channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
-                    <profile name="" format="AUDIO_FORMAT_AAC_ADTS_HE_V1"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 64000 88200 96000"
-                             channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
-                    <profile name="" format="AUDIO_FORMAT_AAC_ADTS_HE_V2"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 64000 88200 96000"
-                             channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
-                    <profile name="" format="AUDIO_FORMAT_OPUS"
-                             samplingRates="8000 12000 16000 24000 48000"
-                             channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
-                </mixPort>
-                <mixPort name="voice_tx" role="source">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 16000 48000" channelMasks="AUDIO_CHANNEL_OUT_MONO AUDIO_CHANNEL_OUT_STEREO"/>
-                </mixPort>
-                <mixPort name="voip_rx" role="source"
-                         flags="AUDIO_OUTPUT_FLAG_VOIP_RX">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 16000 32000 48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </mixPort>
-                <mixPort name="incall_music_uplink" role="source"
-                        flags="AUDIO_OUTPUT_FLAG_INCALL_MUSIC">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 16000 48000"
-                             channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </mixPort>
-
-                <mixPort name="primary input" role="sink" maxOpenCount="2" maxActiveCount="2">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK"/>
-                </mixPort>
-                <mixPort name="compress-input" role="sink"
-                         flags="AUDIO_INPUT_FLAG_DIRECT" >
-                    <profile name="compress-capture-AAC-LC" format="AUDIO_FORMAT_AAC_LC"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK"/>
-                    <profile name="compress-capture-AAC-HE-V1" format="AUDIO_FORMAT_AAC_ADTS_HE_V1"
-                             samplingRates="24000 32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK"/>
-                    <profile name="compress-capture-AAC-HE-V2" format="AUDIO_FORMAT_AAC_ADTS_HE_V2"
-                             samplingRates="24000 32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_IN_STEREO"/>
-                </mixPort>
-                <mixPort name="fast input" role="sink"
-                         flags="AUDIO_INPUT_FLAG_FAST">
-                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                              samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
-                              channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK"/>
-                </mixPort>
-                <mixPort name="quad mic" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                        samplingRates="48000"
-                        channelMasks="AUDIO_CHANNEL_INDEX_MASK_4"/>
-                </mixPort>
-                <mixPort name="voip_tx" role="sink"
-                         flags="AUDIO_INPUT_FLAG_VOIP_TX">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 16000 32000 48000" channelMasks="AUDIO_CHANNEL_IN_MONO"/>
-                </mixPort>
-                <mixPort name="usb_surround_sound" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 88200 96000 176400 192000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK AUDIO_CHANNEL_INDEX_MASK_3 AUDIO_CHANNEL_INDEX_MASK_4 AUDIO_CHANNEL_IN_5POINT1 AUDIO_CHANNEL_INDEX_MASK_6 AUDIO_CHANNEL_INDEX_MASK_8"/>
-                    <profile name="" format="AUDIO_FORMAT_PCM_32_BIT"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 88200 96000 176400 192000"
-                             channelMasks="AUDIO_CHANNEL_IN_5POINT1 AUDIO_CHANNEL_INDEX_MASK_6 AUDIO_CHANNEL_INDEX_MASK_8"/>
-                    <profile name="" format="AUDIO_FORMAT_PCM_FLOAT"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 88200 96000 176400 192000"
-                             channelMasks="AUDIO_CHANNEL_IN_5POINT1 AUDIO_CHANNEL_INDEX_MASK_6 AUDIO_CHANNEL_INDEX_MASK_8"/>
-                </mixPort>
-                <mixPort name="record_24" role="sink" maxOpenCount="2" maxActiveCount="2">
-                    <profile name="" format="AUDIO_FORMAT_PCM_24_BIT_PACKED"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 96000 192000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK AUDIO_CHANNEL_INDEX_MASK_3 AUDIO_CHANNEL_INDEX_MASK_4"/>
-                    <profile name="" format="AUDIO_FORMAT_PCM_8_24_BIT"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 96000 192000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK AUDIO_CHANNEL_INDEX_MASK_3 AUDIO_CHANNEL_INDEX_MASK_4"/>
-                    <profile name="" format="AUDIO_FORMAT_PCM_FLOAT"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 96000 192000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK AUDIO_CHANNEL_INDEX_MASK_3 AUDIO_CHANNEL_INDEX_MASK_4"/>
-                </mixPort>
-                <mixPort name="voice_rx" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 16000 48000" channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO"/>
-                </mixPort>
-                <mixPort name="mmap_no_irq_in" role="sink" flags="AUDIO_INPUT_FLAG_MMAP_NOIRQ">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK AUDIO_CHANNEL_INDEX_MASK_3"/>
-                    <profile name="" format="AUDIO_FORMAT_PCM_24_BIT_PACKED"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK AUDIO_CHANNEL_INDEX_MASK_3"/>
-                    <profile name="" format="AUDIO_FORMAT_PCM_8_24_BIT"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK AUDIO_CHANNEL_INDEX_MASK_3"/>
-
-                </mixPort>
-                <mixPort name="hifi_input" role="sink" />
-            </mixPorts>
-
-            <devicePorts>
-                <!-- Output devices declaration, i.e. Sink DEVICE PORT -->
-                <devicePort tagName="Earpiece" type="AUDIO_DEVICE_OUT_EARPIECE" role="sink">
-                   <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                            samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_MONO"/>
-                </devicePort>
-                <devicePort tagName="Speaker" role="sink" type="AUDIO_DEVICE_OUT_SPEAKER" address="">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="Wired Headset" type="AUDIO_DEVICE_OUT_WIRED_HEADSET" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="Wired Headphones" type="AUDIO_DEVICE_OUT_WIRED_HEADPHONE" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="Line" type="AUDIO_DEVICE_OUT_LINE" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="BT SCO" type="AUDIO_DEVICE_OUT_BLUETOOTH_SCO" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 16000" channelMasks="AUDIO_CHANNEL_OUT_MONO"/>
-                </devicePort>
-                <devicePort tagName="BT SCO Headset" type="AUDIO_DEVICE_OUT_BLUETOOTH_SCO_HEADSET" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 16000" channelMasks="AUDIO_CHANNEL_OUT_MONO"/>
-                </devicePort>
-                <devicePort tagName="BT SCO Car Kit" type="AUDIO_DEVICE_OUT_BLUETOOTH_SCO_CARKIT" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 16000" channelMasks="AUDIO_CHANNEL_OUT_MONO"/>
-                </devicePort>
-                <devicePort tagName="Telephony Tx" type="AUDIO_DEVICE_OUT_TELEPHONY_TX" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 16000" channelMasks="AUDIO_CHANNEL_OUT_MONO AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="HDMI" type="AUDIO_DEVICE_OUT_AUX_DIGITAL" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 11025 16000 22050 32000 44100 48000 64000 88200 96000 128000 176400 192000"/>
-                </devicePort>
-                <devicePort tagName="Proxy" type="AUDIO_DEVICE_OUT_PROXY" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 11025 16000 22050 32000 44100 48000 64000 88200 96000 128000 176400 192000"/>
-                </devicePort>
-                <devicePort tagName="FM" type="AUDIO_DEVICE_OUT_FM" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_MONO AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="BT A2DP Out" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP" role="sink"
-                            encodedFormats="AUDIO_FORMAT_SBC AUDIO_FORMAT_AAC AUDIO_FORMAT_APTX AUDIO_FORMAT_APTX_HD AUDIO_FORMAT_LDAC AUDIO_FORMAT_CELT AUDIO_FORMAT_APTX_ADAPTIVE AUDIO_FORMAT_APTX_TWSP AUDIO_FORMAT_LC3">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="BT A2DP Headphones" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_HEADPHONES" role="sink"
-                            encodedFormats="AUDIO_FORMAT_SBC AUDIO_FORMAT_AAC AUDIO_FORMAT_APTX AUDIO_FORMAT_APTX_HD AUDIO_FORMAT_LDAC AUDIO_FORMAT_CELT AUDIO_FORMAT_APTX_ADAPTIVE AUDIO_FORMAT_APTX_TWSP AUDIO_FORMAT_LC3">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="BT A2DP Speaker" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_SPEAKER" role="sink"
-                            encodedFormats="AUDIO_FORMAT_SBC AUDIO_FORMAT_AAC AUDIO_FORMAT_APTX AUDIO_FORMAT_APTX_HD AUDIO_FORMAT_LDAC AUDIO_FORMAT_CELT AUDIO_FORMAT_APTX_ADAPTIVE AUDIO_FORMAT_APTX_TWSP AUDIO_FORMAT_LC3">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="BT BLE Out" type="AUDIO_DEVICE_OUT_BLE_HEADSET" role="sink"
-                            encodedFormats="AUDIO_FORMAT_LC3 VX_AUDIO_FORMAT_APTX_ADAPTIVE_QLEA">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 16000 32000 48000" channelMasks="AUDIO_CHANNEL_OUT_MONO AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="BT BLE Speaker" type="AUDIO_DEVICE_OUT_BLE_SPEAKER" role="sink"
-                            encodedFormats="AUDIO_FORMAT_LC3 VX_AUDIO_FORMAT_APTX_ADAPTIVE_QLEA">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 16000 32000 48000" channelMasks="AUDIO_CHANNEL_OUT_MONO AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="BT BLE Broadcast" type="AUDIO_DEVICE_OUT_BLE_BROADCAST" role="sink"
-                            encodedFormats="AUDIO_FORMAT_LC3">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 16000 32000 48000" channelMasks="AUDIO_CHANNEL_OUT_MONO AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="USB Device Out" type="AUDIO_DEVICE_OUT_USB_DEVICE" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="44100 48000 64000 88200 96000 128000 176400 192000"/>
-                </devicePort>
-                <devicePort tagName="USB Headset Out" type="AUDIO_DEVICE_OUT_USB_HEADSET" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="44100 48000 64000 88200 96000 128000 176400 192000"/>
-                </devicePort>
-
-                <!-- Input devices declaration, i.e. Source DEVICE PORT -->
-                <devicePort tagName="Built-In Mic" type="AUDIO_DEVICE_IN_BUILTIN_MIC" role="source">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK"/>
-                    <!-- To support compress offload capture such that client can query -->
-                    <profile name="compress-capture-AAC-LC" format="AUDIO_FORMAT_AAC_LC"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK"/>
-                    <profile name="compress-capture-AAC-HE-V1" format="AUDIO_FORMAT_AAC_ADTS_HE_V1"
-                             samplingRates="24000 32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK"/>
-                    <profile name="compress-capture-AAC-HE-V2" format="AUDIO_FORMAT_AAC_ADTS_HE_V2"
-                             samplingRates="24000 32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_IN_STEREO"/>
-                </devicePort>
-                <devicePort tagName="Built-In Back Mic" type="AUDIO_DEVICE_IN_BACK_MIC" role="source">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK"/>
-                </devicePort>
-                <devicePort tagName="FM Tuner" type="AUDIO_DEVICE_IN_FM_TUNER" role="source">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO"/>
-                </devicePort>
-                <devicePort tagName="Wired Headset Mic" type="AUDIO_DEVICE_IN_WIRED_HEADSET" role="source">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO AUDIO_CHANNEL_IN_FRONT_BACK"/>
-                </devicePort>
-                <devicePort tagName="BT SCO Headset Mic" type="AUDIO_DEVICE_IN_BLUETOOTH_SCO_HEADSET" role="source">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 16000" channelMasks="AUDIO_CHANNEL_IN_MONO"/>
-                </devicePort>
-                <devicePort tagName="Telephony Rx" type="AUDIO_DEVICE_IN_TELEPHONY_RX" role="source">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 16000 48000" channelMasks="AUDIO_CHANNEL_IN_MONO"/>
-                    <gains>
-                        <gain name="gain_1" mode="AUDIO_GAIN_MODE_JOINT"
-                              minValueMB="-8400"
-                              maxValueMB="4000"
-                              defaultValueMB="0"
-                              stepValueMB="100"/>
-                    </gains>
-                </devicePort>
-                <devicePort tagName="USB Device In" type="AUDIO_DEVICE_IN_USB_DEVICE" role="source">
-                </devicePort>
-                <devicePort tagName="USB Headset In" type="AUDIO_DEVICE_IN_USB_HEADSET" role="source">
-                </devicePort>
-                <devicePort tagName="A2DP In" type="AUDIO_DEVICE_IN_BLUETOOTH_A2DP" role="source"
-                            encodedFormats="AUDIO_FORMAT_LC3">
-                   <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                            samplingRates="44100 48000" channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO"/>
-                </devicePort>
-                <devicePort tagName="Echo Reference" type="AUDIO_DEVICE_IN_ECHO_REFERENCE" role="source">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_IN_MONO"/>
-                </devicePort>
-                <devicePort tagName="BLE In" type="AUDIO_DEVICE_IN_BLE_HEADSET" role="source"
-                            encodedFormats="AUDIO_FORMAT_LC3">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 16000 24000 44100 48000" channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO"/>
-                </devicePort>
-                <devicePort tagName="Proxy In" type="AUDIO_DEVICE_IN_PROXY" role="source">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 11025 16000 22050 32000 44100 48000 64000 88200 96000 128000 176400 192000"/>
-                </devicePort>
-                <devicePort tagName="IP In" type="AUDIO_DEVICE_IN_IP" role="source">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="8000 11025 16000 22050 32000 44100 48000 64000 88200 96000 128000 176400 192000"/>
-                </devicePort>
-            </devicePorts>
-            <!-- route declaration, i.e. list all available sources for a given sink -->
-            <routes>
-                <route type="mix" sink="Earpiece"
-                       sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,voip_rx,mmap_no_irq_out,haptics output,Telephony Rx"/>
-                <route type="mix" sink="Speaker"
-                       sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,voip_rx,mmap_no_irq_out,haptics output,Telephony Rx"/>
-                <route type="mix" sink="Wired Headset"
-                       sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,voip_rx,mmap_no_irq_out,haptics output,Telephony Rx"/>
-                <route type="mix" sink="Wired Headphones"
-                       sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,voip_rx,mmap_no_irq_out,haptics output,Telephony Rx"/>
-                <route type="mix" sink="Line"
-                       sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,voip_rx,mmap_no_irq_out,haptics output,Telephony Rx"/>
-                <route type="mix" sink="HDMI"
-                       sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,voip_rx,haptics output,Telephony Rx"/>
-                <route type="mix" sink="Proxy"
-                       sources="primary output,deep_buffer,direct_pcm,compressed_offload,haptics output"/>
-                <route type="mix" sink="FM"
-                       sources="primary output"/>
-                <route type="mix" sink="BT SCO"
-                       sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,voip_rx,haptics output,spatial output,Telephony Rx"/>
-                <route type="mix" sink="BT SCO Headset"
-                       sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,voip_rx,haptics output,spatial output,Telephony Rx"/>
-                <route type="mix" sink="BT BLE Out"
-                       sources="primary output,raw,mmap_no_irq_out,deep_buffer,direct_pcm,compressed_offload,voip_rx,haptics output,spatial output,Telephony Rx"/>
-                <route type="mix" sink="BT SCO Car Kit"
-                       sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,voip_rx,haptics output,spatial output,Telephony Rx"/>
-                <route type="mix" sink="USB Device Out"
-                       sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,voip_rx,mmap_no_irq_out,hifi_playback,haptics output,Telephony Rx"/>
-                <route type="mix" sink="USB Headset Out"
-                       sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,voip_rx,mmap_no_irq_out,hifi_playback,haptics output,Telephony Rx"/>
-                <route type="mix" sink="Telephony Tx"
-                       sources="voice_tx,incall_music_uplink"/>
-                <route type="mix" sink="voice_rx"
-                       sources="Telephony Rx"/>
-                <route type="mix" sink="primary input"
-                       sources="Built-In Mic,Built-In Back Mic,Wired Headset Mic,BT SCO Headset Mic,FM Tuner,Telephony Rx,A2DP In,Echo Reference,BLE In,Proxy In,IP In"/>
-                <route type="mix" sink="compress-input"
-                       sources="Built-In Mic,Built-In Back Mic,BT SCO Headset Mic,Wired Headset Mic,USB Device In,USB Headset In,BLE In,Proxy In,IP In"/>
-                <route type="mix" sink="usb_surround_sound"
-                       sources="USB Device In,USB Headset In"/>
-                <route type="mix" sink="fast input"
-                       sources="Built-In Mic,Built-In Back Mic,BT SCO Headset Mic,USB Device In,USB Headset In,Wired Headset Mic,Proxy In,IP In"/>
-                <route type="mix" sink="quad mic"
-                       sources="Built-In Mic,Built-In Back Mic,BT SCO Headset Mic,USB Device In,USB Headset In,Wired Headset Mic"/>
-                <route type="mix" sink="voip_tx"
-                       sources="Built-In Mic,Built-In Back Mic,BT SCO Headset Mic,USB Device In,USB Headset In,Wired Headset Mic,BLE In"/>
-                <route type="mix" sink="record_24"
-                       sources="Built-In Mic,Built-In Back Mic,Wired Headset Mic,A2DP In,BLE In"/>
-                <route type="mix" sink="mmap_no_irq_in"
-                       sources="Built-In Mic,Built-In Back Mic,BT SCO Headset Mic,USB Device In,USB Headset In,Wired Headset Mic"/>
-                <route type="mix" sink="BT A2DP Out"
-                       sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,voip_rx,mmap_no_irq_out,haptics output,spatial output"/>
-                <route type="mix" sink="BT A2DP Headphones"
-                       sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,voip_rx,mmap_no_irq_out,haptics output,spatial output"/>
-                <route type="mix" sink="BT A2DP Speaker"
-                       sources="primary output,raw,deep_buffer,direct_pcm,compressed_offload,voip_rx,mmap_no_irq_out,haptics output"/>
-                <route type="mix" sink="BT BLE Speaker"
-                       sources="primary output,raw,mmap_no_irq_out,deep_buffer,direct_pcm,compressed_offload,voip_rx,haptics output"/>
-                <route type="mix" sink="BT BLE Broadcast"
-                       sources="primary output,deep_buffer,direct_pcm,compressed_offload"/>
-                <route type="mix" sink="hifi_input" sources="USB Device In,USB Headset In" />
-            </routes>
-
-        </module>
-
-        <!-- A2DP Audio HAL -->
-        <!-- <module name="a2dp" halVersion="2.0">
-            <mixPorts>
-                <mixPort name="a2dp input" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="44100 48000" channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO"/>
-                </mixPort>
-            </mixPorts>
-
-            <devicePorts>
-                <devicePort tagName="BT A2DP In" type="AUDIO_DEVICE_IN_BLUETOOTH_A2DP" role="source">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="44100 48000" channelMasks="AUDIO_CHANNEL_IN_MONO AUDIO_CHANNEL_IN_STEREO"/>
-                </devicePort>
-            </devicePorts>
-
-            <routes>
-                <route type="mix" sink="a2dp input"
-                       sources="BT A2DP In"/>
-            </routes>
-        </module> -->
-
-        <!-- Usb Audio HAL -->
-        <module name="usb" halVersion="2.0">
-            <mixPorts>
-                <mixPort name="usb_accessory output" role="source">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="44100" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </mixPort>
-            </mixPorts>
-            <devicePorts>
-                <devicePort tagName="USB Host Out" type="AUDIO_DEVICE_OUT_USB_ACCESSORY" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="44100" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-            </devicePorts>
-            <routes>
-                <route type="mix" sink="USB Host Out"
-                       sources="usb_accessory output"/>
-            </routes>
-        </module>
-
-        <!-- Remote Submix Audio HAL -->
-        <xi:include href="/vendor/etc/r_submix_audio_policy_configuration.xml"/>
-
-        <!-- Bluetooth Audio HAL for hearing aid -->
-        <xi:include href="/vendor/etc/bluetooth_qti_hearing_aid_audio_policy_configuration.xml"/>
-
-    </modules>
-    <!-- End of Modules section -->
-
-    <!-- Volume section -->
-
-    <xi:include href="/vendor/etc/audio_policy_volumes.xml"/>
-    <xi:include href="/vendor/etc/default_volume_tables.xml"/>
-
-    <!-- End of Volume section -->
-
-</audioPolicyConfiguration>
+vendor/app/TxPwrAdmin/TxPwrAdmin.apk
+vendor/bin/batt_health
+vendor/bin/charge_only_mode
+vendor/bin/chiofflinepostproctest
+vendor/bin/hdcp1prov
+vendor/bin/hdcp2p2prov
+vendor/bin/hostapd_cli
+vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
+vendor/bin/hw/android.hardware.security.keymint-service-spu-qti
+vendor/bin/hw/com.motorola.hardware.display.panel-service
+vendor/bin/hw/com.motorola.hardware.display.touch-service
+vendor/bin/hw/vendor.qti.MemHal-service
+vendor/bin/hw/vendor.qti.hardware.lights.service
+vendor/bin/hw/vendor.qti.hardware.secureprocessor
+vendor/bin/hw/vendor.qti.hardware.servicetrackeraidl-service
+vendor/bin/hw/vendor.qti.psiclient@1.0-service
+vendor/bin/hw/vendor.zuialarm.hardware.alarm-service
+vendor/bin/init.crda.sh
+vendor/bin/init.gbmods.sh
+vendor/bin/init.mdm.sh
+vendor/bin/init.mmi.block_perm.sh
+vendor/bin/init.mmi.display.sh
+vendor/bin/init.mmi.mdlog-getlogs.sh
+vendor/bin/init.mmi.modem-rfs.sh
+vendor/bin/init.mmi.shutdown.sh
+vendor/bin/init.mmi.usb.sh
+vendor/bin/init.mmi.wlan-getlogs.sh
+vendor/bin/init.qcom.coex.sh
+vendor/bin/init.qcom.efs.sync.sh
+vendor/bin/init.qcom.sdio.sh
+vendor/bin/init.qti.display_boot.sh
+vendor/bin/init.qti.kernel.debug-parrot.sh
+vendor/bin/init.qti.kernel.debug-ravelin.sh
+vendor/bin/init.qti.kernel.debug.sh
+vendor/bin/init.qti.kernel.early_debug-parrot.sh
+vendor/bin/init.qti.kernel.early_debug.sh
+vendor/bin/msm_irqbalance
+vendor/bin/myftm
+vendor/bin/qesdk-secmanager
+vendor/bin/smcinvoke_example
+vendor/bin/smcinvoke_skeleton
+vendor/bin/smcinvoke_skeleton_cpp
+vendor/bin/spectraltool
+vendor/bin/ssr_diag
+vendor/bin/ssr_setup
+vendor/bin/wpa_cli
+vendor/bin/zui_power_off_alarm
+vendor/etc/a2dp_audio_policy_configuration.xml
+vendor/etc/default-permissions/vendor.qti.data.txpwradmin.xml
+vendor/etc/excluded-input-devices.xml
+vendor/etc/init.qti.fm.sh
+vendor/etc/init/android.hardware.secure_element_gto.rc
+vendor/etc/init/com.motorola.hardware.display.panel-service.rc
+vendor/etc/init/com.motorola.hardware.display.touch-service.rc
+vendor/etc/init/diagcommd.rc
+vendor/etc/init/dlsc.rc
+vendor/etc/init/dms-service.rc
+vendor/etc/init/hostapd.android.rc
+vendor/etc/init/hw/init.mmi.chipset.rc
+vendor/etc/init/hw/init.mmi.debug.rc
+vendor/etc/init/hw/init.mmi.diag.rc
+vendor/etc/init/hw/init.mmi.diag_mdlog.rc
+vendor/etc/init/hw/init.mmi.overlay.rc
+vendor/etc/init/hw/init.mmi.rc
+vendor/etc/init/hw/init.mmi.tcmd.rc
+vendor/etc/init/hw/init.mmi.usb.rc
+vendor/etc/init/hw/init.mmi.wlan.rc
+vendor/etc/init/hw/init.qcom.factory.rc
+vendor/etc/init/hw/init.qcom.rc
+vendor/etc/init/hw/init.qti.ufs.rc
+vendor/etc/init/hw/init.target.rc
+vendor/etc/init/hw/init.vendor.st21nfc.rc
+vendor/etc/init/init.maxe.rc
+vendor/etc/init/init.qti.display_boot.rc
+vendor/etc/init/init.qti.fm.rc
+vendor/etc/init/memtrack_qti.rc
+vendor/etc/init/motorola.hardware.camera.desktop@2.0-service.rc
+vendor/etc/init/motorola.hardware.fm.service.rc
+vendor/etc/init/qesdk-secmanager.rc
+vendor/etc/init/qspa_vendor.rc
+vendor/etc/init/vendor.mmi.carrier.rc
+vendor/etc/init/vendor.qti.MemHal-service.rc
+vendor/etc/init/vendor.qti.hardware.lights.service.rc
+vendor/etc/init/vendor.qti.hardware.secureprocessor.rc
+vendor/etc/init/vendor.qti.hardware.servicetrackeraidl-service.rc
+vendor/etc/init/vendor.qti.psiclient@1.0-service.rc
+vendor/etc/init/vendor.qti.qspa-service.rc
+vendor/etc/init/vendor.sensors.qesdk.rc
+vendor/etc/init/vmmgr.rc
+vendor/etc/init/vndservicemanager.rc
+vendor/etc/msm_irqbalance.conf
+vendor/etc/permissions/com.motorola.camera.extensions.xml
+vendor/etc/permissions/features_com.android.virt.xml
+vendor/etc/permissions/handheld_core_hardware.xml
+vendor/etc/permissions/privapp-permissions-qti-vendor.xml
+vendor/etc/seccomp_policy/atfwd@2.0.policy
+vendor/etc/smomo_setting.xml
+vendor/etc/st54l_conf_ds.txt
+vendor/etc/st54l_conf_ss.txt
+vendor/etc/sysconfig/core-settings-ext-component-overrides.xml
+vendor/etc/usb_audio_policy_configuration.xml
+vendor/etc/vintf/manifest/com.motorola.hardware.display.panel-service.xml
+vendor/etc/vintf/manifest/com.motorola.hardware.display.touch.xml
+vendor/etc/vintf/manifest/mapper.qti.xml
+vendor/etc/vintf/manifest/memtrack_qti.xml
+vendor/etc/vintf/manifest/power.xml
+vendor/etc/vintf/manifest/soundtrigger.qti.xml
+vendor/etc/vintf/manifest/vendor.qti.MemHal.xml
+vendor/etc/vintf/manifest/vendor.qti.hardware.lights.service.xml
+vendor/etc/vintf/manifest/vendor.qti.hardware.secureprocessor.xml
+vendor/etc/vintf/manifest/vendor.qti.hardware.servicetrackeraidl-service.xml
+vendor/etc/vintf/manifest/vendor.qti.hardware.tetheroffload.service.xml
+vendor/etc/vintf/manifest/vendor.qti.qspa-service.xml
+vendor/etc/vmmgr.conf
+vendor/etc/wifi/adrastea/WCNSS_mot_cfg.ini
+vendor/etc/wifi/icm.conf
+vendor/etc/wifi/wfdr2_regex.conf
+vendor/etc/wifi/wpa_supplicant.conf
+vendor/framework/com.motorola.camera.extensions.jar
+vendor/lib64/android.automotive.watchdog-V2-ndk.so
+vendor/lib64/android.hardware.light-V2-ndk.so
+vendor/lib64/android.hardware.memtrack-V1-ndk.so
+vendor/lib64/android.hardware.nfc-V1-ndk.so
+vendor/lib64/android.hardware.power-V5-ndk.so
+vendor/lib64/android.hardware.power@1.0.so
+vendor/lib64/android.hardware.power@1.1.so
+vendor/lib64/android.hardware.power@1.2.so
+vendor/lib64/android.hardware.radio-V3-ndk.so
+vendor/lib64/android.hardware.radio.config-V3-ndk.so
+vendor/lib64/android.hardware.radio.data-V3-ndk.so
+vendor/lib64/android.hardware.radio.messaging-V3-ndk.so
+vendor/lib64/android.hardware.radio.modem-V3-ndk.so
+vendor/lib64/android.hardware.radio.network-V3-ndk.so
+vendor/lib64/android.hardware.radio.sap-V1-ndk.so
+vendor/lib64/android.hardware.radio.sim-V3-ndk.so
+vendor/lib64/android.hardware.radio.voice-V3-ndk.so
+vendor/lib64/android.hardware.radio@1.0.so
+vendor/lib64/android.hardware.radio@1.1.so
+vendor/lib64/android.hardware.renderscript@1.0.so
+vendor/lib64/android.hardware.secure_element-V1-ndk.so
+vendor/lib64/android.hardware.security.keymint-V1-ndk.so
+vendor/lib64/android.hardware.security.keymint-V2-ndk.so
+vendor/lib64/android.hardware.security.keymint-V3-ndk.so
+vendor/lib64/android.hardware.security.rkp-V3-ndk.so
+vendor/lib64/android.hardware.security.secureclock-V1-ndk.so
+vendor/lib64/android.hardware.security.sharedsecret-V1-ndk.so
+vendor/lib64/android.hardware.security.sharedsecret-V2-ndk.so
+vendor/lib64/android.hardware.sensors-V2-ndk.so
+vendor/lib64/android.hardware.sensors@1.0.so
+vendor/lib64/android.hardware.sensors@2.0-ScopedWakelock.so
+vendor/lib64/android.hardware.sensors@2.0.so
+vendor/lib64/android.hardware.sensors@2.1.so
+vendor/lib64/android.hardware.soundtrigger3-V1-ndk.so
+vendor/lib64/android.hardware.soundtrigger@2.0-core.so
+vendor/lib64/android.hardware.soundtrigger@2.0.so
+vendor/lib64/android.hardware.soundtrigger@2.1.so
+vendor/lib64/android.hardware.soundtrigger@2.2.so
+vendor/lib64/android.hardware.soundtrigger@2.3.so
+vendor/lib64/android.hardware.tetheroffload-V1-ndk.so
+vendor/lib64/android.hardware.thermal-V1-ndk.so
+vendor/lib64/android.hardware.thermal-V2-ndk.so
+vendor/lib64/android.hardware.thermal@1.0.so
+vendor/lib64/android.hardware.thermal@2.0.so
+vendor/lib64/android.hardware.weaver-V2-ndk.so
+vendor/lib64/android.hardware.wifi-V2-ndk.so
+vendor/lib64/com.dsi.ant@1.0.so
+vendor/lib64/com.motorola.hardware.biometric.fingerprint@1.0.so
+vendor/lib64/com.motorola.hardware.display.touch-V3-ndk.so
+vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so
+vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so
+vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so
+vendor/lib64/com.qualcomm.qti.imscmservice@2.2.so
+vendor/lib64/com.qualcomm.qti.uceservice@2.0.so
+vendor/lib64/com.qualcomm.qti.uceservice@2.1.so
+vendor/lib64/com.qualcomm.qti.uceservice@2.2.so
+vendor/lib64/com.qualcomm.qti.uceservice@2.3.so
+vendor/lib64/ftm_fm_lib.so
+vendor/lib64/hw/android.hardware.audio.effect@7.0-impl.so
+vendor/lib64/hw/android.hardware.audio@7.0-impl.so
+vendor/lib64/hw/android.hardware.bluetooth.audio@2.0-impl.so
+vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-qti-display.so
+vendor/lib64/hw/android.hardware.renderscript@1.0-impl.so
+vendor/lib64/hw/android.hardware.soundtrigger@2.3-impl.so
+vendor/lib64/hw/audio.primary.default.so
+vendor/lib64/hw/audio.r_submix.default.so
+vendor/lib64/hw/audio.usb.default.so
+vendor/lib64/hw/displaypanel.default.so
+vendor/lib64/hw/gralloc.default.so
+vendor/lib64/hw/libsoundtriggerhal.qti.so
+vendor/lib64/hw/local_time.default.so
+vendor/lib64/hw/mapper.qti.so
+vendor/lib64/hw/power.default.so
+vendor/lib64/hw/sensors.dynamic_sensor_hal.so
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
+vendor/lib64/hw/vendor.qti.hardware.servicetrackeraidl-impl.so
+vendor/lib64/hw/vibrator.default.so
+vendor/lib64/libFaceUnlock.so
+vendor/lib64/libRSCpuRef.so
+vendor/lib64/libRSDriver.so
+vendor/lib64/libRS_internal.so
+vendor/lib64/libasyncio.so
+vendor/lib64/libats.so
+vendor/lib64/libaudioroute.so
+vendor/lib64/libaudioutils.so
+vendor/lib64/libavservices_minijail.so
+vendor/lib64/libbase.so
+vendor/lib64/libbase64.so
+vendor/lib64/libbatterylistener.so
+vendor/lib64/libbcinfo.so
+vendor/lib64/libbinder.so
+vendor/lib64/libbinderdebug.so
+vendor/lib64/libblas.so
+vendor/lib64/libbluetooth_audio_session.so
+vendor/lib64/libboot_control_qti.so
+vendor/lib64/libc++.so
+vendor/lib64/libcamera2ndk_vendor.so
+vendor/lib64/libcamera_metadata.so
+vendor/lib64/libcap.so
+vendor/lib64/libcert_parse.wpa_s.so
+vendor/lib64/libchrome.so
+vendor/lib64/libclang_rt.ubsan_standalone-aarch64-android.so
+vendor/lib64/libcld80211.so
+vendor/lib64/libcodec2.so
+vendor/lib64/libcodec2_aidl.so
+vendor/lib64/libcodec2_hal_common.so
+vendor/lib64/libcodec2_hidl@1.0.so
+vendor/lib64/libcodec2_hidl@1.1.so
+vendor/lib64/libcodec2_hidl@1.2.so
+vendor/lib64/libcodec2_hidl_plugin.so
+vendor/lib64/libcodec2_soft_ac4dec.so
+vendor/lib64/libcodec2_soft_common.so
+vendor/lib64/libcodec2_soft_ddpdec.so
+vendor/lib64/libcodec2_vndk.so
+vendor/lib64/libcompiler_rt.so
+vendor/lib64/libcppbor.so
+vendor/lib64/libcppbor_external.so
+vendor/lib64/libcppcose_rkp.so
+vendor/lib64/libcrypto.so
+vendor/lib64/libcrypto_data.so
+vendor/lib64/libcurl.so
+vendor/lib64/libcutils.so
+vendor/lib64/libdapparamstorage.so
+vendor/lib64/libdeccfg.so
+vendor/lib64/libdisplayconfig.qti.so
+vendor/lib64/libdisplaydebug.so
+vendor/lib64/libdmabufheap.so
+vendor/lib64/libdmap_consent_sdk.so
+vendor/lib64/libdrm.so
+vendor/lib64/libdrmutils.so
+vendor/lib64/libeffects.so
+vendor/lib64/libeffectsconfig.so
+vendor/lib64/libevent.so
+vendor/lib64/libexif.so
+vendor/lib64/libexpat.so
+vendor/lib64/libfilefinder.so
+vendor/lib64/libflatbuffers-cpp.so
+vendor/lib64/libfmpal.so
+vendor/lib64/libfmq.so
+vendor/lib64/libgatekeeper.so
+vendor/lib64/libgpu_tonemapper.so
+vendor/lib64/libgralloc.qti.so
+vendor/lib64/libgralloccore.so
+vendor/lib64/libgralloctypes.so
+vendor/lib64/libgrallocutils.so
+vendor/lib64/libgui_vendor.so
+vendor/lib64/libhardware.so
+vendor/lib64/libhardware_legacy.so
+vendor/lib64/libhdcp1prov.so
+vendor/lib64/libhdcp2p2prov.so
+vendor/lib64/libhdcpsrm.so
+vendor/lib64/libhfp_pal.so
+vendor/lib64/libhidparser.so
+vendor/lib64/libhistogram.so
+vendor/lib64/libhwbinder.so
+vendor/lib64/libion.so
+vendor/lib64/libipanat.so
+vendor/lib64/libiqi_bridge.so
+vendor/lib64/libjpeg.so
+vendor/lib64/libjson.so
+vendor/lib64/libjsoncpp.so
+vendor/lib64/libkeymaster_messages.so
+vendor/lib64/libkeymaster_portable.so
+vendor/lib64/libkeymint.so
+vendor/lib64/liblzma.so
+vendor/lib64/libmapdata_api.so
+vendor/lib64/libmapperutils.so
+vendor/lib64/libmdpfmgr.so
+vendor/lib64/libmedia_helper.so
+vendor/lib64/libmediautils_vendor.so
+vendor/lib64/libmemunreachable.so
+vendor/lib64/libminijail.so
+vendor/lib64/libnative-api.so
+vendor/lib64/libnbaio_mono.so
+vendor/lib64/libnetconfig_vendor.so
+vendor/lib64/libnetfilter_conntrack.so
+vendor/lib64/libnetutils.so
+vendor/lib64/libnfnetlink.so
+vendor/lib64/libnl.so
+vendor/lib64/liboem_specific.so
+vendor/lib64/liboemaids_vendor.so
+vendor/lib64/liboffloadhal.so
+vendor/lib64/liboffscreenpoweroptfeature.so
+vendor/lib64/libpalclient.so
+vendor/lib64/libpalipcservice.so
+vendor/lib64/libpasn.so
+vendor/lib64/libpasrutils.so
+vendor/lib64/libpkip.so
+vendor/lib64/libplatformconfig.so
+vendor/lib64/libpng.so
+vendor/lib64/libpolygon.so
+vendor/lib64/libpower.so
+vendor/lib64/libpowercallback.so
+vendor/lib64/libprocessgroup.so
+vendor/lib64/libpsi.so
+vendor/lib64/libpuresoftkeymasterdevice.so
+vendor/lib64/libqdMetaData.so
+vendor/lib64/libqdp.so
+vendor/lib64/libqdutils.so
+vendor/lib64/libqms_optimized_route_mgr_sdk.so
+vendor/lib64/libqms_packetstats_sdk.so
+vendor/lib64/libqms_sdf_sdk.so
+vendor/lib64/libqsap_sdk.so
+vendor/lib64/libqservice.so
+vendor/lib64/libqsh_wifi_test.so
+vendor/lib64/libqti-MemHal-client.so
+vendor/lib64/libqti-jankrescue.so
+vendor/lib64/libqti-lllite.so
+vendor/lib64/libqti_vndfwk_detect.so
+vendor/lib64/libqti_vndfwk_detect_vendor.so
+vendor/lib64/libqtivibratoreffect.so
+vendor/lib64/libqtivibratoreffectoffload.so
+vendor/lib64/libreference-ril.so
+vendor/lib64/libreffeature.so
+vendor/lib64/libril.so
+vendor/lib64/librilutils.so
+vendor/lib64/librmnetctl.so
+vendor/lib64/libsdedrm.so
+vendor/lib64/libsdk_sr.so
+vendor/lib64/libsdmcore.so
+vendor/lib64/libsdmdal.so
+vendor/lib64/libsdmutils.so
+vendor/lib64/libsfplugin_ccodec_utils.so
+vendor/lib64/libsgutils2.so
+vendor/lib64/libsndcardparser.so
+vendor/lib64/libsoc_helper_jni.so
+vendor/lib64/libsoft_attestation_cert.so
+vendor/lib64/libsotertool.so
+vendor/lib64/libsparse.so
+vendor/lib64/libspeexresampler.so
+vendor/lib64/libspukeymint.so
+vendor/lib64/libspukeymintprovision.so
+vendor/lib64/libsqlite.so
+vendor/lib64/libssl.so
+vendor/lib64/libstagefright_aidl_bufferpool2.so
+vendor/lib64/libstagefright_bufferpool@2.0.1.so
+vendor/lib64/libstagefright_bufferqueue_helper.so
+vendor/lib64/libstagefright_foundation.so
+vendor/lib64/libstagefrighthw.so
+vendor/lib64/libstfactory-vendor.so
+vendor/lib64/libsuspend.so
+vendor/lib64/libsysutils.so
+vendor/lib64/libtcmd_diag.so
+vendor/lib64/libtensorflowlite.so
+vendor/lib64/libtpa.so
+vendor/lib64/libui.so
+vendor/lib64/libunwindstack.so
+vendor/lib64/libutils.so
+vendor/lib64/libutilscallstack.so
+vendor/lib64/libvibratorutils.so
+vendor/lib64/libwifi-hal.so
+vendor/lib64/libwifi-system-iface.so
+vendor/lib64/libwpa_client.so
+vendor/lib64/libyuv.so
+vendor/lib64/libz.so
+vendor/lib64/mediacas/libclearkeycasplugin.so
+vendor/lib64/mediadrm/libdrmclearkeyplugin.so
+vendor/lib64/motorola.hardware.fm-V1-ndk.so
+vendor/lib64/vendor.display.color@1.0.so
+vendor/lib64/vendor.display.color@1.1.so
+vendor/lib64/vendor.display.color@1.2.so
+vendor/lib64/vendor.display.color@1.3.so
+vendor/lib64/vendor.display.color@1.4.so
+vendor/lib64/vendor.display.color@1.5.so
+vendor/lib64/vendor.display.config@1.0.so
+vendor/lib64/vendor.display.config@1.1.so
+vendor/lib64/vendor.display.config@1.10.so
+vendor/lib64/vendor.display.config@1.11.so
+vendor/lib64/vendor.display.config@1.2.so
+vendor/lib64/vendor.display.config@1.3.so
+vendor/lib64/vendor.display.config@1.4.so
+vendor/lib64/vendor.display.config@1.5.so
+vendor/lib64/vendor.display.config@1.6.so
+vendor/lib64/vendor.display.config@1.7.so
+vendor/lib64/vendor.display.config@1.8.so
+vendor/lib64/vendor.display.config@1.9.so
+vendor/lib64/vendor.display.config@2.0.so
+vendor/lib64/vendor.display.postproc@1.0.so
+vendor/lib64/vendor.qti.MemHal-V1-ndk.so
+vendor/lib64/vendor.qti.data.mwqem@1.0.so
+vendor/lib64/vendor.qti.data.slm@1.0.so
+vendor/lib64/vendor.qti.diaghal@1.0.so
+vendor/lib64/vendor.qti.esepowermanager@1.0.so
+vendor/lib64/vendor.qti.hardware.automotive.vehicle@1.0.so
+vendor/lib64/vendor.qti.hardware.bluetooth.audio-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.bluetooth.audio-V2-ndk.so
+vendor/lib64/vendor.qti.hardware.bluetooth_audio@2.0.so
+vendor/lib64/vendor.qti.hardware.bluetooth_audio@2.1.so
+vendor/lib64/vendor.qti.hardware.camera.device@1.0.so
+vendor/lib64/vendor.qti.hardware.camera.postproc-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.data.connection@1.0.so
+vendor/lib64/vendor.qti.hardware.data.connection@1.1.so
+vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
+vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.1.so
+vendor/lib64/vendor.qti.hardware.data.flow@1.0.so
+vendor/lib64/vendor.qti.hardware.data.flow@1.1.so
+vendor/lib64/vendor.qti.hardware.data.lce@1.0.so
+vendor/lib64/vendor.qti.hardware.display.allocator@1.0.so
+vendor/lib64/vendor.qti.hardware.display.allocator@3.0.so
+vendor/lib64/vendor.qti.hardware.display.color-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.display.composer3-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.display.composer@1.0.so
+vendor/lib64/vendor.qti.hardware.display.composer@2.0.so
+vendor/lib64/vendor.qti.hardware.display.config-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.display.config-V10-ndk.so
+vendor/lib64/vendor.qti.hardware.display.config-V11-ndk.so
+vendor/lib64/vendor.qti.hardware.display.config-V12-ndk.so
+vendor/lib64/vendor.qti.hardware.display.config-V2-ndk.so
+vendor/lib64/vendor.qti.hardware.display.config-V3-ndk.so
+vendor/lib64/vendor.qti.hardware.display.config-V4-ndk.so
+vendor/lib64/vendor.qti.hardware.display.config-V5-ndk.so
+vendor/lib64/vendor.qti.hardware.display.config-V6-ndk.so
+vendor/lib64/vendor.qti.hardware.display.config-V7-ndk.so
+vendor/lib64/vendor.qti.hardware.display.config-V8-ndk.so
+vendor/lib64/vendor.qti.hardware.display.config-V9-ndk.so
+vendor/lib64/vendor.qti.hardware.display.demura-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.display.mapper@1.0.so
+vendor/lib64/vendor.qti.hardware.display.mapper@1.1.so
+vendor/lib64/vendor.qti.hardware.display.mapper@2.0.so
+vendor/lib64/vendor.qti.hardware.display.mapper@3.0.so
+vendor/lib64/vendor.qti.hardware.display.mapper@4.0.so
+vendor/lib64/vendor.qti.hardware.display.mapperextensions@1.0.so
+vendor/lib64/vendor.qti.hardware.display.mapperextensions@1.1.so
+vendor/lib64/vendor.qti.hardware.display.mapperextensions@1.2.so
+vendor/lib64/vendor.qti.hardware.display.mapperextensions@1.3.so
+vendor/lib64/vendor.qti.hardware.display.postproc-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.display.snapalloc-impl.so
+vendor/lib64/vendor.qti.hardware.iop@1.0.so
+vendor/lib64/vendor.qti.hardware.iop@2.0.so
+vendor/lib64/vendor.qti.hardware.pal-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.perf@2.0.so
+vendor/lib64/vendor.qti.hardware.perf@2.1.so
+vendor/lib64/vendor.qti.hardware.perf@2.2.so
+vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
+vendor/lib64/vendor.qti.hardware.qspa-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.radio.am@1.0.so
+vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so
+vendor/lib64/vendor.qti.hardware.radio.ims@1.0.so
+vendor/lib64/vendor.qti.hardware.radio.ims@1.1.so
+vendor/lib64/vendor.qti.hardware.radio.ims@1.2.so
+vendor/lib64/vendor.qti.hardware.radio.ims@1.3.so
+vendor/lib64/vendor.qti.hardware.radio.ims@1.4.so
+vendor/lib64/vendor.qti.hardware.radio.ims@1.5.so
+vendor/lib64/vendor.qti.hardware.radio.ims@1.6.so
+vendor/lib64/vendor.qti.hardware.radio.ims@1.7.so
+vendor/lib64/vendor.qti.hardware.radio.ims@1.8.so
+vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so
+vendor/lib64/vendor.qti.hardware.radio.lpa@1.1.so
+vendor/lib64/vendor.qti.hardware.radio.lpa@1.2.so
+vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0.so
+vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so
+vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.0.so
+vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.1.so
+vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.2.so
+vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.3.so
+vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.4.so
+vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.5.so
+vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.6.so
+vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so
+vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so
+vendor/lib64/vendor.qti.hardware.radio.uim@1.2.so
+vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so
+vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so
+vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so
+vendor/lib64/vendor.qti.hardware.secureprocessor.common-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.secureprocessor.common-helper.so
+vendor/lib64/vendor.qti.hardware.secureprocessor.config-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.secureprocessor.device-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.servicetracker@1.0.so
+vendor/lib64/vendor.qti.hardware.servicetracker@1.1.so
+vendor/lib64/vendor.qti.hardware.servicetrackeraidl-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.vibrator.impl.so
+vendor/lib64/vendor.qti.hardware.vibratorOL.impl.so
+vendor/lib64/vendor.qti.hardware.vibratorSel.impl.so
+vendor/lib64/vendor.qti.hardware.vpp@2.0.so
+vendor/lib64/vendor.qti.hardware.wifi.supplicant-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.wifi.wifilearner-V1-ndk.so
+vendor/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
+vendor/lib64/vendor.qti.ims.callcapability@1.0.so
+vendor/lib64/vendor.qti.ims.callinfo@1.0.so
+vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so
+vendor/lib64/vendor.qti.ims.rcsconfig@1.1.so
+vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so
+vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
+vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so
+vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so
+vendor/lib64/vendor.zuialarm.hardware.alarm-V1-ndk.so
+vendor/lib64/wifi_legacy.so
