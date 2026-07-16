@@ -3,6 +3,8 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
+
+PRODUCT_PACKAGES += \
     audioadsprpcd \
     audiohalservice.qti \
     libagm_compress_plugin \
@@ -11,28 +13,16 @@ PRODUCT_PACKAGES += \
     libagmipcservice \
     libaudiochargerlistener \
     libbatterylistener \
+    libcustomva_intf \
     libfmpal \
     libhfp_pal \
-    libmediautils_vendor.vendor \
-    libmemunreachable.vendor \
+    libhotword_intf \
+    libpaleventnotifier \
     libpalipcservice \
-    libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing \
     libsndcardparser \
     libsoundtriggerhal.qti \
-    libvolumelistener \
-    qtiaudiohalvendorextn \
-    qti-audio-types-aidl-V1-ndk.vendor
-
-PRODUCT_PACKAGES += \
-    libalsautilsv2.vendor \
-    libbundleaidl \
-    libdownmixaidl \
-    libdynamicsprocessingaidl \
-    libloudnessenhanceraidl \
-    libreverbaidl \
-    libvisualizeraidl
+    libvui_intf \
+    qtiaudiohalvendorextn
 
 PRODUCT_PACKAGES += \
     android.hardware.audio.common-V1-ndk.vendor \
